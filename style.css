@@ -1,0 +1,72 @@
+body{
+    background-color: black;
+    font-family: 'Press Start 2P', cursive;
+}
+.gameplay{
+    background-image: url(assets/pixil-gif-drawing.gif);
+    width: 900px;
+    height: 900px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.street{
+    background-image: url(assets/alleywayv2.gif);
+    width: 900px;
+    height: 900px;
+    display: block;
+    margin: 0 auto;
+}
+.car{
+    background-image: url(assets/carscene2.gif);
+    width: 900px;
+    height: 900px;
+    display: block;
+    margin: 0 auto;
+}
+.alley{
+    background-image: url(assets/alleyrat.gif);
+    width: 900px;
+    height: 900px;
+    display: block;
+    margin: 0 auto;
+}
+.alleyAfter{
+    background-image: url(assets/alleyAfter.gif);
+    width: 900px;
+    height: 900px;
+    display: block;
+    margin: 0 auto;
+}
+h1{
+    color: white;
+}
+
+h2 {
+    margin: 0 auto; 
+    font-size: 100%; 
+  }
+  
+.question{
+    border: 2px white solid;
+    width: 300px;
+    background-color: thistle;
+    
+}
+.buttonC{
+    border: 1px black solid;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: whitesmoke;
+}
+.buttonC:hover{
+    cursor: pointer;
+    background-color:black;
+    color: white;
+}
+
+footer{
+    padding: 50px;
+}
+
