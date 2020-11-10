@@ -1,0 +1,25 @@
+{
+  "name": "jeronivosh",
+  "version": "1.0.0",
+  "description": "Text based choose your own adventure novel story game.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshglugatch/JERONIVOSH.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshglugatch/JERONIVOSH/issues"
+  },
+  "homepage": "https://github.com/joshglugatch/JERONIVOSH#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.13"
+  }
+}
