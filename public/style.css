@@ -2,6 +2,20 @@ body{
     background-color: black;
     font-family: 'Press Start 2P', cursive;
 }
+
+#start{
+    display: none;
+    position: fixed;
+    left: 47%;
+    bottom: 10%;
+}
+
+#login{
+    color: white;
+    position: fixed;
+    bottom: 15%;
+    left: 40%;
+}
 .gameplay{
     background-image: url(assets/pixil-gif-drawing.gif);
     width: 900px;

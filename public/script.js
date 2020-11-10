@@ -1,9 +1,26 @@
 
 
 var background = $(".gameplay");
-var quest = $(".quest")
+var quest = $(".quest");
 
-begin();
+$("#submit").on("click", event =>{
+    event.preventDefault();
+    $("#login").attr("display", "none");
+    $("#start").attr("display", "block");
+    let username = $("#userName").val().trim();
+    let password = $("#password").val().trim();
+    $.post("/api/create", {username: username, password: password})
+    .then(begin());
+
+})
+
+$("#start").on("click", event =>{
+    event.preventDefault();
+    $("#start").attr("display", "none");
+    $.post("/api/create")
+    begin();
+})
+
 
 function begin() {
     var html =
