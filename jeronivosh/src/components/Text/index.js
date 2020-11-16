@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Text({ user, story, choice }) {
+function Text({ user, story, click }) {
     console.log("text user", user);
     console.log(story[0].choices)
     return (
@@ -8,7 +8,7 @@ function Text({ user, story, choice }) {
             <p>{story[user.level].story}</p>
             <div>
                 {story[user.level].choices.map(x => {
-                    return <button onClick={choice}>{x}</button>
+                    return <button value={story[user.level].choices.indexOf(x)} onClick={click}>{x}</button>
                 })}
             </div>
         </div>

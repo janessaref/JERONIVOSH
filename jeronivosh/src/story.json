@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "image": "abc",
+        "image": "./assets/pixil-gif-drawing.gif",
         "story": "Would you like to explore the city?",
         "choices": [
             "Let's check it out."
@@ -14,7 +14,8 @@
         "choices": [
             "Hide in the nearby alley",
             "Continue exploring."
-        ]
+        ],
+        "decision": [3, 4]
     },
     {
         "id": 3,
@@ -31,7 +32,9 @@
         "story": "You press forward on high alert. What is that beautiful light in the distance... You leap for your life, narrowly avoiding what seemed like sure death. The monster roared on, as if it did not even notice you. Lucky to have avoied the monster's gaze, you creep through the shadows to a narrow opening nearby.",
         "choices": [
             "Continue..."
-        ]
+        ],
+        "badchoice": true
+        
     },
     {
         "id": 5,

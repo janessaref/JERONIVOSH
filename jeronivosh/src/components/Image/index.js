@@ -1,10 +1,10 @@
-import { userInfo } from 'os';
 import React from 'react';
 import "./style.css"
 
-function Image({ user }) {
+function Image({ user, story }) {
+    console.log(story[user.level]);
     return (
-        <img src={user.Image}></img>
+        <img src={story[user.level].image}></img>
     )
 }
 
