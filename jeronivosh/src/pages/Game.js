@@ -13,17 +13,17 @@ function Game() {
         level: 0,
         lives: 9
     })
-    console.log(user);
+    // console.log(user);
 
     const [storyline, setStory] = useState(story);
 
-    console.log(storyline);
+    // console.log(storyline);
     // could set up different state for level so we dont have to update
     // all user info when updating level
     // const [level, setLevel] = useState(1);
 
     useEffect(() => {
-
+        console.log("user update ", user)
     }, [user])
 
 
@@ -32,9 +32,8 @@ function Game() {
         event.preventDefault();
         let value = event.target.value;
         if (storyline[user.level].decision) {
-            if (value === 0) {
-                setUser({ ...user, "level": storyline[user.level].decision[value] });
-            }
+            setUser({ ...user, "level": storyline[user.level].decision[value] });
+            console.log("choice made: ", value, user.level);
         } else {
             setUser({ ...user, "level": user.level + 1 });
         }
