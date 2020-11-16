@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Image from "../components/Image";
 import Text from "../components/Text";
 import story from "../story.json";
+import Style from './style.css'
 
 
 function Game() {
@@ -50,7 +51,7 @@ function Game() {
 
 
     return (
-        <div>
+        <div className="con">
             <Image user={user} story={storyline} />
             <Text user={user} story={storyline} click={choice} />
         </div>
