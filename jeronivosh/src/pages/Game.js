@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from "../components/Image";
 import Text from "../components/Text";
 
