@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "image": "abc",
+        "story": "Would you like to explore the city?",
+        "choices": ["Let's check it out."]
+
+    },
+    {
+        "id": 2,
+        "image": "abc",
+        "story": "The trails are busy. You've never seen anything like this. Monstrous figures pass in a blur, their growls are loud and eyes are glowing. ",
+        "choices": ["Hide in the nearby alley", "Continue exploring."]
+
+    },
+    {
+        "id": 3,
+        "image": "abc",
+        "story": "You made it to calm space in between the towering mountains that surround you. The rumble of the monsters recedes into the background. Your stomach is growling... You haven't eaten for days. You notice some rats feeding on scraps. Fixated on your prey, you...",
+        "choices": ["Go straight for the pounce.", "Play it slow, sneak up behind the dumpster."]
+
+    },
+    {
+        "id": 4,
+        "image": "abc",
+        "story": "You press forward on high alert. What is that beautiful light in the distance... You leap for your life, narrowly avoiding what seemed like sure death. The monster roared on, as if it did not even notice you. Lucky to have avoied the monster's gaze, you creep through the shadows to a narrow opening nearby.",
+        "choices": ["Continue..."]
+
+    },
+    {
+        "id": 5,
+        "image": "abc",
+        "story": "The paltry rodents scurry away before you come within a paws length. They take their scraps with them and you are left alone in the dark, hungry for the night...",
+        "choices": ["Continue..."]
+
+    },
+    {
+        "id": 6,
+        "image": "abc",
+        "story": "You sneak through the rough terrain, slowly creeping towards your prey. You wait for just the right moment and leap for your first chance of nourishment in days.
+        The furry creatures scamper away, leaving their meager scraps behind. The taste of rot will be enough to hold you over.",
+        "choices": ["Continue"]
+
+    },
+    {
+        "id": 7,
+        "image": "abc",
+        "story": "",
+        "choices": [""]
+
+    },
+    {
+        "id": 8,
+        "image": "abc",
+        "story": "",
+        "choices": [""]
+
+    }
+]
