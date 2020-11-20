@@ -15,7 +15,7 @@ function Game() {
         lives: 9
     })
     // console.log(user);
-
+    // 
     const [storyline, setStory] = useState(story);
 
     // console.log(storyline);
