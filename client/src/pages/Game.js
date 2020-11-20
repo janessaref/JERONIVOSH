@@ -17,11 +17,12 @@ function Game() {
     })
 
     useEffect(() => {
-        API.login(user)
+        console.log("running");
+        API.signUp(user)
             .then(function (res) {
                 console.log("Response: ", res);
             }).then(err => {
-                console.log(err);
+                console.log("error: ", err);
             })
     }, [])
     // console.log(user);

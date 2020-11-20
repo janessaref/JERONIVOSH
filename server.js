@@ -4,7 +4,7 @@ const logger = require('morgan');
 const express = require("express");
 const routes = require('./routes')
 // Setting up our port
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
