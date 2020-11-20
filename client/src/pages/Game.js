@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Image from "../components/Image";
 import Text from "../components/Text";
 import story from "../story.json";
