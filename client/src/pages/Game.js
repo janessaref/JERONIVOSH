@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Image from "../components/Image";
 import Text from "../components/Text";
 import story from "../story.json";
+import API from '../utils/api';
 import Style from './style.css'
 
 
@@ -14,6 +15,15 @@ function Game() {
         level: 0,
         lives: 9
     })
+
+    useEffect(() => {
+        API.login(user)
+            .then(function (res) {
+                console.log("Response: ", res);
+            }).then(err => {
+                console.log(err);
+            })
+    }, [])
     // console.log(user);
     // 
     const [storyline, setStory] = useState(story);
