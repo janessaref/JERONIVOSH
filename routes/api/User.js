@@ -6,7 +6,7 @@ router
   .route("/")
   .get(userController.findAll)
   .post(userController.create)
-
+  .put(userController.update)
 
 
 module.exports = router;
