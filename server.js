@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/JERONIVOSH");
 
 // requring our routes
-// app.use(routes);
+app.use(routes);
 
 
 // listening for our ports
