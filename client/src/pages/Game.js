@@ -18,8 +18,8 @@ function Game() {
     useEffect(() => {
         console.log("new user: ", user)
         API.updateUser(user)
-                .then(res => console.log("update response: ", res))
-                .then(err => console.log(err));
+            .then(res => console.log("update response: ", res))
+            .then(err => console.log(err));
     }, [user])
 
     function signup(event) {
@@ -41,7 +41,6 @@ function Game() {
                     API.signUp({ username: name, password: pass })
                         .then(function (res) {
                             console.log("Response: ", res);
-                            setAuth(true);
                             console.log("username sign: ", res.data.username)
                             console.log("username sign: ", res.data.password)
                             console.log("username sign: ", res.data.level)
@@ -53,6 +52,7 @@ function Game() {
                                 lives: res.data.lives,
                                 id: res.data._id
                             })
+                            setAuth(true);
                         }).catch(err => {
                             console.log("error: ", err);
                         })
@@ -81,7 +81,8 @@ function Game() {
             //     .then(res => console.log("update response: ", res))
             //     .then(err => console.log(err));
         }
-        if (storyline.badchoice) {
+        if (storyline[user.level].badchoice) {
+            console.log("working");
             setUser({ ...user, "lives": user.lives - 1 });
             // API.updateLevel(user._id)
             //     .then(res => console.log("update response: ", res))
