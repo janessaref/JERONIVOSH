@@ -29,7 +29,7 @@
     },
     {
         "id": 3,
-        "image": "./assets/carscene2.gif",
+        "image": "./assets/carscenev3.gif",
         "story": "You press forward on high alert. What is that beautiful light in the distance... You leap for your life, narrowly avoiding what seemed like sure death. The monster roared on, as if it did not even notice you. Lucky to have avoied the monster's gaze, you creep through the shadows to a narrow opening nearby.",
         "choices": [
             "Continue..."
@@ -94,7 +94,7 @@
     },
     {
         "id": 10,
-        "image": "./assets/homelessbefore.gif",
+        "image": "./assets/homelessv2before.png",
         "story": "Theres a weird dude laying down in an alley. This dummy just wasted perfectly good water and poured it in a bowl. Drink it?",
         "choices": [
             "I trust the hooman, He smells like me","never trust hoomans..."
@@ -103,7 +103,7 @@
     },
     {
         "id": 11,
-        "image": "./assets/homelessdrink.gif",
+        "image": "./assets/homelessv2after.png",
         "story": "Sucker.. my water now",
         "choices": [
             "gulp gulp gulp"
