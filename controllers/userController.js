@@ -3,8 +3,8 @@ const db = require("../models/User");
 module.exports = {
   findOne: function (req, res) {
     console.log("find response: ", req.body)
-    let username = req.body.username;
-    db.findOne({ username })
+    let username = req.body;
+    db.findOne({ username: req.body.username, password: req.body.password })
       .then((user) => res.json(user))
       .catch((err) => res.status(422).json(err));
   },

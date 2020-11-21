@@ -3,11 +3,13 @@ import "./style.css"
 
 
 function Image({ user, story }) {
-    console.log("level: ", story[user.level]);
+
     return (
-     <div>
-      
-        <img src={story[user.level].image}></img>
+        <div>
+            <audio className="float-right" controls autoPlay loop>
+                <source src="./assets/4_29.mp3" type="audio/mpeg" />
+            </audio>
+            <img src={story[user.level].image}></img>
         </div>
     )
 }

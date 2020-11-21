@@ -7,9 +7,7 @@ function signup({ signup, authorized }) {
 
     return (
         <>
-            <audio className="float-right" controls autoPlay loop>
-                <source src="./assets/4_29.mp3" type="audio/mpeg" />
-            </audio>
+            
             <h1 className="float-left ml-3"> JERONIVOSH</h1>
             {
                 authorized ? <><button id="start" type="button" className="btn btn-primary">Start!</button>
@@ -25,7 +23,7 @@ function signup({ signup, authorized }) {
                                 <input type="password" className="form-control" id="password" placeholder="Password" />
                             </div>
                             <button id="submit" value="send" type="submit" className="btn btn-primary">Submit</button>
-                            <button id="login" value="send" type="submit" href="/game" className="btn btn-primary">Login</button>
+                            <Link className="button" to="/login">Login</Link>
                         </form>
                     </div>
             }

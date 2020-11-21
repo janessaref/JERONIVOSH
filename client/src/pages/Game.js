@@ -6,6 +6,7 @@ import storyline from "../story.json";
 import API from '../utils/api';
 import Style from './style.css';
 import Signup from "../components/Signup";
+import Login from "../components/Login";
 
 
 function Game() {
@@ -13,6 +14,7 @@ function Game() {
     // pass level prop to image and text components to display
     const [user, setUser] = useState({})
     const [authorized, setAuth] = useState(false);
+    const [refresh, setRefresh] = useState(false);
 
 
     useEffect(() => {
@@ -21,6 +23,7 @@ function Game() {
             .then(res => console.log("update response: ", res))
             .then(err => console.log(err));
     }, [user])
+
 
     function signup(event) {
         event.preventDefault();
@@ -68,6 +71,18 @@ function Game() {
         console.log("user signup: ", user);
     }
 
+    function login(event) {
+        event.preventDefault();
+        let name = event.target[0].value;
+        let pass = event.target[1].value;
+        console.log("name, pass", name, pass);
+        API.getUser(name, pass)
+            .then(res => {
+                console.log("login client res: ", res);
+            })
+    }
+
+
     function choice(event) {
         event.preventDefault();
         // console.log(user._id);
@@ -75,10 +90,10 @@ function Game() {
         if (storyline[user.level].decision) {
             if (storyline[user.level].badchoice) {
                 console.log("working");
-                setUser({ ...user,"level": storyline[user.level].decision[value], "lives": user.lives - 1 });
-            }else{
-            setUser({ ...user, "level": storyline[user.level].decision[value] });
-        }
+                setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
+            } else {
+                setUser({ ...user, "level": storyline[user.level].decision[value] });
+            }
         } else {
             setUser({ ...user, "level": user.level + 1 });
         }
@@ -90,6 +105,7 @@ function Game() {
             <div className="con">
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/game" /> : <Signup signup={signup} authorized={authorized} />}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/game" /> : <Login login={login} authorized={authorized} />}</Route>
                     <Route exact path="/game"><Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></Route>
                 </Switch>
