@@ -4,17 +4,20 @@ const userController = require("../../controllers/userController.js");
 
 router
   .route("/")
-  .get(userController.findOne)
   .post(userController.create)
   .put(userController.update)
-  
+
+router
+  .route("/login")
+  .post(userController.findOne)
+
 router
   .route("/all")
   .get(userController.findAll)
-  
+
 // router
 //   .route("/:id")
-  
+
 
 
 module.exports = router;

@@ -22,6 +22,7 @@ function Game() {
         API.updateUser(user)
             .then(res => console.log("update response: ", res))
             .then(err => console.log(err));
+            console.log("Authorization: ", authorized);
     }, [user])
 
 
@@ -75,10 +76,19 @@ function Game() {
         event.preventDefault();
         let name = event.target[0].value;
         let pass = event.target[1].value;
-        console.log("name, pass", name, pass);
+        let obj = { username: name, password: pass }
+        console.log("name, pass", obj);
         API.getUser(name, pass)
             .then(res => {
                 console.log("login client res: ", res);
+                if(res.data){
+                    setUser(res.data);
+                }else{
+                    // modal/text popup alerting user that user doesnt exist
+                }
+                
+            }).catch(err => {
+                console.log("login error: ", err);
             })
     }
 
