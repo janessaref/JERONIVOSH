@@ -1,7 +1,7 @@
 const db = require("../models/User");
 
 module.exports = {
-  findAll: function (req, res) {
+  findOne: function (req, res) {
     console.log("find response: ", req.body)
     let username = req.body.username;
     db.findOne({ username })
@@ -29,5 +29,10 @@ module.exports = {
         console.log("error: ", err);
         return res.status(422).json(err)
       });
+  },
+  findAll: function (req, res) {
+    db.find({})
+      .then((user) => res.json(user))
+      .catch((err) => res.status(422).json(err));
   },
 };

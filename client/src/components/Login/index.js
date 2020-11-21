@@ -1,28 +1,34 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import "./style.css";
 
-function Login() {
-    return(
+function Login({ signup, authorized }) {
+
+
+    return (
         <>
-            <audio class="float-right" controls autoplay loop>
-                <source src="./assets/4_29.mp3" type="audio/mpeg"/>
+            <audio className="float-right" controls autoPlay loop>
+                <source src="./assets/4_29.mp3" type="audio/mpeg" />
             </audio>
-        <h1 class="float-left ml-3"> JERONIVOSH</h1>
-        
-        <div class="gameplay img-fluid">
-            <form id="login">
-            <div class="form-group">
-                <label for="userName">User Name: </label>
-                <input type="text" class="form-control" id="userName" placeholder="Enter User Name: "/>
-            </div>
-            <div class="form-group">
-                <label for="password">Password: </label>
-                <input type="password" class="form-control" id="password" placeholder="Password"/>
-            </div>
-            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <button id="start" type="button" class="btn btn-primary">Start!</button>
-        </div>
-      </>
+            <h1 className="float-left ml-3"> JERONIVOSH</h1>
+            {
+                authorized ? <><button id="start" type="button" className="btn btn-primary">Start!</button>
+                <Link to={"/game"}>Start!</Link></>
+                    : <div className="gameplay img-fluid">
+                        <form id="login" className="form-group loginForm" onSubmit={signup}>
+                            <div className="form-group">
+                                <label>User Name: </label>
+                                <input type="text" className="form-control" id="userName" placeholder="Enter User Name: " />
+                            </div>
+                            <div className="form-group">
+                                <label>Password: </label>
+                                <input type="password" className="form-control" id="password" placeholder="Password" />
+                            </div>
+                            <button id="submit" value="send" type="submit" href="/game" className="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+            }
+        </>
     )
 }
 

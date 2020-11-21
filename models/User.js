@@ -5,19 +5,21 @@ const UserSchema = new Schema({
     username: {
         type: String,
         trim: true,
-        // required: true,
+        required: true,
         unique: true
     },
     password: {
         type: String,
         trim: true,
-        // required: true
+        required: true
     },
     level: {
-        type: Number
+        type: Number,
+        default: 0
     },
     lives: {
-        type: Number
+        type: Number,
+        default: 9
     }
 });
 

@@ -3,7 +3,7 @@ import "./style.css"
 
 
 function Image({ user, story }) {
-    console.log(story[user.level]);
+    console.log("level: ", story[user.level]);
     return (
      <div>
       

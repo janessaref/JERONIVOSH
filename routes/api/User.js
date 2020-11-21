@@ -4,9 +4,13 @@ const userController = require("../../controllers/userController.js");
 
 router
   .route("/")
-  .get(userController.findAll)
+  .get(userController.findOne)
   .post(userController.create)
 
+router
+  .route("/all")
+  .get(userController.findAll)
+  
 router
   .route("/:id")
   .put(userController.update)

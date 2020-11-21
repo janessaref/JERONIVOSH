@@ -9,6 +9,9 @@ const API = {
     },
     updateLevel: function(id, level){
         return axios.put(`/api/user/${id}`, {level});
+    },
+    findAll: function(){
+        return axios.get("/api/user/all")
     }
 }
 
