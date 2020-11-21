@@ -28,17 +28,14 @@ function Game() {
 
     function signup(event) {
         event.preventDefault();
-        console.log("working")
         let holder = [];
         holder.length = 0;
-        console.log("event: ", event);
         let name = event.target[0].value;
         let pass = event.target[1].value;
         console.log("username, password: ", name, pass)
         // check all users
         API.findAll()
             .then(res => {
-                console.log("all users: ", res)
                 for (let i = 0; i < res.data.length; i++) {
                     holder.push(res.data[i].username);
                 }
@@ -47,11 +44,6 @@ function Game() {
                     // add new user
                     API.signUp({ username: name, password: pass })
                         .then(function (res) {
-                            console.log("Response: ", res);
-                            console.log("username sign: ", res.data.username)
-                            console.log("username sign: ", res.data.password)
-                            console.log("username sign: ", res.data.level)
-                            console.log("username sign: ", res.data.lives)
                             setUser({
                                 username: res.data.username,
                                 password: res.data.password,
@@ -69,18 +61,16 @@ function Game() {
                     // username is already taken
                 }
             })
-        console.log("user signup: ", user);
+        // console.log("user signup: ", user);
     }
 
     function login(event) {
         event.preventDefault();
         let name = event.target[0].value;
         let pass = event.target[1].value;
-        let obj = { username: name, password: pass }
-        console.log("name, pass", obj);
         API.getUser(name, pass)
             .then(res => {
-                console.log("login client res: ", res);
+                // console.log("login client res: ", res);
                 if(res.data){
                     setUser(res.data);
                     setAuth(true);
