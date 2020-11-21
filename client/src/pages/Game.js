@@ -61,11 +61,7 @@ function Game() {
 
                 }
             })
-
         console.log("user signup: ", user);
-
-
-
     }
 
     function choice(event) {
@@ -73,26 +69,16 @@ function Game() {
         // console.log(user._id);
         let value = event.target.value;
         if (storyline[user.level].decision) {
+            if (storyline[user.level].badchoice) {
+                console.log("working");
+                setUser({ ...user,"level": storyline[user.level].decision[value], "lives": user.lives - 1 });
+            }else{
             setUser({ ...user, "level": storyline[user.level].decision[value] });
-            // console.log("choice made: ", value, user.level);
+        }
         } else {
             setUser({ ...user, "level": user.level + 1 });
-            // API.updateLevel(user._id, user.level)
-            //     .then(res => console.log("update response: ", res))
-            //     .then(err => console.log(err));
-        }
-        if (storyline[user.level].badchoice) {
-            console.log("working");
-            setUser({ ...user, "lives": user.lives - 1 });
-            // API.updateLevel(user._id)
-            //     .then(res => console.log("update response: ", res))
-            //     .then(err => console.log(err));
         }
     }
-
-    // function save(){
-    //     setUser({...user, level: level, lives, lives});
-    // }
 
 
     return (

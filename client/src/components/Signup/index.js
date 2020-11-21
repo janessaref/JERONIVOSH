@@ -24,7 +24,8 @@ function signup({ signup, authorized }) {
                                 <label>Password: </label>
                                 <input type="password" className="form-control" id="password" placeholder="Password" />
                             </div>
-                            <button id="submit" value="send" type="submit" href="/game" className="btn btn-primary">Submit</button>
+                            <button id="submit" value="send" type="submit" className="btn btn-primary">Submit</button>
+                            <button id="login" value="send" type="submit" href="/game" className="btn btn-primary">Login</button>
                         </form>
                     </div>
             }
