@@ -83,6 +83,7 @@ function Game() {
                 console.log("login client res: ", res);
                 if(res.data){
                     setUser(res.data);
+                    setAuth(true);
                 }else{
                     // modal/text popup alerting user that user doesnt exist
                 }
