@@ -53,7 +53,8 @@
         "story": "You sneak through the rough terrain, slowly creeping towards your prey. You wait for just the right moment and leap for your first chance of nourishment in days. The furry creatures scamper away, leaving their meager scraps behind. The taste of rot will be enough to hold you over.",
         "choices": [
             "Continue"
-        ]
+        ],
+        "decision": [6]
     },
     {
         "id": 6,
@@ -61,7 +62,8 @@
         "story": "There is a girl. Let her pet you?",
         "choices": [
             "Yes","No"
-        ]
+        ],
+        "decision": [7,8]
     },
     {
         "id": 7,
@@ -69,15 +71,17 @@
         "story": "You let her pet you? Get smacked with a broom",
         "choices": [
             "ok :("
-        ]
+        ],
+        "decision": [8]
     },
     {
         "id": 8,
         "image": "https://images-gmi-pmc.edge-generalmills.com/173da066-c6b4-45dd-9b28-0d459cf6f169.jpg",
-        "story": "Eat the pie? its okay.. try it... come on.. you know you want to...",
+        "story": "Found a pie... Eat the pie? its okay.. try it... come on.. you know you want to...",
         "choices": [
             "ummmm yes?","thats gonna be a no from me dawg"
-        ]
+        ],
+        "decision": [9,10]
     },
     {
         "id": 9,
@@ -85,7 +89,8 @@
         "story": "YUMMY FREAKIN PIE!!!!!",
         "choices": [
             "WOOOHOOOOO!"
-        ]
+        ],
+        "decision": [10]
     },
     {
         "id": 10,
@@ -93,7 +98,8 @@
         "story": "Theres a weird dude laying down in an alley. This dummy just wasted perfectly good water and poured it in a bowl. Drink it?",
         "choices": [
             "I trust the hooman, He smells like me","never trust hoomans..."
-        ]
+        ],
+        "decision": [11,12]
     },
     {
         "id": 11,
@@ -101,7 +107,8 @@
         "story": "Sucker.. my water now",
         "choices": [
             "gulp gulp gulp"
-        ]
+        ],
+        "decision": [12]
     },
     {
         "id": 12,
@@ -109,6 +116,114 @@
         "story": "O...M...G... BIRB. Chase it?",
         "choices": [
             "yess","nah"
+        ],
+        "decision": [13,25]
+    },
+    {
+        "id": 13,
+        "image": ".assets/catintree.gif",
+        "story": "darn birb got away. Looks like i can climb up the building tho...",
+        "choices": [
+            "jump out?","raise the roof bb"
+        ],
+        "decision": [14,15]
+    },
+    {
+        "id": 14,
+        "image": ".assets/jumpfromtree.gif",
+        "story": "ouchie, that hurt",
+        "choices": [
+            "explore the park"
+        ],
+        "decision": [25]
+    },
+    {
+        "id": 15,
+        "image": ".assets/roofview.gif",
+        "story": "monsters are tiny from up here...",
+        "choices": [
+            "continue"
+        ],
+        "decision": [16]
+    },
+    {
+        "id": 16,
+        "image": ".assets/chimney.gif",
+        "story": "that looks warm.. i am tired",
+        "choices": [
+            "lay in the warmth","find a way down"
+        ],
+        "decision": [17,18]
+    },
+    {
+        "id": 17,
+        "image": ".assets/toomuchsmoke.gif",
+        "story": "*cough cough* maybe its a bit much",
+        "choices": [
+            "plz no more"
+        ],
+        "decision": [18]
+    },
+    {
+        "id": 18,
+        "image": ".assets/boxchoice.gif",
+        "story": "ooo a box up here too? i really need to lay down...",
+        "choices": [
+            "if i fitz, i sitz","get me off this roof."
+        ],
+        "decision": [19,20]
+    },
+    {
+        "id": 19,
+        "image": ".assets/boxspiders.gif",
+        "story": "AHHHHHHH SPIIIIIDDDEEEEEEERRRRRRSSSSS",
+        "choices": [
+            "ok that one really freaked me out."
+        ],
+        "decision": [20]
+    },
+    {
+        "id": 20,
+        "image": ".assets/roofjumpdecide.gif",
+        "story": "I found the edge... looks kinda high up... maybe if i jump to the next building i can get down easily",
+        "choices": [
+            "leap of faith","find another way"
+        ],
+        "decision": [22,21]
+    },
+    {
+        "id": 21,
+        "image": ".assets/roofjumpdecide.gif",
+        "story": "You look around and theres an easy way down right in front of you the whole time.",
+        "choices": [
+            "get down"
+        ],
+        "decision": [23]
+    },
+    {
+        "id": 22,
+        "image": ".assets/roofjumpafter.gif",
+        "story": "jumped and missed... ouch... at least you landed in a dumpster that cushioned the fall",
+        "choices": [
+            "plz kill me"
+        ],
+        "decision": [23]
+    },
+    {
+        "id": 23,
+        "image": ".assets/findman.png",
+        "story": "im tired feel like death blah blah blah.. oh wait ive seen this man before",
+        "choices": [
+            "I rly just wanna sleep"
+        ],
+        "decision": [24]
+    },
+    {
+        "id": 24,
+        "image": ".assets/findman.png",
+        "story": "idk if i trust him but desparation so ima snug. he takes you in and makes you cozy. see? happy ending after all.",
+        "choices": [
+            "Game Over thanks 4 bein a playr (<- check out the playr app)"
         ]
     }
 ]
