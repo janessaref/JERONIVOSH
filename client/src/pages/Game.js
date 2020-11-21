@@ -14,15 +14,21 @@ function Game() {
     // pass level prop to image and text components to display
     const [user, setUser] = useState({})
     const [authorized, setAuth] = useState(false);
+
+    // state to deal with refresh during game
     const [refresh, setRefresh] = useState(false);
 
+    useEffect(() => {
+        setRefresh(true);
+        setAuth(false);
+    }, [])
 
     useEffect(() => {
         console.log("new user: ", user)
         API.updateUser(user)
             .then(res => console.log("update response: ", res))
             .then(err => console.log(err));
-            console.log("Authorization: ", authorized);
+        console.log("Authorization: ", authorized);
     }, [user])
 
 
@@ -71,13 +77,13 @@ function Game() {
         API.getUser(name, pass)
             .then(res => {
                 // console.log("login client res: ", res);
-                if(res.data){
+                if (res.data) {
                     setUser(res.data);
                     setAuth(true);
-                }else{
+                } else {
                     // modal/text popup alerting user that user doesnt exist
                 }
-                
+
             }).catch(err => {
                 console.log("login error: ", err);
             })
