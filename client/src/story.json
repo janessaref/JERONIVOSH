@@ -29,7 +29,7 @@
     },
     {
         "id": 3,
-        "image": "./assets/carscene2.gif",
+        "image": "./assets/carscenev3.gif",
         "story": "You press forward on high alert. What is that beautiful light in the distance... You leap for your life, narrowly avoiding what seemed like sure death. The monster roared on, as if it did not even notice you. Lucky to have avoied the monster's gaze, you creep through the shadows to a narrow opening nearby.",
         "choices": [
             "Continue..."
@@ -45,7 +45,8 @@
         "choices": [
             "Continue..."
         ],
-        "decision": [6]
+        "decision": [6],
+        "badchoice": true
     },
     {
         "id": 5,
@@ -72,7 +73,8 @@
         "choices": [
             "ok :("
         ],
-        "decision": [8]
+        "decision": [8],
+        "badchoice": true
     },
     {
         "id": 8,
@@ -94,16 +96,16 @@
     },
     {
         "id": 10,
-        "image": "./assets/homelessbefore.gif",
+        "image": "./assets/homelessv2before.png",
         "story": "Theres a weird dude laying down in an alley. This dummy just wasted perfectly good water and poured it in a bowl. Drink it?",
         "choices": [
             "I trust the hooman, He smells like me","never trust hoomans..."
         ],
-        "decision": [11,12]
+        "decision": [11,25]
     },
     {
         "id": 11,
-        "image": "./assets/homelessdrink.gif",
+        "image": "./assets/homelessv2after.png",
         "story": "Sucker.. my water now",
         "choices": [
             "gulp gulp gulp"
@@ -135,7 +137,8 @@
         "choices": [
             "explore the park"
         ],
-        "decision": [25]
+        "decision": [25],
+        "badchoice": true
     },
     {
         "id": 15,
@@ -162,7 +165,8 @@
         "choices": [
             "plz no more"
         ],
-        "decision": [18]
+        "decision": [18],
+        "badchoice": true
     },
     {
         "id": 18,
@@ -180,7 +184,8 @@
         "choices": [
             "ok that one really freaked me out."
         ],
-        "decision": [20]
+        "decision": [20],
+        "badchoice": true
     },
     {
         "id": 20,
@@ -207,7 +212,8 @@
         "choices": [
             "plz kill me"
         ],
-        "decision": [23]
+        "decision": [23],
+        "badchoice": true
     },
     {
         "id": 23,
@@ -225,5 +231,16 @@
         "choices": [
             "Game Over thanks 4 bein a playr (<- check out the playr app)"
         ]
+    },
+    {
+        "id": 25,
+        "image": "./assets/birdintree.gif",
+        "story": "ugh i really shouldve taken that water im so thirsty",
+        "choices": [
+            "lose a life:("
+        ],
+        "decision": [12],
+        "badchoice": true
+        
     }
 ]
