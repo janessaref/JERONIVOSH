@@ -16,21 +16,10 @@ function Game() {
 
 
     useEffect(() => {
-        // console.log("user update ", user)
         console.log("new user: ", user)
-        API.signUp(user)
-            .then(function (res) {
-                console.log("Response: ", res);
-                setAuth(true);
-                setUser({
-                    username: res.data.username,
-                    password: res.data.password,
-                    level: res.data.level,
-                    lives: res.data.lives
-                })
-            }).catch(err => {
-                    console.log("error: ", err);
-                })
+        API.updateLevel(user._id, user.level)
+                .then(res => console.log("update response: ", res))
+                .then(err => console.log(err));
     }, [user])
 
     function signup(event) {
@@ -49,10 +38,25 @@ function Game() {
                     holder.push(res.data[i].username);
                 }
                 if (!holder.includes(name)) {
-                    setUser({
-                        username: name,
-                        password: pass
-                    })
+                    API.signUp({ username: name, password: pass })
+                        .then(function (res) {
+                            console.log("Response: ", res);
+                            setAuth(true);
+                            console.log("username sign: ", res.data.username)
+                            console.log("username sign: ", res.data.password)
+                            console.log("username sign: ", res.data.level)
+                            console.log("username sign: ", res.data.lives)
+                            setUser({
+                                username: res.data.username,
+                                password: res.data.password,
+                                level: res.data.level,
+                                lives: res.data.lives,
+                                id: res.data._id
+                            })
+                        }).catch(err => {
+                            console.log("error: ", err);
+                        })
+
                 } else {
 
                 }
@@ -71,20 +75,17 @@ function Game() {
         if (storyline[user.level].decision) {
             setUser({ ...user, "level": storyline[user.level].decision[value] });
             // console.log("choice made: ", value, user.level);
-            API.updateLevel(user._id)
-                .then(res => console.log(res))
-                .then(err => console.log(err));
         } else {
             setUser({ ...user, "level": user.level + 1 });
-            API.updateLevel(user._id, user.level)
-                .then(res => console.log(res))
-                .then(err => console.log(err));
+            // API.updateLevel(user._id, user.level)
+            //     .then(res => console.log("update response: ", res))
+            //     .then(err => console.log(err));
         }
         if (storyline.badchoice) {
             setUser({ ...user, "lives": user.lives - 1 });
-            API.updateLevel(user._id)
-                .then(res => console.log(res))
-                .then(err => console.log(err));
+            // API.updateLevel(user._id)
+            //     .then(res => console.log("update response: ", res))
+            //     .then(err => console.log(err));
         }
     }
 
@@ -97,7 +98,7 @@ function Game() {
         <Router>
             <div className="con">
                 <Switch>
-                    <Route exact path="/"><Login signup={signup} authorized={authorized}/></Route>
+                    <Route exact path="/"><Login signup={signup} authorized={authorized} /></Route>
                     <Route exact path="/game"><Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></Route>
                 </Switch>
