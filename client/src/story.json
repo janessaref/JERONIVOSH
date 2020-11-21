@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "image": "./assets/pixil-gif-drawing.gif",
+        "image": "./assets/introcity.gif",
         "story": "Would you like to explore the city?",
         "choices": [
             "Let's check it out."
@@ -57,18 +57,58 @@
     },
     {
         "id": 6,
-        "image": "abc",
-        "story": "",
+        "image": ".assets/girlscene.gif",
+        "story": "There is a girl. Let her pet you?",
         "choices": [
-            ""
+            "Yes","No"
         ]
     },
     {
         "id": 7,
-        "image": "abc",
-        "story": "",
+        "image": ".assets/broomscene.gif",
+        "story": "You let her pet you? Get smacked with a broom",
         "choices": [
-            ""
+            "ok :("
+        ]
+    },
+    {
+        "id": 8,
+        "image": "https://images-gmi-pmc.edge-generalmills.com/173da066-c6b4-45dd-9b28-0d459cf6f169.jpg",
+        "story": "Eat the pie? its okay.. try it... come on.. you know you want to...",
+        "choices": [
+            "ummmm yes?","thats gonna be a no from me dawg"
+        ]
+    },
+    {
+        "id": 9,
+        "image": "https://images-gmi-pmc.edge-generalmills.com/173da066-c6b4-45dd-9b28-0d459cf6f169.jpg",
+        "story": "YUMMY FREAKIN PIE!!!!!",
+        "choices": [
+            "WOOOHOOOOO!"
+        ]
+    },
+    {
+        "id": 10,
+        "image": ".assets/homelessbefore.gif",
+        "story": "Theres a weird dude laying down in an alley. This dummy just wasted perfectly good water and poured it in a bowl. Drink it?",
+        "choices": [
+            "I trust the hooman, He smells like me","never trust hoomans..."
+        ]
+    },
+    {
+        "id": 11,
+        "image": ".assets/homelessdrink.gif",
+        "story": "Sucker.. my water now",
+        "choices": [
+            "gulp gulp gulp"
+        ]
+    },
+    {
+        "id": 12,
+        "image": ".assets/birdintree.gif",
+        "story": "O...M...G... BIRB. Chase it?",
+        "choices": [
+            "yess","nah"
         ]
     }
 ]
