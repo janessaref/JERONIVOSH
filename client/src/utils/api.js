@@ -4,11 +4,11 @@ const API = {
     signUp: function(user){
         return axios.post("/api/user", user);
     },
-    login: function(user){
-        return axios.get("/api/user");
+    getUser: function(username){
+        return axios.get("/api/user", {username});
     },
-    updateLevel: function(user){
-        return axios.put("/api/user");
+    updateLevel: function(id, level){
+        return axios.put(`/api/user/${id}`, {level});
     }
 }
 

@@ -2,7 +2,9 @@ const db = require("../models/User");
 
 module.exports = {
   findAll: function (req, res) {
-    db.find(req.User)
+    console.log("find response: ", req.body)
+    let username = req.body.username;
+    db.findOne({ username })
       .then((user) => res.json(user))
       .catch((err) => res.status(422).json(err));
   },
@@ -14,8 +16,19 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
-    db.findOneAndUpdate({ _id: req.params.id }, req.body)
+    console.log("level: ", req.body.level)
+    console.log("id: ", req.params.id)
+    db.findByIdAndUpdate(
+
+      req.params.id
+      ,
+      {
+        level: req.body.level
+      })
       .then((user) => res.json(user))
-      .catch((err) => res.status(422).json(err));
+      .catch((err) => {
+        console.log("error: ", err);
+        return res.status(422).json(err)
+      });
   },
 };

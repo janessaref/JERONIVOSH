@@ -22,7 +22,9 @@ function Game() {
         API.signUp(user)
             .then(function (res) {
                 console.log("Response: ", res);
-            }).then(err => {
+                setUser(res.data)
+                
+            }).catch(err => {
                 console.log("error: ", err);
             })
     }, [])
@@ -43,15 +45,25 @@ function Game() {
 
     function choice(event) {
         event.preventDefault();
+        console.log(user._id);
         let value = event.target.value;
         if (storyline[user.level].decision) {
             setUser({ ...user, "level": storyline[user.level].decision[value] });
             console.log("choice made: ", value, user.level);
+            API.updateLevel(user._id)
+                .then(res => console.log(res))
+                .then(err => console.log(err));
         } else {
             setUser({ ...user, "level": user.level + 1 });
+            API.updateLevel(user._id, user.level)
+                .then(res => console.log(res))
+                .then(err => console.log(err));
         }
         if (storyline.badchoice) {
             setUser({ ...user, "lives": user.lives - 1 });
+            API.updateLevel(user._id)
+                .then(res => console.log(res))
+                .then(err => console.log(err));
         }
     }
 
