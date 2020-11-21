@@ -19,7 +19,6 @@ module.exports = {
     console.log("level: ", req.body.level)
     console.log("id: ", req.params.id)
     db.findByIdAndUpdate(
-
       req.params.id
       ,
       {
