@@ -58,7 +58,7 @@
     },
     {
         "id": 6,
-        "image": ".assets/girlscene.gif",
+        "image": "./assets/girlscene.gif",
         "story": "There is a girl. Let her pet you?",
         "choices": [
             "Yes","No"
@@ -67,7 +67,7 @@
     },
     {
         "id": 7,
-        "image": ".assets/broomscene.gif",
+        "image": "./assets/broomscene.gif",
         "story": "You let her pet you? Get smacked with a broom",
         "choices": [
             "ok :("
@@ -94,7 +94,7 @@
     },
     {
         "id": 10,
-        "image": ".assets/homelessbefore.gif",
+        "image": "./assets/homelessbefore.gif",
         "story": "Theres a weird dude laying down in an alley. This dummy just wasted perfectly good water and poured it in a bowl. Drink it?",
         "choices": [
             "I trust the hooman, He smells like me","never trust hoomans..."
@@ -103,7 +103,7 @@
     },
     {
         "id": 11,
-        "image": ".assets/homelessdrink.gif",
+        "image": "./assets/homelessdrink.gif",
         "story": "Sucker.. my water now",
         "choices": [
             "gulp gulp gulp"
@@ -112,7 +112,7 @@
     },
     {
         "id": 12,
-        "image": ".assets/birdintree.gif",
+        "image": "./assets/birdintree.gif",
         "story": "O...M...G... BIRB. Chase it?",
         "choices": [
             "yess","nah"
@@ -121,7 +121,7 @@
     },
     {
         "id": 13,
-        "image": ".assets/catintree.gif",
+        "image": "./assets/catintree.gif",
         "story": "darn birb got away. Looks like i can climb up the building tho...",
         "choices": [
             "jump out?","raise the roof bb"
@@ -130,7 +130,7 @@
     },
     {
         "id": 14,
-        "image": ".assets/jumpfromtree.gif",
+        "image": "./assets/jumpfromtree.gif",
         "story": "ouchie, that hurt",
         "choices": [
             "explore the park"
@@ -139,7 +139,7 @@
     },
     {
         "id": 15,
-        "image": ".assets/roofview.gif",
+        "image": "./assets/roofview.gif",
         "story": "monsters are tiny from up here...",
         "choices": [
             "continue"
@@ -148,7 +148,7 @@
     },
     {
         "id": 16,
-        "image": ".assets/chimney.gif",
+        "image": "./assets/chimney.gif",
         "story": "that looks warm.. i am tired",
         "choices": [
             "lay in the warmth","find a way down"
@@ -157,7 +157,7 @@
     },
     {
         "id": 17,
-        "image": ".assets/toomuchsmoke.gif",
+        "image": "./assets/toomuchsmoke.gif",
         "story": "*cough cough* maybe its a bit much",
         "choices": [
             "plz no more"
@@ -166,7 +166,7 @@
     },
     {
         "id": 18,
-        "image": ".assets/boxchoice.gif",
+        "image": "./assets/boxchoice.gif",
         "story": "ooo a box up here too? i really need to lay down...",
         "choices": [
             "if i fitz, i sitz","get me off this roof."
@@ -175,7 +175,7 @@
     },
     {
         "id": 19,
-        "image": ".assets/boxspiders.gif",
+        "image": "./assets/boxspiders.gif",
         "story": "AHHHHHHH SPIIIIIDDDEEEEEEERRRRRRSSSSS",
         "choices": [
             "ok that one really freaked me out."
@@ -184,7 +184,7 @@
     },
     {
         "id": 20,
-        "image": ".assets/roofjumpdecide.gif",
+        "image": "./assets/roofjumpdecide.gif",
         "story": "I found the edge... looks kinda high up... maybe if i jump to the next building i can get down easily",
         "choices": [
             "leap of faith","find another way"
@@ -193,7 +193,7 @@
     },
     {
         "id": 21,
-        "image": ".assets/roofjumpdecide.gif",
+        "image": "./assets/roofjumpdecide.gif",
         "story": "You look around and theres an easy way down right in front of you the whole time.",
         "choices": [
             "get down"
@@ -202,7 +202,7 @@
     },
     {
         "id": 22,
-        "image": ".assets/roofjumpafter.gif",
+        "image": "./assets/roofjumpafter.gif",
         "story": "jumped and missed... ouch... at least you landed in a dumpster that cushioned the fall",
         "choices": [
             "plz kill me"
@@ -211,7 +211,7 @@
     },
     {
         "id": 23,
-        "image": ".assets/findman.png",
+        "image": "./assets/findman.png",
         "story": "im tired feel like death blah blah blah.. oh wait ive seen this man before",
         "choices": [
             "I rly just wanna sleep"
@@ -220,7 +220,7 @@
     },
     {
         "id": 24,
-        "image": ".assets/findman.png",
+        "image": "./assets/ending1.gif",
         "story": "idk if i trust him but desparation so ima snug. he takes you in and makes you cozy. see? happy ending after all.",
         "choices": [
             "Game Over thanks 4 bein a playr (<- check out the playr app)"
