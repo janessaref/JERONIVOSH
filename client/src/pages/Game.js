@@ -31,13 +31,16 @@ function Game() {
         let name = event.target[0].value;
         let pass = event.target[1].value;
         console.log("username, password: ", name, pass)
+        // check all users
         API.findAll()
             .then(res => {
                 console.log("all users: ", res)
                 for (let i = 0; i < res.data.length; i++) {
                     holder.push(res.data[i].username);
                 }
+                // check if username exists
                 if (!holder.includes(name)) {
+                    // add new user
                     API.signUp({ username: name, password: pass })
                         .then(function (res) {
                             console.log("Response: ", res);
@@ -58,7 +61,8 @@ function Game() {
                         })
 
                 } else {
-
+                    // modal popup or text change informing user
+                    // username is already taken
                 }
             })
         console.log("user signup: ", user);
