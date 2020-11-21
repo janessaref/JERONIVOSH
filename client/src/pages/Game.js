@@ -5,7 +5,7 @@ import Text from "../components/Text";
 import storyline from "../story.json";
 import API from '../utils/api';
 import Style from './style.css';
-import Login from "../components/Login";
+import Signup from "../components/Signup";
 
 
 function Game() {
@@ -98,7 +98,7 @@ function Game() {
         <Router>
             <div className="con">
                 <Switch>
-                    <Route exact path="/"><Login signup={signup} authorized={authorized} /></Route>
+                    <Route exact path="/">{authorized ? <Redirect to="/game" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/game"><Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></Route>
                 </Switch>

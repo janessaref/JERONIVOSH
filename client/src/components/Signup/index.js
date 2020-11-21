@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "./style.css";
 
-function Login({ signup, authorized }) {
+function signup({ signup, authorized }) {
 
 
     return (
@@ -15,7 +15,7 @@ function Login({ signup, authorized }) {
                 authorized ? <><button id="start" type="button" className="btn btn-primary">Start!</button>
                 <Link to={"/game"}>Start!</Link></>
                     : <div className="gameplay img-fluid">
-                        <form id="login" className="form-group loginForm" onSubmit={signup}>
+                        <form id="signup" className="form-group signupForm" onSubmit={signup}>
                             <div className="form-group">
                                 <label>User Name: </label>
                                 <input type="text" className="form-control" id="userName" placeholder="Enter User Name: " />
@@ -32,4 +32,4 @@ function Login({ signup, authorized }) {
     )
 }
 
-export default Login;
+export default signup;
