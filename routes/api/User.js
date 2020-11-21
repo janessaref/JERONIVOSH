@@ -6,14 +6,15 @@ router
   .route("/")
   .get(userController.findOne)
   .post(userController.create)
-
+  .put(userController.update)
+  
 router
   .route("/all")
   .get(userController.findAll)
   
-router
-  .route("/:id")
-  .put(userController.update)
+// router
+//   .route("/:id")
+  
 
 
 module.exports = router;

@@ -16,13 +16,14 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
-    console.log("level: ", req.body.level)
-    console.log("id: ", req.params.id)
+    console.log("level: ", req.body)
+    console.log("id: ", req.body.id)
     db.findByIdAndUpdate(
-      req.params.id
+      req.body.id
       ,
       {
-        level: req.body.level
+        level: req.body.level,
+        lives: req.body.lives
       })
       .then((user) => res.json(user))
       .catch((err) => {

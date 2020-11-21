@@ -17,7 +17,7 @@ function Game() {
 
     useEffect(() => {
         console.log("new user: ", user)
-        API.updateLevel(user._id, user.level)
+        API.updateUser(user)
                 .then(res => console.log("update response: ", res))
                 .then(err => console.log(err));
     }, [user])

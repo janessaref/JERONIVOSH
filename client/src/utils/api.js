@@ -7,8 +7,8 @@ const API = {
     getUser: function(username){
         return axios.get("/api/user", {username});
     },
-    updateLevel: function(id, level){
-        return axios.put(`/api/user/${id}`, {level});
+    updateUser: function(user){
+        return axios.put("/api/user/", user);
     },
     findAll: function(){
         return axios.get("/api/user/all")
