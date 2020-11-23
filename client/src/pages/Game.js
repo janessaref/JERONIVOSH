@@ -7,8 +7,7 @@ import API from '../utils/api';
 import Style from './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
-import Credits from "../components/Credits";
-import Chat from "../components/Chat";
+import Chat from '../components/Chat/index.js'
 
 
 function Game() {
