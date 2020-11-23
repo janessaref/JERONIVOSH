@@ -3,7 +3,8 @@
 }
 .polls{
     position: absolute;
-    top: 3%;
+    top: 40%;
     right: 3%;
     width: 300px;
+    color: white;
 }

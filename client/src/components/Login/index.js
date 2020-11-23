@@ -20,6 +20,7 @@ function login({ login }) {
                     </div>
                     <button id="submit" value="send" type="submit" className="btn btn-primary">Submit</button>
                     <Link className="button" to="/">Sign Up</Link>
+                    <Link className="button" to="/credits">Credits</Link>
                 </form>
             </div>
         </>

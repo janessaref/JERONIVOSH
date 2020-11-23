@@ -4,12 +4,14 @@ import "./style.css"
 function Credits() {
     const names=["Jerri", "Jon","Ivan","Josh"]
   return (
-    <div className="wrapper">
-        {/* <audio controls autoplay loop>
-            <source src="./assets/CreditsSong.mp3" type="audio/mpeg" />
-        </audio> */}
+    <div className="wrapper img-fluid">
+        <div>
+            <audio autoPlay loop>
+                <source src="./assets/CreditsSong.mp3" type="audio/mpeg" />
+            </audio>
+        </div>
 
-        <h1 className="name">Jeronivosh</h1>
+        <p className="gameTitle" style={{color:"black"}}>Jeronivosh</p>
 
        <div className="break"/><div className="break"/>
        <br/><br/><br/><br/>
