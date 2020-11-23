@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const userRoutes = require("./user");
+const userRoutes = require("./User");
 const userController = require("../../controllers/userController.js");
 
 // Book routes
