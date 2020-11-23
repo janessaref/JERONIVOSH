@@ -247,8 +247,43 @@
         "image": "./assets/shadowparkscene.gif",
         "story": "Wait, what is that? It's so dark but I think I see something over there. HELLOOOOO, I come in peace!",
         "choices": [
-            "Run away!!!", "Go closer?"
+            "Run away to the bridge!!!", "Go closer?"
         ],
         "decision": [27,28]
+    },
+    {
+        "id": 27,
+        "image": "./assets/boxscene.gif",
+        "story": "Soooo cold, I shiverssss. I just want to rest. Ooooh a box, this might keep me warm.",
+        "choices": [
+            "Go inside the box", "Find other shelter"
+        ],
+        "decision": [29,30]
+    },
+    {
+        "id": 28,
+        "image": "./assets/dogparkscene.gif",
+        "story": "OH MY!!! MY WORST ENEMY!!! RUN!!!!",
+        "choices": [
+            "Run run RUN!!!"
+        ],
+        "decision": [27]
+    },
+    {
+        "id": 29,
+        "image": "",
+        "story": "",
+        "choices": [
+            ""
+        ],
+        "decision": []
+    }, {
+        "id": 30,
+        "image": "",
+        "story": "",
+        "choices": [
+            ""
+        ],
+        "decision": []
     }
 ]
