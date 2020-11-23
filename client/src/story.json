@@ -263,7 +263,7 @@
     {
         "id": 28,
         "image": "./assets/dogparkscene.gif",
-        "story": "OH MY!!! MY WORST ENEMY!!! RUN!!!!",
+        "story": "OH MY!!! MY WORST ENEMY!!!",
         "choices": [
             "Run run RUN!!!"
         ],
