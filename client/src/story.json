@@ -78,8 +78,8 @@
     },
     {
         "id": 8,
-        "image": "https://images-gmi-pmc.edge-generalmills.com/173da066-c6b4-45dd-9b28-0d459cf6f169.jpg",
-        "story": "Found a pie... Eat the pie? its okay.. try it... come on.. you know you want to...",
+        "image": "./assets/piescene.gif",
+        "story": "Found a pie... Eat the pie? Tt's okay.. try it... come on.. you know you want to...",
         "choices": [
             "ummmm yes?","thats gonna be a no from me dawg"
         ],
@@ -87,7 +87,7 @@
     },
     {
         "id": 9,
-        "image": "https://images-gmi-pmc.edge-generalmills.com/173da066-c6b4-45dd-9b28-0d459cf6f169.jpg",
+        "image": "./assets/eatpiescene.gif",
         "story": "YUMMY FREAKIN PIE!!!!!",
         "choices": [
             "WOOOHOOOOO!"
