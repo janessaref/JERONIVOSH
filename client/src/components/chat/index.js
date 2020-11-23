@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
+import ". /style.css";
 import io from "socket.io-client";
 // import TextField from '@material-ui/core/TextField'
 // import TextField from "@material-ui/core/TextField";
@@ -25,7 +25,7 @@ function onMessageSubmit(e) {
     e.preventDefault();
 
     const { name, message } = state
-    socket.emit('message', {name, message})
+    socket.emit('message', { name, message })
     setState({message: '', name})
 }
 
