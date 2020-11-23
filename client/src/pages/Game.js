@@ -7,18 +7,20 @@ import API from '../utils/api';
 import './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
-import Chat from '../components/Chat';
-import Credits from "../components/Credits"
-import Polls from "../components/Sidebar/polls"
+// import Chat from '../components/Chat';
+import Credits from "../components/Credits";
+import Polls from "../components/Sidebar/polls";
+import CoopLogin from "../components/CoopLogin";
+import Multiplayer from "../components/Multiplayer";
 
 
 
 function Game() {
     // when logging in, setUser to data from mongodb
     // pass level prop to image and text components to display
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({});
     const [authorized, setAuth] = useState(false);
-
+    const [coopUser, setCoopUser] = useState({});
     // state to deal with refresh during game
     const [refresh, setRefresh] = useState(false);
 
@@ -29,11 +31,20 @@ function Game() {
 
     useEffect(() => {
         console.log("new user: ", user)
-        API.updateUser(user)
-            .then(res => console.log("update response: ", res))
-            .then(err => console.log(err));
-        // console.log("Authorization: ", authorized);
+            API.updateUser(user)
+                .then(res => console.log("update response: ", res))
+                .then(err => console.log(err));
+            // console.log("Authorization: ", authorized);
+        
     }, [user])
+
+    useEffect(() => {
+        console.log("new coop user: ", coopUser)
+            API.updateCoop(coopUser)
+                .then(res => console.log("update response: ", res))
+                .then(err => console.log(err));
+            // console.log("Authorization: ", authorized);
+    }, [coopUser])
 
 
     function signup(event) {
@@ -93,6 +104,44 @@ function Game() {
             })
     }
 
+    function coopLogin(event) {
+        event.preventDefault();
+        let title = event.target[0].value;
+        console.log("title: ", title);
+        API.startCoop(title)
+            .then(res => {
+                // console.log("login client res: ", res);
+                if (res.data) {
+                    console.log("coop login response", res.data)
+                    setCoopUser(res.data);
+                    setAuth(true);
+                    console.log("coopuser: ", coopUser);
+                } else {
+                    // modal/text popup alerting user that user doesnt exist
+                }
+            }).catch(err => {
+                console.log("login error: ", err);
+            })
+    }
+
+    function coopJoin(event) {
+        event.preventDefault();
+        console.log(event.target.form[0].value);
+        API.findGame(event.target.form[0].value)
+            .then(res => {
+                if (res.data) {
+                    console.log("coop login response", res.data)
+                    setCoopUser(res.data);
+                    setAuth(true);
+                    console.log("coopuser: ", coopUser);
+                } else {
+                    // modal/text popup alerting user that user doesnt exist
+                }
+            }).catch(err => {
+                console.log("login error: ", err);
+            })
+    }
+
 
     function choice(event) {
         event.preventDefault();
@@ -110,29 +159,43 @@ function Game() {
         }
     }
 
-    document.volume=0.3
+    function coopChoice(event) {
+        event.preventDefault();
+        // console.log(user._id);
+        let value = event.target.value;
+        if (storyline[coopUser.level].decision) {
+            if (storyline[coopUser.level].badchoice) {
+                console.log("working");
+                setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value], "lives": coopUser.lives - 1 });
+            } else {
+                setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value] });
+            }
+        } else {
+            setCoopUser({ ...coopUser, "level": coopUser.level + 1 });
+        }
+    }
+
+
+
+    document.volume = 0.3
 
 
     return (
         <Router>
             <div className="con">
-                
+
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/game" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/game" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game"><Image user={user} story={storyline} />
-                        <Chat />
-                        <Text user={user} story={storyline} click={choice} /></Route>
-
-                   
-                    <Route exact path="/credits" component={Credits}/>
-                    <Route exact path="/message" component={Chat}/>
-
+                    <Route exact path="/game">{authorized ? <><Image user={user} story={storyline} />
+                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/" />}
+                    </Route>
                     <Route exact path="/credits" component={Credits} />
-
+                    <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Multiplayer user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
             </div>
-        </Router>
+        </Router >
     )
 }
 

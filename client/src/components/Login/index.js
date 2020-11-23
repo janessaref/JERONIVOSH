@@ -22,6 +22,7 @@ function login({ login }) {
                     </div>
                     <button id="submit" value="send" type="submit" className="btn">Submit</button>
                     <Link className="button" to="/">Sign Up</Link>
+                    <Link className="button" to="/cooplogin">Multiplayer</Link>
                     <Link className="button" to="/credits">Credits</Link>
                 </form>
             </div>

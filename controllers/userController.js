@@ -1,15 +1,15 @@
-const db = require("../models/User");
+const user = require("../models/User");
 
 module.exports = {
   findOne: function (req, res) {
     console.log("find response: ", req.body)
-    db.findOne(req.body)
+    user.findOne(req.body)
       .then((user) => res.json(user))
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
     console.log("body: ", req.body)
-    db
+    user
       .create(req.body)
       .then((user) => res.json(user))
       .catch((err) => res.status(422).json(err));
@@ -17,7 +17,7 @@ module.exports = {
   update: function (req, res) {
     console.log("level: ", req.body)
     console.log("id: ", req.body.id)
-    db.findByIdAndUpdate(
+    user.findByIdAndUpdate(
       req.body.id
       ,
       {
@@ -31,7 +31,7 @@ module.exports = {
       });
   },
   findAll: function (req, res) {
-    db.find({})
+    user.find({})
       .then((user) => res.json(user))
       .catch((err) => res.status(422).json(err));
   },
