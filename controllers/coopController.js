@@ -3,8 +3,8 @@ const coop = require("../models/Coop");
 
 module.exports = {
     findOne: function (req, res) {
-        console.log("find response: ", req.body)
-        coop.findOne(req.body)
+        console.log("find response: ", req.body.title)
+        coop.findOne(req.body.title)
             .then((user) => res.json(user))
             .catch((err) => res.status(422).json(err));
     },

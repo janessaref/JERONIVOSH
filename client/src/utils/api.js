@@ -15,7 +15,10 @@ const API = {
     },
     startCoop: function(title){
         return axios.post("/api/user/coop", {title});
-    }
+    },
+    findGame: function(title){
+        return axios.get("/api/user/coop", {title});
+    } 
 }
 
 export default API;

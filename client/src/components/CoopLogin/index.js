@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/api";
@@ -26,8 +26,21 @@ function CoopLogin({ }) {
             })
     }
 
-    function coopJoin(event){
+    function coopJoin(event) {
+        event.preventDefault();
         console.log(event.target.form[0].value);
+        API.findGame(event.target.form[0].value)
+            .then(res => {
+                if (res.data) {
+                    console.log("coop login response", res.data)
+                    setUser(res.data);
+                    setAuth(true);
+                } else {
+                    // modal/text popup alerting user that user doesnt exist
+                }
+            }).catch(err => {
+                console.log("login error: ", err);
+            })
     }
 
     return (

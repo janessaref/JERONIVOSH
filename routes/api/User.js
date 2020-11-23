@@ -22,7 +22,8 @@ router.route("/message")
 
 router
   .route("/coop")
-  .post(coopController.create);
+  .post(coopController.create)
+  .get(coopController.findOne)
 
 
 module.exports = router;
