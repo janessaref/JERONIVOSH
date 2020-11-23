@@ -27,7 +27,7 @@ function CoopLogin({ }) {
     }
 
     function coopJoin(event){
-        console.log(event);
+        console.log(event.target.form[0].value);
     }
 
     return (
@@ -37,10 +37,10 @@ function CoopLogin({ }) {
                 <form id="signup" className="form-group signupForm" onSubmit={coopLogin}>
                     <div className="form-group">
                         <label>Game Title: </label>
-                        <input type="text" className="form-control" id="userName" placeholder="Enter game title: " />
+                        <input type="text" className="form-control" id="title" placeholder="Enter game title: " />
                     </div>
                     <button id="submit" value="send" type="submit" className="btn btn-primary">Submit</button>
-                    {/* <button id="submit" value="send" onClick={coopJoin} className="btn btn-primary">Join Game</button> */}
+                    <button onClick={coopJoin} className="btn btn-primary">Join Game</button>
                     <Link className="button" to="/login">Login</Link>
                     <Link className="button" to="/">Sign Up</Link>
                     <Link className="button" to="/credits">Credits</Link>
