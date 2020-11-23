@@ -8,6 +8,7 @@ import Style from './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
 import Credits from "../components/Credits"
+import Polls from "../components/Sidebar/polls"
 
 
 function Game() {
@@ -111,10 +112,15 @@ function Game() {
     return (
         <Router>
             <div className="con">
+                
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/game" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/game" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game"><Image user={user} story={storyline} />
+                    <Route exact path="/game">
+                    {/* <div className="polls">
+                    <   Polls/>
+                    </div> */}
+                        <Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></Route>
                     <Route exact path="/credits" component={Credits}/>
                 </Switch>
