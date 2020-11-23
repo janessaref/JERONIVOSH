@@ -158,7 +158,7 @@ function Game() {
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/game" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/game" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? <><Image user={user} story={storyline} /><Chat />
+                    <Route exact path="/game">{authorized ? <><Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/credits" component={Credits} />
