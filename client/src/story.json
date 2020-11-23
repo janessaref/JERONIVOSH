@@ -78,8 +78,8 @@
     },
     {
         "id": 8,
-        "image": "https://images-gmi-pmc.edge-generalmills.com/173da066-c6b4-45dd-9b28-0d459cf6f169.jpg",
-        "story": "Found a pie... Eat the pie? its okay.. try it... come on.. you know you want to...",
+        "image": "./assets/piescene.gif",
+        "story": "Found a pie... Eat the pie? It's okay.. try it... No... must resist... Maybe??? SMELLS SCRUMPTIOUS!!! come on.. you know you want to...",
         "choices": [
             "ummmm yes?","thats gonna be a no from me dawg"
         ],
@@ -87,8 +87,8 @@
     },
     {
         "id": 9,
-        "image": "https://images-gmi-pmc.edge-generalmills.com/173da066-c6b4-45dd-9b28-0d459cf6f169.jpg",
-        "story": "YUMMY FREAKIN PIE!!!!!",
+        "image": "./assets/eatpiescene.gif",
+        "story": "NOM NOM MUNCH MUNCH YUMMY FREAKIN PIE!!!!!",
         "choices": [
             "WOOOHOOOOO!"
         ],
@@ -101,7 +101,7 @@
         "choices": [
             "I trust the hooman, He smells like me","never trust hoomans..."
         ],
-        "decision": [11,25]
+        "decision": [11,12]
     },
     {
         "id": 11,
@@ -234,13 +234,104 @@
     },
     {
         "id": 25,
-        "image": "./assets/birdintree.gif",
-        "story": "ugh i really shouldve taken that water im so thirsty",
+        "image": "./assets/parkscene.gif",
+        "story": "Wow, this place is pretty. No scary monsters over here.",
         "choices": [
-            "lose a life:("
+            "Continue"
         ],
-        "decision": [12],
-        "badchoice": true
+        "decision": [26]
         
+    },
+    {
+        "id": 26,
+        "image": "./assets/parkscene.gif",
+        "story": "Wait, what is that? It's so dark but I think I see something over there. HELLOOOOO, I come in peace!",
+        "choices": [
+            "Run away to the bridge!!!", "Go closer?"
+        ],
+        "decision": [27,28]
+    },
+    {
+        "id": 27,
+        "image": "./assets/boxscene.gif",
+        "story": "Soooo cold, I shiverssss. I just want to rest. Ooooh a box, this might keep me warm.",
+        "choices": [
+            "Go inside the box", "Find other shelter"
+        ],
+        "decision": [29,30]
+    },
+    {
+        "id": 28,
+        "image": "./assets/dogparkscene.gif",
+        "story": "OH MY!!! MY WORST ENEMY!!!",
+        "choices": [
+            "Run run RUN!!!"
+        ],
+        "decision": [27],
+        "badchoice": true
+    },
+    {
+        "id": 29,
+        "image": "./assets/insideboxscene.gif",
+        "story": "You stay in the box for warmth and started to groom the poor little kitten that was living in there and on high alert, you hear something coming towards the box. It's another cat who started to growl!",
+        "choices": [
+            "CAT FIGHT!!!", "Bye, Felicia!"
+        ],
+        "decision": [31,32]
+    }, 
+    {
+        "id": 30,
+        "image": "./assets/kittenboxscene.gif",
+        "story": "You were walking away until you heard a little meow coming from inside and you see a little kitten all alone. You decided to go inside the box instead.",
+        "choices": [
+            "Stay with the kitten"
+        ],
+        "decision": [29]
+    },
+    {
+        "id": 31,
+        "image": "./assets/mothercatscene.gif",
+        "story": "A brawl happens and the cat hisses at you angrily. Things are getting crazy, so you decided to run away from the fight badly hurt.",
+        "choices": [
+            "I'm a pussy, I gots to run."
+        ],
+        "decision": [32],
+        "badchoice": true
+    },
+    {
+        "id": 32,
+        "image": "./assets/animalcontrolscene.gif",
+        "story": "You run back into the city and find yourself back into the streets. There's a hooman staring at you, calling you over. You're on guard and you don't move. You watch him as he comes closer. He's getting too close...",
+        "choices": [
+            "STRANGER DANGER GET OUT NOW!", "Trust the hooman?"
+        ],
+        "decision": [33,34]
+    },
+    {
+        "id": 33,
+        "image": "./assets/cemeteryscene.gif",
+        "story": "You're tired, hungry, and thirsty all over again but all you want is some peace and quiet. You lie on the dirt looking up at the moon. Nothing scary over here.",
+        "choices": [
+            "Go to sleep"
+        ],
+        "decision": [35]
+    },
+    {
+        "id": 34,
+        "image": "./assets/runfromacscene.gif",
+        "story": "You made a HUGE mistake trusting the hooman!!! You're wrestling your way out and manage to bring out your hunting weapons and slicing the hooman and using your munchers to break free and escape!",
+        "choices": [
+            "Escape to the quiet park!"
+        ],
+        "decision": [33],
+        "badchoice": true
+    },
+    {
+        "id": 35,
+        "image": "./assets/endingcemeteryscene.gif",
+        "story": "You lay on the cold stone thinking, \"finally some peace.\"",
+        "choices": [
+            "Game Over thanks 4 bein a playr (<- check out the playr app)"
+        ]
     }
 ]
