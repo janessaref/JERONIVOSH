@@ -24,7 +24,9 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.10.15",
     "morgan": "^1.10.0",
+    "react-router-dom": "^5.2.0",
+    "socket.io": "^3.0.3"
     "react-polls": "^1.2.0",
-    "react-router-dom": "^5.2.0"
+
   }
 }

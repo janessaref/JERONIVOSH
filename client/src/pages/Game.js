@@ -7,8 +7,10 @@ import API from '../utils/api';
 import Style from './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
+import Chat from '../components/Chat/index.js'
 import Credits from "../components/Credits"
 import Polls from "../components/Sidebar/polls"
+
 
 
 function Game() {
@@ -122,6 +124,7 @@ function Game() {
                     </div> */}
                         <Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></Route>
+                   <Chat />
                     <Route exact path="/credits" component={Credits}/>
                 </Switch>
             </div>
