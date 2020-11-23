@@ -12,7 +12,7 @@ import Credits from "../components/Credits";
 import Polls from "../components/Sidebar/polls";
 import CoopLogin from "../components/CoopLogin";
 import Multiplayer from "../components/Multiplayer";
-
+let time = 0;
 
 
 function Game() {
@@ -23,29 +23,41 @@ function Game() {
     const [coopUser, setCoopUser] = useState({});
     // state to deal with refresh during game
     const [refresh, setRefresh] = useState(false);
-
+    const [timer, setTimer] = useState("");
     useEffect(() => {
         setRefresh(true);
         setAuth(false);
+        coopTimer();
     }, [])
 
     useEffect(() => {
-        console.log("new user: ", user)
-            API.updateUser(user)
-                .then(res => console.log("update response: ", res))
-                .then(err => console.log(err));
-            // console.log("Authorization: ", authorized);
-        
+        // console.log("new user: ", user)
+        API.updateUser(user)
+            .then(res => console.log("update response: ", res))
+            .then(err => console.log(err));
+        // console.log("Authorization: ", authorized);
+
     }, [user])
 
     useEffect(() => {
-        console.log("new coop user: ", coopUser)
-            API.updateCoop(coopUser)
-                .then(res => console.log("update response: ", res))
-                .then(err => console.log(err));
-            // console.log("Authorization: ", authorized);
+        // console.log("new coop user: ", coopUser)
+        
+        API.updateCoop(coopUser)
+            .then(res => console.log("coop update response: ", res))
+            .then(err => console.log(err));
+        // console.log("Authorization: ", authorized);
     }, [coopUser])
 
+    useEffect(() => {
+        console.log("tick");
+        coopTimer();
+    }, [timer])
+
+    function coopTimer() {
+        
+        setTimeout(time++, 5000);
+        setTimer(time);
+    }
 
     function signup(event) {
         event.preventDefault();
@@ -53,7 +65,7 @@ function Game() {
         holder.length = 0;
         let name = event.target[0].value;
         let pass = event.target[1].value;
-        console.log("username, password: ", name, pass)
+        // console.log("username, password: ", name, pass)
         // check all users
         API.findAll()
             .then(res => {
@@ -107,15 +119,15 @@ function Game() {
     function coopLogin(event) {
         event.preventDefault();
         let title = event.target[0].value;
-        console.log("title: ", title);
+        // console.log("title: ", title);
         API.startCoop(title)
             .then(res => {
                 // console.log("login client res: ", res);
                 if (res.data) {
-                    console.log("coop login response", res.data)
+                    // console.log("coop login response", res.data)
                     setCoopUser(res.data);
                     setAuth(true);
-                    console.log("coopuser: ", coopUser);
+                    // console.log("coopuser: ", coopUser);
                 } else {
                     // modal/text popup alerting user that user doesnt exist
                 }
@@ -126,14 +138,14 @@ function Game() {
 
     function coopJoin(event) {
         event.preventDefault();
-        console.log(event.target.form[0].value);
+        // console.log(event.target.form[0].value);
         API.findGame(event.target.form[0].value)
             .then(res => {
                 if (res.data) {
-                    console.log("coop login response", res.data)
+                    // console.log("coop login response", res.data)
                     setCoopUser(res.data);
                     setAuth(true);
-                    console.log("coopuser: ", coopUser);
+                    // console.log("coopuser: ", coopUser);
                 } else {
                     // modal/text popup alerting user that user doesnt exist
                 }
@@ -149,7 +161,7 @@ function Game() {
         let value = event.target.value;
         if (storyline[user.level].decision) {
             if (storyline[user.level].badchoice) {
-                console.log("working");
+                // console.log("working");
                 setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
             } else {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
@@ -165,7 +177,7 @@ function Game() {
         let value = event.target.value;
         if (storyline[coopUser.level].decision) {
             if (storyline[coopUser.level].badchoice) {
-                console.log("working");
+                // console.log("working");
                 setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value], "lives": coopUser.lives - 1 });
             } else {
                 setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value] });
