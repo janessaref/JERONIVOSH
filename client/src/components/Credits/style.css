@@ -13,7 +13,7 @@ html, body {
     animation-delay: 11s;
     animation-duration: 51s;
     animation-fill-mode: forwards;
-    animation-timing-function:cubic-bezier(.56,0,0,.72);
+    animation-timing-function:ease-in-out;
     position: absolute;
     top: 35%;
     width: 100%;
@@ -34,7 +34,7 @@ html, body {
 
 @keyframes credits {
 from { transform:  translateY(0); }
-  to { transform: translateY(-4200px); }
+  to { transform: translateY(-4100px); }
 }
 
 .logo{
@@ -60,7 +60,6 @@ from { transform:  translateY(0); }
   };
   
 }
-
 
 .gameTitle{
   animation-name: title;
