@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController.js");
-
+const coopController = require("../../controllers/coopController");
 
 router
   .route("/")
@@ -20,7 +20,10 @@ router.route("/message")
     res.send({ response: "WORKING" }).status(200);
   })
 
-
+router
+  .route("/coop")
+  .post(coopController.create)
+  .get(coopController.findOne)
 
 
 module.exports = router;

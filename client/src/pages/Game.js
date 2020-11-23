@@ -8,8 +8,10 @@ import './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
 import Chat from '../components/Chat';
-import Credits from "../components/Credits"
-import Polls from "../components/Sidebar/polls"
+import Credits from "../components/Credits";
+import Polls from "../components/Sidebar/polls";
+import CoopLogin from "../components/CoopLogin";
+import Multiplayer from "../components/Multiplayer";
 
 
 
@@ -93,6 +95,42 @@ function Game() {
             })
     }
 
+    function coopLogin(event) {
+        event.preventDefault();
+        let title = event.target[0].value;
+        console.log("title: ", title);
+        API.startCoop(title)
+            .then(res => {
+                // console.log("login client res: ", res);
+                if (res.data) {
+                    console.log("coop login response", res.data)
+                    setUser(res.data);
+                    setAuth(true);
+                } else {
+                    // modal/text popup alerting user that user doesnt exist
+                }
+            }).catch(err => {
+                console.log("login error: ", err);
+            })
+    }
+
+    function coopJoin(event) {
+        event.preventDefault();
+        console.log(event.target.form[0].value);
+        API.findGame(event.target.form[0].value)
+            .then(res => {
+                if (res.data) {
+                    console.log("coop login response", res.data)
+                    setUser(res.data);
+                    setAuth(true);
+                } else {
+                    // modal/text popup alerting user that user doesnt exist
+                }
+            }).catch(err => {
+                console.log("login error: ", err);
+            })
+    }
+
 
     function choice(event) {
         event.preventDefault();
@@ -110,29 +148,25 @@ function Game() {
         }
     }
 
-    document.volume=0.3
+    document.volume = 0.3
 
 
     return (
         <Router>
             <div className="con">
-                
+
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/game" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/game" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game"><Image user={user} story={storyline} />
-                        <Chat />
-                        <Text user={user} story={storyline} click={choice} /></Route>
-
-                   
-                    <Route exact path="/credits" component={Credits}/>
-                    <Route exact path="/message" component={Chat}/>
-
+                    <Route exact path="/game">{authorized ? <><Image user={user} story={storyline} /><Chat />
+                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/" />}
+                    </Route>
                     <Route exact path="/credits" component={Credits} />
-
+                    <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Multiplayer user={user} story={storyline} click={choice} /><Chat /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
             </div>
-        </Router>
+        </Router >
     )
 }
 
