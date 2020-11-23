@@ -123,7 +123,13 @@ function Game() {
                     <Route exact path="/game"><Image user={user} story={storyline} />
                         <Chat />
                         <Text user={user} story={storyline} click={choice} /></Route>
+
+                   
+                    <Route exact path="/credits" component={Credits}/>
+                    <Route exact path="/message" component={Chat}/>
+
                     <Route exact path="/credits" component={Credits} />
+
                 </Switch>
             </div>
         </Router>
