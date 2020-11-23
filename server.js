@@ -43,7 +43,6 @@ io.on('connection', (socket) => {
   })
 })
 
-server.listen(4000, () => console.log('listening on port' + 4000))
 
 
 // listening for our ports
@@ -55,3 +54,4 @@ app.listen(PORT, function () {
     );
   });
   
+  server.listen(4000, () => console.log('listening on port' + 4000))
