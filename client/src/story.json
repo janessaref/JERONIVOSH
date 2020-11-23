@@ -303,8 +303,35 @@
         "image": "./assets/animalcontrolscene.gif",
         "story": "You run back into the city and find yourself back into the streets. There's a hooman staring at you, calling you over. You're on guard and you don't move. You watch him as he comes closer. He's getting too close...",
         "choices": [
-            "Trust the hooman?","STRANGER DANGER GET OUT NOW!"
+            "STRANGER DANGER GET OUT NOW!", "Trust the hooman?"
         ],
         "decision": [33,34]
+    },
+    {
+        "id": 33,
+        "image": "./assets/cemeteryscene.gif",
+        "story": "You're tired, hungry, and thirsty all over again but all you want is some peace and quiet. You lie on the dirt looking up at the moon. Nothing scary over here.",
+        "choices": [
+            "Go to sleep"
+        ],
+        "decision": [35]
+    },
+    {
+        "id": 34,
+        "image": "./assets/animalcontrolscene.gif",
+        "story": "You made a HUGE mistake trusting the hooman!!! You're wrestling your way out and manage to bring out your hunting weapons and slicing the hooman and using your munchers to break free and escape!",
+        "choices": [
+            "Escape to the quiet park!"
+        ],
+        "decision": [33],
+        "badchoice": true
+    },
+    {
+        "id": 35,
+        "image": "./assets/endingcemeteryscene.gif",
+        "story": "You lay on the cold stone thinking, \"finally some peace.\"",
+        "choices": [
+            "Game Over thanks 4 bein a playr (<- check out the playr app)"
+        ]
     }
 ]
