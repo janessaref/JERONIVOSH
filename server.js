@@ -43,11 +43,11 @@ io.on('connection', (socket) => {
   })
 })
 
-// server.listen(4000, () => console.log('listening on port' + 4000))
+server.listen(4000, () => console.log('listening on port' + 4000))
 
 
 // listening for our ports
-server.listen(PORT, function () {
+app.listen(PORT, function () {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,

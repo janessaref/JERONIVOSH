@@ -7,6 +7,7 @@ import API from '../utils/api';
 import Style from './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
+import Chat from '../components/Chat/index.js'
 
 
 function Game() {
@@ -115,6 +116,7 @@ function Game() {
                     <Route exact path="/login">{authorized ? <Redirect to="/game" /> : <Login login={login} authorized={authorized} />}</Route>
                     <Route exact path="/game"><Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></Route>
+                   <Chat />
                 </Switch>
             </div>
         </Router>
