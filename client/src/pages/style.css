@@ -1,3 +1,10 @@
 .con {
     background-color: black;
 }
+.polls{
+    position: absolute;
+    top: 40%;
+    right: 3%;
+    width: 300px;
+    color: white;
+}
