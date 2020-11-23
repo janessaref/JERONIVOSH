@@ -234,13 +234,21 @@
     },
     {
         "id": 25,
-        "image": "./assets/birdintree.gif",
-        "story": "ugh i really shouldve taken that water im so thirsty",
+        "image": "./assets/parkscene.gif",
+        "story": "Wow, this place is pretty. No scary monsters over here.",
         "choices": [
-            "lose a life:("
+            "Continue"
         ],
-        "decision": [12],
-        "badchoice": true
+        "decision": [26]
         
+    },
+    {
+        "id": 26,
+        "image": "./assets/shadowparkscene.gif",
+        "story": "Wait, what is that? It's so dark but I think I see something over there. HELLOOOOO, I come in peace!",
+        "choices": [
+            "Run away!!!", "Go closer?"
+        ],
+        "decision": [27,28]
     }
 ]
