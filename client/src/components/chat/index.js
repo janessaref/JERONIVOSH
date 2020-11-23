@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Style from "./style.css";
+import "./style.css";
 import io from "socket.io-client";
 // import TextField from '@material-ui/core/TextField'
 // import TextField from "@material-ui/core/TextField";
