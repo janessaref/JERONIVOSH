@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const CoopSchema = new Schema({
-    coop: {
+    title: {
         type: String,
         trim: true,
         required: true,
@@ -18,6 +18,6 @@ const CoopSchema = new Schema({
     }
 });
 
-const Coop = mongoose.model("Coop", UserSchema);
+const Coop = mongoose.model("Coop", CoopSchema);
 
 module.exports = Coop;

@@ -9,21 +9,25 @@ function CoopLogin({ }) {
 
     function coopLogin(event) {
         event.preventDefault();
-        let name = event.target[0].value;
-        let pass = event.target[1].value;
-        API.getUser(name, pass)
+        let title = event.target[0].value;
+        console.log("title: ", title);
+        API.startCoop(title)
             .then(res => {
                 // console.log("login client res: ", res);
                 if (res.data) {
+                    console.log("coop login response", res.data)
                     setUser(res.data);
                     setAuth(true);
                 } else {
                     // modal/text popup alerting user that user doesnt exist
                 }
-
             }).catch(err => {
                 console.log("login error: ", err);
             })
+    }
+
+    function coopJoin(event){
+        console.log(event);
     }
 
     return (
@@ -32,17 +36,13 @@ function CoopLogin({ }) {
             <div className="gameplay img-fluid">
                 <form id="signup" className="form-group signupForm" onSubmit={coopLogin}>
                     <div className="form-group">
-                        <label>User Name: </label>
-                        <input type="text" className="form-control" id="userName" placeholder="Enter User Name: " />
-                    </div>
-                    <div className="form-group">
-                        <label>Password: </label>
-                        <input type="password" className="form-control" id="password" placeholder="Password" />
+                        <label>Game Title: </label>
+                        <input type="text" className="form-control" id="userName" placeholder="Enter game title: " />
                     </div>
                     <button id="submit" value="send" type="submit" className="btn btn-primary">Submit</button>
-                    <Link className="button" to="/login">Single Player Log In</Link>
+                    {/* <button id="submit" value="send" onClick={coopJoin} className="btn btn-primary">Join Game</button> */}
+                    <Link className="button" to="/login">Login</Link>
                     <Link className="button" to="/">Sign Up</Link>
-                    <Link className="button" to="/cooplogin">Multiplayer</Link>
                     <Link className="button" to="/credits">Credits</Link>
                 </form>
             </div>

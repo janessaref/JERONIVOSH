@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController.js");
-
+const coopController = require("../../controllers/coopController");
 
 router
   .route("/")
@@ -22,7 +22,7 @@ router.route("/message")
 
 router
   .route("/coop")
-  
+  .post(coopController.create);
 
 
 module.exports = router;
