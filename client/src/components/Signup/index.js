@@ -24,6 +24,7 @@ function signup({ signup, authorized }) {
                             </div>
                             <button id="submit" value="send" type="submit" className="btn btn-primary">Submit</button>
                             <Link className="button" to="/login">Login</Link>
+                            <Link className="button" to="/cooplogin">Multiplayer</Link>
                         </form>
                     </div>
             }
