@@ -20,7 +20,9 @@ router.route("/message")
     res.send({ response: "WORKING" }).status(200);
   })
 
-
+router
+  .route("/coop")
+  
 
 
 module.exports = router;
