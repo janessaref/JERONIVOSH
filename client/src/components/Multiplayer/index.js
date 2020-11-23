@@ -41,6 +41,7 @@ function Multiplayer({user, story, click}) {
 
     return (
         <>
+        
             <div>
                 <audio className="float-right" autoPlay loop>
                     <source src="./assets/4_29.mp3" type="audio/mpeg" />

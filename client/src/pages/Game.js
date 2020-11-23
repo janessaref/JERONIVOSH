@@ -27,7 +27,7 @@ function Game() {
     useEffect(() => {
         setRefresh(true);
         setAuth(false);
-        coopTimer();
+        // coopTimer();
     }, [])
 
     useEffect(() => {
@@ -41,22 +41,41 @@ function Game() {
 
     useEffect(() => {
         // console.log("new coop user: ", coopUser)
-        
+
         API.updateCoop(coopUser)
             .then(res => console.log("coop update response: ", res))
             .then(err => console.log(err));
         // console.log("Authorization: ", authorized);
+        // coopTimer();
     }, [coopUser])
 
-    useEffect(() => {
-        console.log("tick");
-        coopTimer();
-    }, [timer])
+    // useEffect(() => {
+    //     console.log("tick");
+    //     coopTimer();
+    // }, [timer])
 
     function coopTimer() {
-        
-        setTimeout(time++, 5000);
+        console.log("tick");
+        // setTimeout(findGame(), 5000);
         setTimer(time);
+    }
+
+
+    function findGame() {
+        API.findGame(coopUser.title)
+            .then(res => {
+                if (res.data) {
+                    console.log("coop login response", res.data)
+                    setCoopUser(res.data);
+                    // coopTimer();
+                    // setAuth(true);
+                    // console.log("coopuser: ", coopUser);
+                } else {
+                    // modal/text popup alerting user that user doesnt exist
+                }
+            }).catch(err => {
+                console.log("error: ", err);
+            })
     }
 
     function signup(event) {
@@ -127,6 +146,7 @@ function Game() {
                     // console.log("coop login response", res.data)
                     setCoopUser(res.data);
                     setAuth(true);
+                    // coopTimer();
                     // console.log("coopuser: ", coopUser);
                 } else {
                     // modal/text popup alerting user that user doesnt exist
@@ -145,6 +165,7 @@ function Game() {
                     // console.log("coop login response", res.data)
                     setCoopUser(res.data);
                     setAuth(true);
+                    // coopTimer();
                     // console.log("coopuser: ", coopUser);
                 } else {
                     // modal/text popup alerting user that user doesnt exist
