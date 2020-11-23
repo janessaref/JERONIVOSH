@@ -272,20 +272,39 @@
     },
     {
         "id": 29,
-        "image": "./assets/mothercatscene.gif",
+        "image": "./assets/insideboxscene.gif",
         "story": "You stay in the box for warmth and started to groom the poor little kitten that was living in there and on high alert, you hear something coming towards the box. It's another cat who started to growl!",
         "choices": [
             "CAT FIGHT!!!", "Bye, Felicia!"
         ],
         "decision": [31,32]
-    }, {
+    }, 
+    {
         "id": 30,
         "image": "./assets/kittenboxscene.gif",
         "story": "You were walking away until you heard a little meow coming from inside and you see a little kitten all alone. You decided to go inside the box instead.",
         "choices": [
             "Stay with the kitten"
         ],
-        "decision": [29],
+        "decision": [29]
+    },
+    {
+        "id": 31,
+        "image": "./assets/mothercatscene.gif",
+        "story": "A brawl happens and the cat hisses at you angrily. Things are getting crazy, so you decided to run away from the fight badly hurt.",
+        "choices": [
+            "I'm a pussy, I gots to run."
+        ],
+        "decision": [32],
         "badchoice": true
+    },
+    {
+        "id": 32,
+        "image": "./assets/animalcontrolscene.gif",
+        "story": "You run back into the city and find yourself back into the streets. There's a hooman staring at you, calling you over. You're on guard and you don't move. You watch him as he comes closer. He's getting too close...",
+        "choices": [
+            "Trust the hooman?","STRANGER DANGER GET OUT NOW!"
+        ],
+        "decision": [33,34]
     }
 ]
