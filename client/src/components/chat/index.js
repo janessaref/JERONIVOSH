@@ -4,7 +4,7 @@ import io from "socket.io-client";
 // import TextField from '@material-ui/core/TextField'
 // import TextField from "@material-ui/core/TextField";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("http://localhost:3000");
 
 function Chat() {
   const [state, setState] = useState({ message: "", name: "" });
@@ -21,13 +21,22 @@ useEffect(() => {
     })
 })
 
-const onMessageSubmit = (e) => {
+function onMessageSubmit(e) {
     e.preventDefault();
 
-    const {name, message} = state
+    const { name, message } = state
     socket.emit('message', {name, message})
     setState({message: '', name})
 }
+
+
+// const onMessageSubmit = (e) => {
+//     e.preventDefault();
+
+//     const { name, message } = state
+//     socket.emit('message', {name, message})
+//     setState({message: '', name})
+// }
 
   const renderChat = () => {
     return chat.map(({ name, message }, i) => (
@@ -40,8 +49,8 @@ const onMessageSubmit = (e) => {
   };
 
   return (
-    <div>
-      <form onSubmit={onMessageSubmit}>
+    <div className="newForm">
+      <form>
         <h1>Messanger</h1>
         <div className="name-field">
           <input
@@ -52,16 +61,14 @@ const onMessageSubmit = (e) => {
           />
         </div>
         <div>
-          <input
-            name="name"
+          <textarea
+            name="message"
             onChange={(e) => onTextChange(e)}
             value={state.message}
-            id="outlined-multiline-static"
-            variant="outlined"
             label="message"
           />
         </div>
-        <button>Send Message</button>
+        <button onClick={onMessageSubmit}>Send Message</button>
       </form>
       <div className="render-chat">
         <h1>chat Log</h1>

@@ -5,7 +5,7 @@ const logger = require('morgan');
 const express = require("express");
 const routes = require('./routes')
 const http = require('http');
-const socketIo = require('socket.io');
+const socketIo = require('socket.io')
 
 
 // Setting up our port
@@ -38,20 +38,19 @@ const io = socketIo(server)
 
 io.on('connection', (socket) => {
   console.log("a user connected")
-  socket.on('message', ({name, message}) => {
-    io.emit('message', {name, message})
+  socket.on('message', ({ name, message }) => {
+    io.emit('message', { name, message })
   })
 })
 
-
+server.listen(PORT, () => console.log('listening on port' + PORT))
 
 // listening for our ports
-app.listen(PORT, function () {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
+// app.listen(PORT, function () {
+//     console.log(
+//       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+//       PORT,
+//       PORT
+//     );
+//   });
   
-  server.listen(4000, () => console.log('listening on port' + 4000))
