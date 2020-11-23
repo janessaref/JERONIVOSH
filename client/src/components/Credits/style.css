@@ -21,7 +21,7 @@ html, body {
     font-family: "Press Start 2P";
      text-align: center;
     text-transform: uppercase;
-    color: #fff;
+    color: white;
   
 }
 
@@ -52,4 +52,19 @@ from { transform:  translateY(0); }
     border-radius: 5000px ;
     border: solid rgb(255, 255, 142);
     background-color:  rgb(255, 255, 142);
+}
+
+@keyframes title{
+  100%{
+    color:white
+  };
+  
+}
+
+
+.gameTitle{
+  animation-name: title;
+  animation-delay: 8s;
+  font-size: 8vw;
+  animation-fill-mode: forwards;
 }
