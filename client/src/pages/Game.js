@@ -7,7 +7,7 @@ import API from '../utils/api';
 import './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
-import Chat from '../components/Chat/index.js'
+import Chat from '../components/Chat';
 import Credits from "../components/Credits"
 import Polls from "../components/Sidebar/polls"
 
@@ -32,7 +32,7 @@ function Game() {
         API.updateUser(user)
             .then(res => console.log("update response: ", res))
             .then(err => console.log(err));
-        console.log("Authorization: ", authorized);
+        // console.log("Authorization: ", authorized);
     }, [user])
 
 
@@ -120,15 +120,16 @@ function Game() {
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/game" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/game" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">
-                    {/* <div className="polls">
-                    <   Polls/>
-                    </div> */}
-                        <Image user={user} story={storyline} />
+                    <Route exact path="/game"><Image user={user} story={storyline} />
+                        <Chat />
                         <Text user={user} story={storyline} click={choice} /></Route>
+
                    
                     <Route exact path="/credits" component={Credits}/>
                     <Route exact path="/message" component={Chat}/>
+
+                    <Route exact path="/credits" component={Credits} />
+
                 </Switch>
             </div>
         </Router>
