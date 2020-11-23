@@ -101,7 +101,7 @@
         "choices": [
             "I trust the hooman, He smells like me","never trust hoomans..."
         ],
-        "decision": [11,25]
+        "decision": [11,12]
     },
     {
         "id": 11,
@@ -244,7 +244,7 @@
     },
     {
         "id": 26,
-        "image": "./assets/shadowparkscene.gif",
+        "image": "./assets/parkscene.gif",
         "story": "Wait, what is that? It's so dark but I think I see something over there. HELLOOOOO, I come in peace!",
         "choices": [
             "Run away to the bridge!!!", "Go closer?"
@@ -318,7 +318,7 @@
     },
     {
         "id": 34,
-        "image": "./assets/animalcontrolscene.gif",
+        "image": "./assets/runfromacscene.gif",
         "story": "You made a HUGE mistake trusting the hooman!!! You're wrestling your way out and manage to bring out your hunting weapons and slicing the hooman and using your munchers to break free and escape!",
         "choices": [
             "Escape to the quiet park!"
