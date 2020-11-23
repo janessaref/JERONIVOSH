@@ -79,7 +79,7 @@
     {
         "id": 8,
         "image": "./assets/piescene.gif",
-        "story": "Found a pie... Eat the pie? Tt's okay.. try it... come on.. you know you want to...",
+        "story": "Found a pie... Eat the pie? It's okay.. try it... No... must resist... Maybe??? SMELLS SCRUMPTIOUS!!! come on.. you know you want to...",
         "choices": [
             "ummmm yes?","thats gonna be a no from me dawg"
         ],
@@ -88,7 +88,7 @@
     {
         "id": 9,
         "image": "./assets/eatpiescene.gif",
-        "story": "YUMMY FREAKIN PIE!!!!!",
+        "story": "NOM NOM MUNCH MUNCH YUMMY FREAKIN PIE!!!!!",
         "choices": [
             "WOOOHOOOOO!"
         ],
