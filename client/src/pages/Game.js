@@ -128,7 +128,7 @@ function Game() {
                         <Text user={user} story={storyline} click={choice} /></Route>
                    
                     <Route exact path="/credits" component={Credits}/>
-                    <Route exact path="/chat" component={Chat}/>
+                    <Route exact path="/message" component={Chat}/>
                 </Switch>
             </div>
         </Router>
