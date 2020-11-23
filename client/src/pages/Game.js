@@ -4,7 +4,7 @@ import Image from "../components/Image";
 import Text from "../components/Text";
 import storyline from "../story.json";
 import API from '../utils/api';
-import Style from './style.css';
+import './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
 import Chat from '../components/Chat/index.js'
@@ -110,6 +110,8 @@ function Game() {
         }
     }
 
+    document.volume=0.3
+
 
     return (
         <Router>
@@ -124,8 +126,9 @@ function Game() {
                     </div> */}
                         <Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></Route>
-                   <Chat />
+                   
                     <Route exact path="/credits" component={Credits}/>
+                    <Route exact path="/chat" component={Chat}/>
                 </Switch>
             </div>
         </Router>

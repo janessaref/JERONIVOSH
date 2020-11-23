@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Style from "./style.css";
+import "./style.css";
 import io from "socket.io-client";
 // import TextField from '@material-ui/core/TextField'
 // import TextField from "@material-ui/core/TextField";
@@ -51,7 +51,7 @@ function onMessageSubmit(e) {
   return (
     <div className="newForm">
       <form>
-        <h1>Messanger</h1>
+        <h1>Messenger</h1>
         <div className="name-field">
           <input
             name="name"

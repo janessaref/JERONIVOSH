@@ -10,7 +10,7 @@ router.use(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
-router.get("/messge", (req, res) => {
+router.get("/message", (req, res) => {
   res.send({ response: "I am alive" }).status(200);
 });
 
