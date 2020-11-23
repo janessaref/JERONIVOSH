@@ -10,6 +10,7 @@ import Login from "../components/Login";
 import Chat from '../components/Chat';
 import Credits from "../components/Credits"
 import Polls from "../components/Sidebar/polls"
+import CoopLogin from "../components/CoopLogin";
 
 
 
@@ -110,23 +111,24 @@ function Game() {
         }
     }
 
-    document.volume=0.3
+    document.volume = 0.3
 
 
     return (
         <Router>
             <div className="con">
-                
+
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/game" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/game" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game"><Image user={user} story={storyline} />
-                        <Chat />
-                        <Text user={user} story={storyline} click={choice} /></Route>
+                    <Route exact path="/game">{authorized ? <><Image user={user} story={storyline} /><Chat />
+                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/" />}
+                    </Route>
                     <Route exact path="/credits" component={Credits} />
+                    <Route exact path="/coopLogin" component={CoopLogin} />
                 </Switch>
             </div>
-        </Router>
+        </Router >
     )
 }
 
