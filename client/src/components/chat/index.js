@@ -30,14 +30,6 @@ function onMessageSubmit(e) {
 }
 
 
-// const onMessageSubmit = (e) => {
-//     e.preventDefault();
-
-//     const { name, message } = state
-//     socket.emit('message', {name, message})
-//     setState({message: '', name})
-// }
-
   const renderChat = () => {
     return chat.map(({ name, message }, i) => (
       <div key={i}>
@@ -68,7 +60,7 @@ function onMessageSubmit(e) {
             label="message"
           />
         </div>
-        <button onClick={onMessageSubmit}>Send Message</button>
+        <button id="submitbutton" onClick={onMessageSubmit}>Send Message</button>
       </form>
       <div className="render-chat">
         <h1>chat Log</h1>
