@@ -15,6 +15,11 @@ router
   .route("/all")
   .get(userController.findAll)
 
+router.route("/message")
+  .get((req, res) => {
+    res.send({ response: "WORKING" }).status(200);
+  })
+
 // router
 //   .route("/:id")
 
