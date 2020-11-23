@@ -163,7 +163,7 @@ function Game() {
                     </Route>
                     <Route exact path="/credits" component={Credits} />
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
-                    <Route exact path="/multiplayer">{authorized ? <><Multiplayer user={user} story={storyline} click={choice} /><Chat /></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Multiplayer user={user} story={storyline} click={choice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
             </div>
         </Router >
