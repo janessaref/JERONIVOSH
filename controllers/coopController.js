@@ -17,9 +17,9 @@ module.exports = {
     },
     update: function (req, res) {
         console.log("level: ", req.body)
-        console.log("id: ", req.body.id)
+        console.log("id: ", req.body._id)
         coop.findByIdAndUpdate(
-            req.body.id
+            req.body._id
             ,
             {
                 level: req.body.level,

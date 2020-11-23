@@ -31,11 +31,20 @@ function Game() {
 
     useEffect(() => {
         console.log("new user: ", user)
-        API.updateUser(user)
-            .then(res => console.log("update response: ", res))
-            .then(err => console.log(err));
-        // console.log("Authorization: ", authorized);
+            API.updateUser(user)
+                .then(res => console.log("update response: ", res))
+                .then(err => console.log(err));
+            // console.log("Authorization: ", authorized);
+        
     }, [user])
+
+    useEffect(() => {
+        console.log("new coop user: ", coopUser)
+            API.updateCoop(coopUser)
+                .then(res => console.log("update response: ", res))
+                .then(err => console.log(err));
+            // console.log("Authorization: ", authorized);
+    }, [coopUser])
 
 
     function signup(event) {
@@ -183,7 +192,7 @@ function Game() {
                     </Route>
                     <Route exact path="/credits" component={Credits} />
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
-                    <Route exact path="/multiplayer">{authorized ? <><Multiplayer user={coopUser} story={storyline} click={coopChoice}/></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Multiplayer user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
             </div>
         </Router >
