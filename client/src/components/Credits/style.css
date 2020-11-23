@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+html, body {
+  height: 100vh;
+  background: #000000;
+  overflow: hidden;
+  
+}
+
+.wrapper {
+    animation-name: credits;
+    /* animation-delay: 7s; */
+    animation-duration: 62s;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear;
+    position: absolute;
+    top: 110%;
+    width: 100%;
+    font: 300 30px/1 ;
+    font-family: "Press Start 2P";
+     text-align: center;
+    text-transform: uppercase;
+    color: white;
+  
+}
+
+
+
+.name {
+  margin-bottom: 50px;
+  font-size: 45px;
+}
+
+@keyframes credits {
+from { transform:  translateY(0); }
+  to { transform: translateY(-4800px); }
+}
+
+.logo{
+    width: 500px;
+    height: 600px;
+    
+    
+}
+.break{
+    height: 400px;
+}
+
+.cat:hover{
+    cursor: pointer;
+    border-radius: 5000px ;
+    border: solid rgb(255, 255, 142);
+    background-color:  rgb(255, 255, 142);
+}
+
+@keyframes title{
+  100%{
+    color:white
+  };
+  
+}
+
+
+.gameTitle{
+  animation-name: title;
+  animation-delay: 8s;
+  font-size: 8vw;
+  animation-fill-mode: forwards;
+}

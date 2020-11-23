@@ -4,10 +4,13 @@ import Image from "../components/Image";
 import Text from "../components/Text";
 import storyline from "../story.json";
 import API from '../utils/api';
-import Style from './style.css';
+import './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
 import Chat from '../components/Chat/index.js'
+import Credits from "../components/Credits"
+import Polls from "../components/Sidebar/polls"
+
 
 
 function Game() {
@@ -107,16 +110,25 @@ function Game() {
         }
     }
 
+    document.volume=0.3
+
 
     return (
         <Router>
             <div className="con">
+                
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/game" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/game" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game"><Image user={user} story={storyline} />
+                    <Route exact path="/game">
+                    {/* <div className="polls">
+                    <   Polls/>
+                    </div> */}
+                        <Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></Route>
-                   <Chat />
+                   
+                    <Route exact path="/credits" component={Credits}/>
+                    <Route exact path="/chat" component={Chat}/>
                 </Switch>
             </div>
         </Router>
