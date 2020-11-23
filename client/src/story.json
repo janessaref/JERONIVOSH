@@ -267,23 +267,25 @@
         "choices": [
             "Run run RUN!!!"
         ],
-        "decision": [27]
+        "decision": [27],
+        "badchoice": true
     },
     {
         "id": 29,
-        "image": "",
-        "story": "",
+        "image": "./assets/mothercatscene.gif",
+        "story": "You stay in the box for warmth and started to groom the poor little kitten that was living in there and on high alert, you hear something coming towards the box. It's another cat who started to growl!",
         "choices": [
-            ""
+            "CAT FIGHT!!!", "Bye, Felicia!"
         ],
-        "decision": []
+        "decision": [31,32]
     }, {
         "id": 30,
-        "image": "",
-        "story": "",
+        "image": "./assets/kittenboxscene.gif",
+        "story": "You were walking away until you heard a little meow coming from inside and you see a little kitten all alone. You decided to go inside the box instead.",
         "choices": [
-            ""
+            "Stay with the kitten"
         ],
-        "decision": []
+        "decision": [29],
+        "badchoice": true
     }
 ]
