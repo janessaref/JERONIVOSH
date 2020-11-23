@@ -40,14 +40,25 @@ const socketIo = require('socket.io');
 const server = http.createServer(app);
 const io = socketIo(server);
 
-io.on("connection", socket=>{
-  console.log("Client Connected");
-})
+let interval;
+io.on("connection", (socket) => {
+  console.log("New client connected");
+  if (interval) {
+    clearInterval(interval);
+  }
+  interval = setInterval(() => getApiAndEmit(socket), 1000);
+  socket.on("disconnect", () => {
+    console.log("Client disconnected");
+    clearInterval(interval);
+  });
+});
 
-server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 const getApiAndEmit = socket => {
   const response = new Date();
   // Emitting a new message. Will be consumed by the client
   socket.emit("FromAPI", response);
 };
+
+server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+

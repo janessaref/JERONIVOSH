@@ -7,7 +7,8 @@ import API from '../utils/api';
 import Style from './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
-import Credits from "../components/Credits"
+import Credits from "../components/Credits";
+import Chat from "../components/Chat";
 
 
 function Game() {
@@ -29,7 +30,7 @@ function Game() {
         API.updateUser(user)
             .then(res => console.log("update response: ", res))
             .then(err => console.log(err));
-        console.log("Authorization: ", authorized);
+        // console.log("Authorization: ", authorized);
     }, [user])
 
 
@@ -115,7 +116,7 @@ function Game() {
                     <Route exact path="/">{authorized ? <Redirect to="/game" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/game" /> : <Login login={login} authorized={authorized} />}</Route>
                     <Route exact path="/game"><Image user={user} story={storyline} />
-                        <Text user={user} story={storyline} click={choice} /></Route>
+                        <Text user={user} story={storyline} click={choice} /><Chat /></Route>
                     <Route exact path="/credits" component={Credits}/>
                 </Switch>
             </div>
