@@ -18,9 +18,9 @@ import Multiplayer from "../components/Multiplayer";
 function Game() {
     // when logging in, setUser to data from mongodb
     // pass level prop to image and text components to display
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({});
     const [authorized, setAuth] = useState(false);
-
+    const [coopUser, setCoopUser] = useState({});
     // state to deal with refresh during game
     const [refresh, setRefresh] = useState(false);
 
@@ -104,8 +104,9 @@ function Game() {
                 // console.log("login client res: ", res);
                 if (res.data) {
                     console.log("coop login response", res.data)
-                    setUser(res.data);
+                    setCoopUser(res.data);
                     setAuth(true);
+                    console.log("coopuser: ", coopUser);
                 } else {
                     // modal/text popup alerting user that user doesnt exist
                 }
@@ -121,8 +122,9 @@ function Game() {
             .then(res => {
                 if (res.data) {
                     console.log("coop login response", res.data)
-                    setUser(res.data);
+                    setCoopUser(res.data);
                     setAuth(true);
+                    console.log("coopuser: ", coopUser);
                 } else {
                     // modal/text popup alerting user that user doesnt exist
                 }
@@ -148,6 +150,24 @@ function Game() {
         }
     }
 
+    function coopChoice(event) {
+        event.preventDefault();
+        // console.log(user._id);
+        let value = event.target.value;
+        if (storyline[coopUser.level].decision) {
+            if (storyline[coopUser.level].badchoice) {
+                console.log("working");
+                setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value], "lives": coopUser.lives - 1 });
+            } else {
+                setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value] });
+            }
+        } else {
+            setCoopUser({ ...coopUser, "level": coopUser.level + 1 });
+        }
+    }
+
+
+
     document.volume = 0.3
 
 
@@ -163,7 +183,7 @@ function Game() {
                     </Route>
                     <Route exact path="/credits" component={Credits} />
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
-                    <Route exact path="/multiplayer">{authorized ? <><Multiplayer user={user} story={storyline} click={choice} /></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Multiplayer user={coopUser} story={storyline} click={coopChoice}/></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
             </div>
         </Router >

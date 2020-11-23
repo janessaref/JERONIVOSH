@@ -24,6 +24,7 @@ router
   .route("/coop")
   .post(coopController.create)
   .get(coopController.findOne)
+  .put(coopController.update)
 
 
 module.exports = router;

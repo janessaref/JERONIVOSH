@@ -5,7 +5,7 @@ const API = {
         return axios.post("/api/user", user);
     },
     getUser: function (username, password) {
-        return axios.post("/api/user/login", {username, password});
+        return axios.post("/api/user/login", { username, password });
     },
     updateUser: function (user) {
         return axios.put("/api/user", user);
@@ -13,12 +13,15 @@ const API = {
     findAll: function () {
         return axios.get("/api/user/all")
     },
-    startCoop: function(title){
-        return axios.post("/api/user/coop", {title});
+    startCoop: function (title) {
+        return axios.post("/api/user/coop", { title });
     },
-    findGame: function(title){
-        return axios.get("/api/user/coop", {title});
-    } 
+    findGame: function (title) {
+        return axios.get("/api/user/coop", { title });
+    },
+    updateCoop: function (user) {
+        return axios.put("api/user/coop", user)
+    }
 }
 
 export default API;
