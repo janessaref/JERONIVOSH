@@ -1,6 +1,16 @@
 .logIn {
     background-color: #5F5375;
-   padding: 20px;
-   margin-top: 200px;
-   font-family: 'Press Start 2P', cursive;
+    padding: 20px;
+    margin-top: 200px;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 3px;
+}
+
+.brand {
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+}
+
+hr {
+    border-width: 4px;
 }
