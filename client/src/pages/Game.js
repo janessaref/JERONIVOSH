@@ -25,6 +25,8 @@ function Game() {
     // state to deal with refresh during game
     const [refresh, setRefresh] = useState(false);
     const [timer, setTimer] = useState("");
+    const [endGame, setEndGame] = useState(true)
+
     useEffect(() => {
         setRefresh(true);
         setAuth(false);
@@ -185,8 +187,8 @@ function Game() {
             if (storyline[user.level].badchoice) {
                 // console.log("working");
                 setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
-            } else if (storyline[user.level].end) {
-                    
+            } else if (storyline[user.level].end === true) {
+                setEndGame(false)
             }
             else {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
@@ -224,8 +226,8 @@ function Game() {
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? <><Image user={user} story={storyline} />
-                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/" />}
+                    <Route exact path="/game">{endGame ? <><Image user={user} story={storyline} />
+                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" />}
                     </Route>
                     <Route exact path="/main" component={Main} />
                     <Route exact path="/credits" component={Credits} />
