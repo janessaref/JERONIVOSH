@@ -178,7 +178,7 @@ function Game() {
             })
     }
 
-// if story line lever end return false, then return false
+    // if story line lever end return false, then return false
     function choice(event) {
         event.preventDefault();
         // console.log(user._id);
@@ -226,8 +226,8 @@ function Game() {
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{endGame ? <><Image user={user} story={storyline} />
-                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" />}
+                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
+                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/main" component={Main} />
                     <Route exact path="/credits" component={Credits} />
