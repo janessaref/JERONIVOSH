@@ -239,7 +239,8 @@
         "choices": [
             "Continue"
         ],
-        "decision": [26]
+        "decision": [26],
+        "end": true
         
     },
     {
@@ -332,6 +333,7 @@
         "story": "You lay on the cold stone thinking, \"finally some peace.\"",
         "choices": [
             "Game Over thanks 4 bein a playr (<- check out the playr app)"
-        ]
+        ],
+        "end": true
     }
 ]
