@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import ". /style.css";
+import "./style.css";
 import io from "socket.io-client";
 // import TextField from '@material-ui/core/TextField'
 // import TextField from "@material-ui/core/TextField";
@@ -28,15 +28,6 @@ function onMessageSubmit(e) {
     socket.emit('message', { name, message })
     setState({message: '', name})
 }
-
-
-// const onMessageSubmit = (e) => {
-//     e.preventDefault();
-
-//     const { name, message } = state
-//     socket.emit('message', {name, message})
-//     setState({message: '', name})
-// }
 
 
   const renderChat = () => {
@@ -69,7 +60,7 @@ function onMessageSubmit(e) {
             label="message"
           />
         </div>
-        <button onClick={onMessageSubmit}>Send Message</button>
+        <button id="submitbutton" onClick={onMessageSubmit}>Send Message</button>
       </form>
       <div className="render-chat">
         <h1>chat Log</h1>

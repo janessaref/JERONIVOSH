@@ -1,7 +1,16 @@
 .newForm {
     background-color: white;
+    position: fixed;
+    top: 25%;
+    right: 50px;
+    width: 25%;
+    overflow: auto;
+    height: 25%;
+    padding: 25px;
 }
-
 .render-chat {
     color: black;
+}
+.submitbutton{
+    float: right;
 }

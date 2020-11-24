@@ -10,12 +10,12 @@ html, body {
 
 .wrapper {
     animation-name: credits;
-    /* animation-delay: 7s; */
-    animation-duration: 62s;
+    animation-delay: 11s;
+    animation-duration: 51s;
     animation-fill-mode: forwards;
-    animation-timing-function:linear;
+    animation-timing-function:ease-in;
     position: absolute;
-    top: 110%;
+    top: 35%;
     width: 100%;
     font: 300 30px/1 ;
     font-family: "Press Start 2P";
@@ -34,7 +34,7 @@ html, body {
 
 @keyframes credits {
 from { transform:  translateY(0); }
-  to { transform: translateY(-4800px); }
+  to { transform: translateY(-4250px); }
 }
 
 .logo{
@@ -60,7 +60,6 @@ from { transform:  translateY(0); }
   };
   
 }
-
 
 .gameTitle{
   animation-name: title;
