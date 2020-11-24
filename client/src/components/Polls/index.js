@@ -5,10 +5,14 @@ import Poll from 'react-polls';
 
 function Polls({user,story}){
   
-  const [pollAnswers, setPollAnswers] = useState([
-  { option: story[user.level].choices[0], votes: 8 },
-  { option: story[user.level].choices[1], votes: 3 }
-  ]
+  const [pollAnswers, setPollAnswers] = useState(
+    story[user.level].choices.map(choice => {
+      return(
+        { option: choice, votes: 0 }
+      )
+    })
+
+  
     )
 
    function handleVote(voteAnswer) {
@@ -26,7 +30,7 @@ function Polls({user,story}){
     <div className= "Container fixed-bottom">
     <div className="row">
         <p>{story[user.level].story}</p>
-        <Poll answers={pollAnswers} onVote={handleVote} />
+        <Poll  classname="col btn" answers={pollAnswers} onVote={handleVote} />
     </div>
     </div>
       
