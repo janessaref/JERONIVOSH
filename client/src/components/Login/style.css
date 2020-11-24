@@ -1,16 +1,75 @@
-.logIn {
-    background-color: #5F5375;
-    padding: 20px;
-    margin-top: 200px;
+.loginContainer {
+    background-color: #6f6188;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 3px;
     font-family: 'Press Start 2P', cursive;
-    border-radius: 3px;
+    border-radius: 20px;
+    opacity: 0.98;
+    box-shadow: 5px 5px 2px #514564;
+    max-width: 100%;
+    max-height: 85%;
 }
-
-.brand {
-    margin-left: 0 auto;
-    margin-right: 0 auto;
+.btn {
+    border: 1px black solid;
+    /* padding: 10px; */
+    margin-top: 20px;
+    background-color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+    color: black;
 }
-
+.btn:hover{
+    cursor: pointer;
+    background-color:black;
+    color: white;
+}
+.mainContent {
+    margin-top: 220px;
+}
 hr {
     border-width: 4px;
+}
+.homepage {
+    background-image: url("https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/introcitynocat.gif?raw=true");
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+    .brand {
+        font-size: 22px;
+    }
+    #userName {
+        font-size: 10px;
+    }
+    #password {
+        font-size: 10px;
+    }
+    #signUpBtn {
+        font-size: 14px;
+    }
+}
+@media (max-width: 400px) {
+    .brand {
+        font-size: 19px;
+    }
+    #userName {
+        font-size: 8px;
+    }
+    #password {
+        font-size: 8px;
+    }
+    #signUpBtn {
+        font-size: 8px;
+    }
+    .usernameLabel {
+        font-size: 14px;
+    }
+    .passwordLabel {
+        font-size: 14px;
+    }
+    .notUser {
+        font-size: 8px;
+    }
 }
