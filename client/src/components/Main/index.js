@@ -8,12 +8,18 @@ function Main() {
 
    return(
     <div className="container menu">
+            
+        <div className="text-center pad">
         
-            <Link to={"/game"}><div className="btn">SOLO</div></Link>
-        
-            <Link to={"/coopLogin"}><div className="btn">CO-OP</div></Link>
-
-        
+            <div className="col-auto ">
+                <Link to={"/game"}><div className="btn mr-1">SOLO</div></Link>
+                
+                {/* <Link to={"/coopLogin"}> */}
+                        <div className="btn ml-1">CO-OP (AVAILABLE SOON)</div>
+                 {/* </Link> */}
+                
+            </div>
+        </div>
 
     </div>
    ) 
