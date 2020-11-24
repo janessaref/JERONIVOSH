@@ -223,6 +223,7 @@
             "I rly just wanna sleep"
         ],
         "decision": [24]
+      
     },
     {
         "id": 24,
@@ -230,7 +231,10 @@
         "story": "idk if i trust him but desparation so ima snug. he takes you in and makes you cozy. see? happy ending after all.",
         "choices": [
             "Game Over thanks 4 bein a playr (<- check out the playr app)"
-        ]
+        ],
+        "decision": [36],
+
+        "end": true
     },
     {
         "id": 25,
@@ -240,7 +244,7 @@
             "Continue"
         ],
         "decision": [26]
-        
+       
     },
     {
         "id": 26,
@@ -332,6 +336,12 @@
         "story": "You lay on the cold stone thinking, \"finally some peace.\"",
         "choices": [
             "Game Over thanks 4 bein a playr (<- check out the playr app)"
-        ]
+        ],
+        "decision": [36],
+        "end": true
+    },
+    {
+        "id": 36,
+        "end": true
     }
 ]

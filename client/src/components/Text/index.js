@@ -1,6 +1,8 @@
 import React from 'react';
 import Style from './style.css'
 
+
+
 function Text({ user, story, click }) {
     console.log("text user", user);
     console.log(story[0].choices)
