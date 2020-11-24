@@ -33,7 +33,7 @@ function Image({ user, story }) {
       <div className="mute">
         <img src="./assets/audiosmall.png" onClick={handleMute} />
       </div>
-      <div>
+      <div className="lives">
         <p>lives: {user.lives}</p>
       </div>
       <audio className="float-right" autoPlay loop id="gameAudio" ref={volume}>
