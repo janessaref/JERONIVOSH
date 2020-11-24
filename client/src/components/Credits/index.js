@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css"
-import Link from "react-router-dom"
-import { reset } from "nodemon";
+import {Link} from "react-router-dom"
+
 
 function Credits() {
     const names=["Jerri Fong", "Jon SanPedro","Ivan Torres","Josh Glugatch"]
