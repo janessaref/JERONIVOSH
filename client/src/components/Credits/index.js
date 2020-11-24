@@ -6,7 +6,7 @@ function Credits() {
   return (
     <div className="wrapper img-fluid">
         <div>
-            <audio autoPlay loop>
+            <audio autoPlay >
                 <source src="./assets/CreditsSong.mp3" type="audio/mpeg" />
             </audio>
         </div>
