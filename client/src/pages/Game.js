@@ -176,7 +176,7 @@ function Game() {
             })
     }
 
-
+// if story line lever end return false, then return false
     function choice(event) {
         event.preventDefault();
         // console.log(user._id);
@@ -185,7 +185,10 @@ function Game() {
             if (storyline[user.level].badchoice) {
                 // console.log("working");
                 setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
-            } else {
+            } else if (storyline[user.level].end) {
+                    
+            }
+            else {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
             }
         } else {
