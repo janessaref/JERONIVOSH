@@ -4,7 +4,6 @@ import "./style.css";
 
 function login({ login }) {
     return (
-       
         <div className="homepage container">
             <div className="mainContent container d-flex justify-content-center">
                 <div class="card loginContainer ">
@@ -15,16 +14,16 @@ function login({ login }) {
                     <hr/>
                         <form id="loginForm" className="form-group" onSubmit={login}>
                             <div className="form-group mx-auto text-center">
-                                <p className="h5 usernameLabel">Username: </p>
+                                <p className="h5 mt-4 usernameLabel">Username: </p>
                                 <input type="text" className="form-control" id="userName" placeholder="Enter your username" />
                             </div>
                             <div className="form-group mx-auto text-center">
-                                <p className="h5 mt-2 passwordLabel">Password: </p>
+                                <p className="h5 mt-4 passwordLabel">Password: </p>
                                 <input type="password" className="form-control" id="password" placeholder="Enter your password" />
                             </div>
                             <div className ="row mx-auto text-center">
                                 <div className="col-md">
-                                    <button id="submit" value="send" type="submit" className="btn btn-block mt-1 mb-1">Login
+                                    <button id="loginBtn" value="send" type="submit" className="btn mt-1 mb-1">Login
                                     </button>
                                 </div>
                             </div>
@@ -33,7 +32,7 @@ function login({ login }) {
                                 <div className="col-md">
                                     <p className="mt-1 mb-1 notUser">Not a user?</p>
                                     <Link className="button" to="/">
-                                        <button className="btn btn-block mt-1" id="signUpBtn">Sign Up Here</button>
+                                        <button className="btn mt-1" id="signUpBtn">Sign Up Here</button>
                                     </Link>
                                 </div>
                             </div>
@@ -42,10 +41,8 @@ function login({ login }) {
                 </div>
             </div>
         </div>
- 
-       
     )
-}
+};
 
 export default login;
 

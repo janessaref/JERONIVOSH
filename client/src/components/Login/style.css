@@ -13,7 +13,6 @@
 }
 .btn {
     border: 1px black solid;
-    /* padding: 10px; */
     margin-top: 20px;
     background-color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
@@ -61,7 +60,7 @@ hr {
         font-size: 8px;
     }
     #signUpBtn {
-        font-size: 8px;
+        font-size: 10px;
     }
     .usernameLabel {
         font-size: 14px;
@@ -70,6 +69,9 @@ hr {
         font-size: 14px;
     }
     .notUser {
-        font-size: 8px;
+        font-size: 12px;
+    }
+    #loginBtn {
+        font-size: 12px;
     }
 }
