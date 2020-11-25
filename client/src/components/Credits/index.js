@@ -3,7 +3,7 @@ import "./style.css"
 import {Link} from "react-router-dom"
 
 
-function Credits() {
+function Credits(reset) {
     const names=["Jerri Fong", "Jon SanPedro","Ivan Torres","Josh Glugatch"]
   return (
     <div className="wrapper img-fluid">

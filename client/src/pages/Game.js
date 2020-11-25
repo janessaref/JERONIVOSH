@@ -7,7 +7,7 @@ import API from '../utils/api';
 import './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
-// import Chat from '../components/Chat';
+import Chat from '../components/Chat';
 import Credits from "../components/Credits";
 import Polls from "../components/Polls";
 import CoopLogin from "../components/CoopLogin";
@@ -232,7 +232,7 @@ function Game() {
                     <Route exact path="/main" component={Main} />
                     <Route exact path="/credits" component={Credits} />
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
-                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
             </div>
         </Router >
