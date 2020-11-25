@@ -7,7 +7,7 @@ import API from '../utils/api';
 import './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
-import Chat from '../components/Chat';
+import Chat from '../components/Chat/index';
 import Credits from "../components/Credits";
 import Polls from "../components/Polls";
 import CoopLogin from "../components/CoopLogin";
