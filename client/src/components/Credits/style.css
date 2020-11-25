@@ -34,7 +34,7 @@ html, body {
 
 @keyframes credits {
 from { transform:  translateY(0); }
-  to { transform: translateY(-4250px); }
+  to { transform: translateY(-5750px); }
 }
 
 .logo{

@@ -7,7 +7,7 @@ import API from '../utils/api';
 import './style.css';
 import Signup from "../components/Signup";
 import Login from "../components/Login";
-// import Chat from '../components/Chat';
+import Chat from '../components/Chat';
 import Credits from "../components/Credits";
 import Polls from "../components/Polls";
 import CoopLogin from "../components/CoopLogin";
@@ -25,6 +25,8 @@ function Game() {
     // state to deal with refresh during game
     const [refresh, setRefresh] = useState(false);
     const [timer, setTimer] = useState("");
+    const [endGame, setEndGame] = useState(true)
+
     useEffect(() => {
         setRefresh(true);
         setAuth(false);
@@ -176,7 +178,7 @@ function Game() {
             })
     }
 
-
+    // if story line lever end return false, then return false
     function choice(event) {
         event.preventDefault();
         // console.log(user._id);
@@ -185,7 +187,10 @@ function Game() {
             if (storyline[user.level].badchoice) {
                 // console.log("working");
                 setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
-            } else {
+            } else if (storyline[user.level].end === true) {
+                setEndGame(false)
+            }
+            else {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
             }
         } else {
@@ -221,13 +226,13 @@ function Game() {
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? <><Image user={user} story={storyline} />
-                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/" />}
+                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
+                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/main" component={Main} />
                     <Route exact path="/credits" component={Credits} />
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
-                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
             </div>
         </Router >
