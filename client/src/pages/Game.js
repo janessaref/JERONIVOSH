@@ -12,6 +12,7 @@ import Polls from "../components/Polls";
 import CoopLogin from "../components/CoopLogin";
 // import Multiplayer from "../components/Multiplayer";
 import Main from "../components/Main";
+import Chat from "../components/Chat";
 // let time = 0;
 
 
@@ -231,7 +232,7 @@ function Game() {
                     <Route exact path="/main" component={Main} />
                     <Route exact path="/credits" component={Credits} />
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
-                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
             </div>
         </Router >
