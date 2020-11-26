@@ -39,7 +39,7 @@ function Image({ user, story }) {
       <audio className="float-right" autoPlay loop id="gameAudio" ref={volume}>
         <source src="./assets/4_29.mp3" type="audio/mpeg" />
       </audio>
-      <img className="gif" src={story[user.level].image}></img>
+      <img className="gif img-fluid" src={story[user.level].image}></img>
     </div>
   );
 }
