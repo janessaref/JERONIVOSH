@@ -18,5 +18,11 @@
     cursor: pointer;
     background-color:black;
     color: white;
+
 }
 
+@keyframes hvr-back-pulse {
+    50% {
+      background-color:rgb(102, 41, 41);
+    }
+}

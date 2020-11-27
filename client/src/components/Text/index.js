@@ -1,5 +1,5 @@
 import React from 'react';
-import Style from './style.css'
+import './style.css'
 
 
 
@@ -15,7 +15,7 @@ function Text({ user, story, click }) {
             <div className="row">
                 {/* user buttons */}
                 {story[user.level].choices.map(x => {
-                    return <button className="col btn" key={story[user.level].choices.indexOf(x)} value={story[user.level].choices.indexOf(x)} onClick={click}>{x}</button>
+                    return <button className="col btn hvr-back-pulse" key={story[user.level].choices.indexOf(x)} value={story[user.level].choices.indexOf(x)} onClick={click}>{x}</button>
                 })}
             </div>
         </div>
