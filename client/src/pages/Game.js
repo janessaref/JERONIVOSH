@@ -64,6 +64,10 @@ function Game() {
     //     setTimer(time);
     // }
 
+    function reset(){
+        setUser({...user, level: 0, lives: 9});
+    }
+
 
     function findGame() {
         API.findGame(coopUser.title)
@@ -231,7 +235,7 @@ function Game() {
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/main" component={Main} />
-                    <Route exact path="/credits" component={Credits} />
+                    <Route exact path="/credits"><Credits reset={reset}/></Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
