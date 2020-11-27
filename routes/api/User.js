@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController.js");
 const coopController = require("../../controllers/coopController");
+const highScoreController = require("../../controllers/highscoreController");
+const highscoreController = require("../../controllers/highscoreController");
 
 router
   .route("/")
@@ -19,6 +21,16 @@ router.route("/message")
   .get((req, res) => {
     res.send({ response: "WORKING" }).status(200);
   })
+
+router
+  .route("/highscores")
+  .get(highScoreController.findOne)
+  .post(highScoreController.create)
+  .put(highscoreController.update)
+
+router
+  .route("/allscores")
+  .get(highScoreController.findAll)
 
 router
   .route("/coop")

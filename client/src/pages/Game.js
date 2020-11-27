@@ -35,10 +35,10 @@ function Game() {
     }, [])
 
     useEffect(() => {
-        console.log("user before update: ", user)
+        // console.log("user before update: ", user)
     
         API.updateUser(user)
-            .then(res => console.log("update response: ", res))
+            .then(res => console.log("updated user"))
             .then(err => console.log(err));
         // console.log("Authorization: ", authorized);
 
@@ -65,8 +65,11 @@ function Game() {
     //     setTimer(time);
     // }
 
-    function reset(){
+    function reset(event){
+        event.preventDefault();
+        // write code to push user level, name, lives to a new db table
         setUser({...user, level: 0, lives: 9});
+        setEndGame(true);
     }
 
 
