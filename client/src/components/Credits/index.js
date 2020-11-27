@@ -84,7 +84,15 @@ function Credits(reset) {
        <div className="break"/><div className="break"/>
        <p>A special thank you to Jerome, Roger, Kerwin, Manuel, and Mahi.</p>
        <div className="break"/><div className="break"/>
-
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
        
         <p>Thanks for playing</p>
         <br/>
