@@ -11,8 +11,8 @@ import Credits from "../components/Credits";
 import Polls from "../components/Polls";
 import CoopLogin from "../components/CoopLogin";
 // import Multiplayer from "../components/Multiplayer";
-import Chat from '../components/Chat';
 import Main from "../components/Main";
+import Chat from '../components/chat';
 
 // let time = 0;
 
@@ -24,18 +24,19 @@ function Game() {
     const [authorized, setAuth] = useState(false);
     const [coopUser, setCoopUser] = useState({});
     // state to deal with refresh during game
-    const [refresh, setRefresh] = useState(false);
-    const [timer, setTimer] = useState("");
+    // const [refresh, setRefresh] = useState(false);
+    // const [timer, setTimer] = useState("");
     const [endGame, setEndGame] = useState(true)
 
     useEffect(() => {
-        setRefresh(true);
+        // setRefresh(true);
         setAuth(false);
         // coopTimer();
     }, [])
 
     useEffect(() => {
-        // console.log("new user: ", user)
+        console.log("user before update: ", user)
+    
         API.updateUser(user)
             .then(res => console.log("update response: ", res))
             .then(err => console.log(err));
