@@ -3,18 +3,28 @@ import "./style.css";
 
 function Instructions() {
     const [modalInstructions, setModalInstructions] = useState("modal hideModal");
-    const [text, setText] = useState();
+    const [text, setText] = useState("instructions");
 
     useEffect(() => {
     }, [modalInstructions]);
 
     function hideModalInstructions() {
         setModalInstructions("modal hideModal");
+
     };
+
+    const showInstructions = () => {
+        setModalInstructions("modal showModal");
+    }
 
     return(
         <>
-            <button className="btn mr-1" id="InstructionsBtn">Instructions</button>
+            <button 
+            className="btn mr-1" 
+            id="InstructionsBtn" 
+            onClick={() => {showInstructions()}}>
+                Instructions
+            </button>
 
             <div className={modalInstructions} id="instuctionsModal" role="dialog">
         <div className="modal-dialog" role="document">
