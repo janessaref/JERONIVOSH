@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route, Switch, useHistory } from "react-router-dom";
 import Image from "../components/Image";
 import Text from "../components/Text";
 import storyline from "../story.json";
@@ -26,7 +26,9 @@ function Game() {
     // state to deal with refresh during game
     // const [refresh, setRefresh] = useState(false);
     // const [timer, setTimer] = useState("");
-    const [endGame, setEndGame] = useState(true)
+    const [endGame, setEndGame] = useState(true);
+
+    let history = useHistory();
 
     useEffect(() => {
         // setRefresh(true);
@@ -65,11 +67,20 @@ function Game() {
     //     setTimer(time);
     // }
 
-    function reset(event){
-        event.preventDefault();
+    function reset(){
+        // event.preventDefault();
+        console.log("reset event:");
+        // API.findHighScore(user.username)
+        // .then(res=>{
+        //     console.log("highscore find: ", res);
+        //     if(res){
+        //         API.newHighScore(user.username, user.level, user.lives)
+        //     }
+        // })
         // write code to push user level, name, lives to a new db table
         setUser({...user, level: 0, lives: 9});
         setEndGame(true);
+        history.push("/main");
     }
 
 

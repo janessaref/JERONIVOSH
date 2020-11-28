@@ -2,6 +2,7 @@ const user = require("../models/User");
 
 module.exports = {
   findOne: function (req, res) {
+      
     // console.log("find response: ", req.body)
     user.findOne(req.body)
       .then((user) => res.json(user))
