@@ -178,6 +178,7 @@ function Game() {
         console.log("end event: ", event)
         console.log("user at credits: ", user);
         setEnd(true);
+        setEndGame(true);
     }
 
     function coopLogin(event) {
