@@ -16,16 +16,23 @@ function Main({start}) {
                     JERONIVOSH
                     </h1>
                     <hr/>
-                        {/* <Link to={"/game"}><div className="btn mr-1">SOLO</div></Link> */}
-                        <button className="btn mr-1" id="soloBtn" onClick={start}>Single Player</button>
-                        {/* <Link to={"/coopLogin"}> */}
-                        <div className="btn ml-1" id ="coopBtn" >CO-OP (AVAILABLE SOON)</div>
-                        {/* </Link> */}
-                        <Instructions />
-                </div> 
-            </div>
+                    <div className="row">
+                        <div className="col-md-5">
+                            {/* <Link to={"/game"}><div className="btn mr-1">SOLO</div></Link> */}
+                            <button className="btn btn-block mr-1" id="soloBtn" onClick={start}>Single Player</button>
+                        </div>
+                        <div className="col-md-7">
+                            {/* <Link to={"/coopLogin"}> */}
+                            <div className="btn btn-block ml-1" id ="coopBtn">CO-OP (COMING SOON)</div>
+                            {/* </Link> */}
+                        </div>
+                    </div>
+                    <Instructions />
+                </div>  
+            </div> 
         </div>
     </div>
+
    ) 
 }
 

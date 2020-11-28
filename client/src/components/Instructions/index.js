@@ -26,7 +26,7 @@ function Instructions() {
             className="btn btn-block" 
             id="InstructionsBtn" 
             onClick={() => {showInstructions()}}>
-                Instructions
+                How to play
             </button>
             {/* Instructions Modal */}
             <div className={modalInstructions} id="instuctionsModal" role="dialog">
