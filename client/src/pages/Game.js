@@ -163,14 +163,20 @@ function Game() {
             })
     }
 
-    function start() {
-        console.log("user at start: ", user)
+    function start(event) {
+        event.preventDefault();
+        console.log("start event: ", event)
+        console.log("user at start: ", user);
+        setEnd(false);
         setStart(true);
         if (user.level === 35) {
             setUser({ ...user, level: 0, lives: 9 })
         }
     }
-    function endCredits(){
+    function endCredits(event){
+        event.preventDefault();
+        console.log("end event: ", event)
+        console.log("user at credits: ", user);
         setEnd(true);
     }
 
@@ -217,6 +223,7 @@ function Game() {
     // if story line lever end return false, then return false
     function choice(event) {
         event.preventDefault();
+        setStart(false);
         // console.log(user._id);
         let value = event.target.value;
         if (storyline[user.level].decision) {
