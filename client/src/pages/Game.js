@@ -89,22 +89,22 @@ function Game() {
     // }
 
 
-    function findGame() {
-        API.findGame(coopUser.title)
-            .then(res => {
-                if (res.data) {
-                    console.log("coop login response", res.data)
-                    setCoopUser(res.data);
-                    // coopTimer();
-                    // setAuth(true);
-                    // console.log("coopuser: ", coopUser);
-                } else {
-                    // modal/text popup alerting user that user doesnt exist
-                }
-            }).catch(err => {
-                console.log("error: ", err);
-            })
-    }
+    // function findGame() {
+    //     API.findGame(coopUser.title)
+    //         .then(res => {
+    //             if (res.data) {
+    //                 console.log("coop login response", res.data)
+    //                 setCoopUser(res.data);
+    //                 // coopTimer();
+    //                 // setAuth(true);
+    //                 // console.log("coopuser: ", coopUser);
+    //             } else {
+    //                 // modal/text popup alerting user that user doesnt exist
+    //             }
+    //         }).catch(err => {
+    //             console.log("error: ", err);
+    //         })
+    // }
 
     function signup(event) {
         event.preventDefault();
@@ -169,10 +169,12 @@ function Game() {
         console.log("user at start: ", user);
         setEnd(false);
         setStart(true);
-        if (user.level === 35) {
+        if (user.level === 35 || user.level === 24) {
             setUser({ ...user, level: 0, lives: 9 })
         }
+        console.log(endGame)
     }
+
     function endCredits(event){
         event.preventDefault();
         console.log("end event: ", event)
@@ -238,6 +240,7 @@ function Game() {
             }
         } else if (storyline[user.level].end === true) {
             setEndGame(false)
+            
         } else {
             setUser({ ...user, "level": user.level + 1 });
         }
@@ -259,9 +262,6 @@ function Game() {
         }
     }
 
-
-
-    document.volume = 0.3
 
 
     return (
