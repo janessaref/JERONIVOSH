@@ -11,7 +11,7 @@ html, body {
 .wrapper {
     animation-name: credits;
     animation-delay: 11s;
-    animation-duration: 64s;
+    animation-duration: 80s;
     animation-fill-mode: forwards;
     animation-timing-function:ease-in-out;
     position: absolute;
@@ -34,7 +34,7 @@ html, body {
 
 @keyframes credits {
 from { transform:  translateY(0); }
-  to { transform: translateY(-10250px); }
+  to { transform: translateY(-12420px); }
 }
 
 .logo{
@@ -53,11 +53,18 @@ from { transform:  translateY(0); }
     height: 400px;
 }
 
+.cat{
+width: 27%;
+}
+
 .cat:hover{
     cursor: pointer;
     border-radius: 5000px ;
     border: solid rgb(255, 255, 142);
     background-color:  rgb(255, 255, 142);
+    animation: moon 15s infinite linear;
+    
+    
 }
 
 @keyframes title{
@@ -67,9 +74,25 @@ from { transform:  translateY(0); }
   
 }
 
+@keyframes moon{
+  50%{
+    background-color: rgb(225, 190, 231);
+    border: solid rgb(225, 190, 231);
+    
+  }
+  80%{
+    background-color:  rgb(255, 255, 142);
+    border: solid  rgb(255, 255, 142);
+  }
+}
+
 .gameTitle{
   animation-name: title;
   animation-delay: 8s;
-  font-size: 8vw;
+  font-size: 125px;
   animation-fill-mode: forwards;
+}
+
+span{
+color: rgb(239, 116, 255);
 }

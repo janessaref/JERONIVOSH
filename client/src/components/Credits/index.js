@@ -11,7 +11,18 @@ function Credits(reset) {
     volume.current.volume = 0.5;
   }, []);
 
-    const names=["Jerri Fong", "Jon SanPedro","Ivan Torres","Josh Glugatch"]
+    const highScores=[
+      {name:"Jerry", lives: 9},
+      {name:"MemeGod", lives: 9},
+      {name:"Jerri", lives: 8},
+      {name:"NyanCat", lives: 7},
+      {name:"bluecat", lives: 6},
+      {name:"acedragon48", lives: 6},
+      {name:"Tom", lives: 5},
+      {name:"Bob", lives: 5},
+      {name:"Jill", lives: 4},
+      {name:"Rat", lives: 1}
+    ]
   return (
     <div className="wrapper img-fluid">
         <div>
@@ -28,11 +39,12 @@ function Credits(reset) {
        <br/>
        <br/>
        <br/>
-        {names.map(name=>{
-            return(
-                <p className="name">{name}</p>
-            )
-        })}
+       <p className="name"><span>Jer</span>ri Fong</p>
+       <p className="name">J<span>on</span> SanPedro</p>
+       <p className="name"><span>Iv</span>an Torres</p>
+       <p className="name">J<span>osh</span> Glugatch</p>
+       
+      
 
         <div className="break"/><div className="break"/>
 
@@ -41,11 +53,11 @@ function Credits(reset) {
        <br/>
        <br/>
        <br/>
-            {names.map(name=>{
-            return(
-                <p className="name">{name}</p>
-            )
-        })}
+
+       <p className="name">Jerri Fong</p>
+       <p className="name">Jon SanPedro</p>
+       <p className="name">Ivan Torres</p>
+       <p className="name">Josh Glugatch</p>
         
         <div className="break"/><div className="break"/>
 
@@ -69,6 +81,24 @@ function Credits(reset) {
 
 
        <div className="break"/><div className="break"/>
+       <br/>
+       <br/>
+       <br/>
+        <p className="name">High Scores:</p>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       {highScores.map(score=>{
+            return(
+                <p className="name" key={score.name}>{score.name}: {score.lives}</p>
+            )
+        })}
+
+       <div className="break"/><div className="break"/>
+       <br/>
+       <br/>
+       <br/>
        
        <img className="name logo" src="./assets/logos/reactlogo.png" alt="reactlogo"/>
        <br/>
@@ -98,7 +128,7 @@ function Credits(reset) {
         <br/>
         <br/>
         <br/>
-        <Link to={"/main"}> <img className="name logo cat" src="./assets/logos/cattransparent.png" onClick={reset} alt="catlogo"/> </Link>
+        <Link to={"/main"}> <img className="name cat" src="./assets/logos/creditscat.png" onClick={reset} alt="catlogo"/> </Link>
      
     </div>
   );
