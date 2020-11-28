@@ -2,6 +2,7 @@ const user = require("../models/User");
 
 module.exports = {
   findOne: function (req, res) {
+      
     // console.log("find response: ", req.body)
     user.findOne(req.body)
       .then((user) => res.json(user))
@@ -15,8 +16,8 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
-    console.log("level: ", req.body)
-    console.log("id: ", req.body._id)
+    // console.log("level: ", req.body)
+    // console.log("id: ", req.body._id)
     user.findByIdAndUpdate(
       req.body._id
       ,

@@ -4,8 +4,8 @@ import './style.css'
 
 
 function Text({ user, story, click }) {
-    console.log("text user", user);
-    console.log(story[0].choices)
+    // console.log("text user", user);
+    // console.log(story[0].choices)
     return (
         <div className= "Container fixed-bottom">
             <div className="row">

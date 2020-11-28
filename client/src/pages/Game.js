@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+// import history from "../utils/history";
+// import {useHistory} from "react-router";
 import Image from "../components/Image";
 import Text from "../components/Text";
 import storyline from "../story.json";
@@ -11,8 +13,8 @@ import Credits from "../components/Credits";
 import Polls from "../components/Polls";
 import CoopLogin from "../components/CoopLogin";
 // import Multiplayer from "../components/Multiplayer";
-import Chat from '../components/chat';
 import Main from "../components/Main";
+import Chat from '../components/chat';
 
 // let time = 0;
 
@@ -24,21 +26,27 @@ function Game() {
     const [authorized, setAuth] = useState(false);
     const [coopUser, setCoopUser] = useState({});
     // state to deal with refresh during game
-    const [refresh, setRefresh] = useState(false);
-    const [timer, setTimer] = useState("");
-    const [endGame, setEndGame] = useState(true)
+    // const [refresh, setRefresh] = useState(false);
+    // const [timer, setTimer] = useState("");
+    const [endGame, setEndGame] = useState(true);
+
+    const [startGame, setStart] = useState(false);
+    // state for end of credits
+    const [end, setEnd]= useState(false);
+    // let history = useHistory();
 
     useEffect(() => {
-        setRefresh(true);
+        // setRefresh(true);
         setAuth(false);
         // coopTimer();
     }, [])
 
     useEffect(() => {
-        // console.log("new user: ", user)
+        // console.log("user before update: ", user)
+
         API.updateUser(user)
-            .then(res => console.log("update response: ", res))
-            .then(err => console.log(err));
+            .then(res => console.log("updated user"))
+            .catch(err => console.log("update user error: ", err));
         // console.log("Authorization: ", authorized);
 
     }, [user])
@@ -48,7 +56,7 @@ function Game() {
 
         API.updateCoop(coopUser)
             .then(res => console.log("coop update response: ", res))
-            .then(err => console.log(err));
+            .catch(err => console.log(err));
         // console.log("Authorization: ", authorized);
         // coopTimer();
     }, [coopUser])
@@ -64,9 +72,21 @@ function Game() {
     //     setTimer(time);
     // }
 
-    function reset(){
-        setUser({...user, level: 0, lives: 9});
-    }
+    // function reset() {
+    //     // event.preventDefault();
+    //     console.log("reset event:");
+    //     // API.findHighScore(user.username)
+    //     // .then(res=>{
+    //     //     console.log("highscore find: ", res);
+    //     //     if(res){
+    //     //         API.newHighScore(user.username, user.level, user.lives)
+    //     //     }
+    //     // })
+    //     // write code to push user level, name, lives to a new db table
+    //     setUser({ ...user, level: 0, lives: 9 });
+    //     setEndGame(true);
+    //     // history.push("/main");
+    // }
 
 
     function findGame() {
@@ -143,6 +163,25 @@ function Game() {
             })
     }
 
+    function start(event) {
+        event.preventDefault();
+        console.log("start event: ", event)
+        console.log("user at start: ", user);
+        setEnd(false);
+        setStart(true);
+        if (user.level === 35) {
+            setUser({ ...user, level: 0, lives: 9 })
+        }
+    }
+    function endCredits(event){
+        event.preventDefault();
+        console.log("end event: ", event)
+        console.log("user at credits: ", user);
+        setStart(false);
+        setEnd(true);
+        setEndGame(true);
+    }
+
     function coopLogin(event) {
         event.preventDefault();
         let title = event.target[0].value;
@@ -186,18 +225,19 @@ function Game() {
     // if story line lever end return false, then return false
     function choice(event) {
         event.preventDefault();
+        setStart(false);
         // console.log(user._id);
         let value = event.target.value;
         if (storyline[user.level].decision) {
             if (storyline[user.level].badchoice) {
                 // console.log("working");
                 setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
-            } else if (storyline[user.level].end === true) {
-                setEndGame(false)
             }
             else {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
             }
+        } else if (storyline[user.level].end === true) {
+            setEndGame(false)
         } else {
             setUser({ ...user, "level": user.level + 1 });
         }
@@ -234,8 +274,8 @@ function Game() {
                     <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
-                    <Route exact path="/main" component={Main} />
-                    <Route exact path="/credits"><Credits reset={reset}/></Route>
+                    <Route exact path="/main">{startGame ? <Redirect to="/game" /> : <Main start={start} />} </Route>
+                    <Route exact path="/credits">{end ? <Redirect to="/main" /> : <Credits end={endCredits} />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
