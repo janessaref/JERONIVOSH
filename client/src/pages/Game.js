@@ -11,7 +11,7 @@ import Credits from "../components/Credits";
 import Polls from "../components/Polls";
 import CoopLogin from "../components/CoopLogin";
 // import Multiplayer from "../components/Multiplayer";
-import Chat from '../components/Chat';
+import Chat from '../components/chat';
 import Main from "../components/Main";
 
 // let time = 0;
