@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import CoopLogin from '../CoopLogin';
+import Instructions from '../Instructions';
 import './style.css'
 
 function Main({start}) {
@@ -20,6 +21,7 @@ function Main({start}) {
                         {/* <Link to={"/coopLogin"}> */}
                         <div className="btn ml-1" id ="coopBtn" >CO-OP (AVAILABLE SOON)</div>
                         {/* </Link> */}
+                        <Instructions />
                 </div> 
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 
 function Instructions() {
@@ -13,7 +13,9 @@ function Instructions() {
     };
 
     return(
-
+        <>
+            <button className="btn mr-1" id="InstructionsBtn">Instructions</button>
+        </>
     );
 }
 
