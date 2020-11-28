@@ -1,4 +1,4 @@
-.menu{
+.mainMenu {
     background-image: url("https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/introcity.gif?raw=true");
     height: 100vh;
 }
@@ -11,11 +11,23 @@
     color: black;
 }
 
-.btn:hover{
+.btn:hover {
     cursor: pointer;
     background-color:black;
     color: white;
 }
-.pad{
-    padding-top: 23%;
+
+.gameTypeContainer {
+    margin-top: 120px;
+    background-color: #6f6188;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 3px;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 20px;
+    opacity: 0.93;
+    box-shadow: 5px 5px 2px #514564;
+    max-width: 100%;
+    max-height: 85%;
 }
