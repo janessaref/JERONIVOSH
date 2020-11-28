@@ -1,6 +1,6 @@
 import React, {useRef, useEffect} from "react";
 import "./style.css"
-import {Link} from "react-router-dom"
+import {Link, withRouter} from "react-router-dom"
 
 
 function Credits({reset}) {
@@ -98,14 +98,14 @@ function Credits({reset}) {
         <br/>
         <br/>
         <br/>
-        <div onClick={reset}><img className="name logo cat" src="./assets/logos/cattransparent.png" alt="catlogo"/></div>
-        {/* <Link to={"/main"}> <img className="name logo cat" src="./assets/logos/cattransparent.png" onClick={()=>reset} alt="catlogo"/> </Link> */}
+        {/* <div onClick={()=>reset()}><img className="name logo cat" src="./assets/logos/cattransparent.png" alt="catlogo"/></div> */}
+        <Link to={"/main"}> <img className="name logo cat" src="./assets/logos/cattransparent.png"  alt="catlogo"/> </Link>
      
     </div>
   );
 }
 
-export default Credits;
+export default withRouter(Credits);
 
 
 

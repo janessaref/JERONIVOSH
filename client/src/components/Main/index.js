@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import CoopLogin from '../CoopLogin';
 import './style.css'
 
@@ -25,5 +25,5 @@ function Main() {
    ) 
 }
 
-export default Main;
+export default withRouter(Main);
 

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+// import history from "../utils/history";
+// import {useHistory} from "react-router";
 import Image from "../components/Image";
 import Text from "../components/Text";
 import storyline from "../story.json";
@@ -28,7 +30,7 @@ function Game() {
     // const [timer, setTimer] = useState("");
     const [endGame, setEndGame] = useState(true);
 
-    let history = useHistory();
+    // let history = useHistory();
 
     useEffect(() => {
         // setRefresh(true);
@@ -38,10 +40,10 @@ function Game() {
 
     useEffect(() => {
         // console.log("user before update: ", user)
-    
+
         API.updateUser(user)
             .then(res => console.log("updated user"))
-            .then(err => console.log(err));
+            .catch(err => console.log("update user error: ", err));
         // console.log("Authorization: ", authorized);
 
     }, [user])
@@ -51,7 +53,7 @@ function Game() {
 
         API.updateCoop(coopUser)
             .then(res => console.log("coop update response: ", res))
-            .then(err => console.log(err));
+            .catch(err => console.log(err));
         // console.log("Authorization: ", authorized);
         // coopTimer();
     }, [coopUser])
@@ -67,21 +69,21 @@ function Game() {
     //     setTimer(time);
     // }
 
-    function reset(){
-        // event.preventDefault();
-        console.log("reset event:");
-        // API.findHighScore(user.username)
-        // .then(res=>{
-        //     console.log("highscore find: ", res);
-        //     if(res){
-        //         API.newHighScore(user.username, user.level, user.lives)
-        //     }
-        // })
-        // write code to push user level, name, lives to a new db table
-        setUser({...user, level: 0, lives: 9});
-        setEndGame(true);
-        history.push("/main");
-    }
+    // function reset() {
+    //     // event.preventDefault();
+    //     console.log("reset event:");
+    //     // API.findHighScore(user.username)
+    //     // .then(res=>{
+    //     //     console.log("highscore find: ", res);
+    //     //     if(res){
+    //     //         API.newHighScore(user.username, user.level, user.lives)
+    //     //     }
+    //     // })
+    //     // write code to push user level, name, lives to a new db table
+    //     setUser({ ...user, level: 0, lives: 9 });
+    //     setEndGame(true);
+    //     // history.push("/main");
+    // }
 
 
     function findGame() {
@@ -207,12 +209,12 @@ function Game() {
             if (storyline[user.level].badchoice) {
                 // console.log("working");
                 setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
-            } else if (storyline[user.level].end === true) {
-                setEndGame(false)
-            }
+            } 
             else {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
             }
+        }else if (storyline[user.level].end === true) {   
+            setEndGame(false)
         } else {
             setUser({ ...user, "level": user.level + 1 });
         }
@@ -249,8 +251,8 @@ function Game() {
                     <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
-                    <Route exact path="/main" component={Main} />
-                    <Route exact path="/credits"><Credits reset={reset}/></Route>
+                    <Route exact path="/main"render={(props) => <Main {...props}/>} />
+                    <Route exact path="/credits" render={(props) => <Credits {...props}/>}></Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
