@@ -3,17 +3,17 @@ import "./style.css";
 
 function Image({ user, story }) {
   const [levels, setLevels] = useState({ status: "unmuted" });
-  const [visibleX, setVisibleX] = useState(true);
+  const [visibleX, setVisibleX] = useState(false);
 
-  let style={display: "none"};
-  if(!visibleX) style.display = "block";
+  let style={display: "block"};
+  if(!visibleX) style.display = "none";
 
   function showXImage() {
-    setVisibleX(false);
+    setVisibleX(true);
   }
 
   function hideXImage() {
-    setVisibleX(true);
+    setVisibleX(false);
   }
 
   function handleMute() {

@@ -5,8 +5,7 @@
 }
 
 #volIcon {
-    width: 75px;
-    z-index: 0;
+    width: 80px;
 }
 
 .mute {
@@ -32,6 +31,4 @@
    display: none;
    position: absolute;
    right: 20%;
-   z-index: 1;
-
 }
