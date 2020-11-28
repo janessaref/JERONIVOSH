@@ -8,7 +8,7 @@
   
 .modal {
     text-align: center;
-    top: 25%;
+    top: 5%;
 }
   
 .modal-content {
@@ -16,4 +16,12 @@
     padding: 5px black solid;
     background-color: rgb(166, 100, 197);
     color: white;
+}
+
+.singlePlayer,
+.coopPlayer {
+    color: black;
+    border-bottom: dashed black;
+    border-width: 2px;
+    /* border-style: solid; */
 }

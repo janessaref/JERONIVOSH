@@ -28,39 +28,37 @@ function Instructions() {
             onClick={() => {showInstructions()}}>
                 Instructions
             </button>
-
+            {/* Instructions Modal */}
             <div className={modalInstructions} id="instuctionsModal" role="dialog">
-        <div className="modal-dialog" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-                Gameplay Instructions
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              ></button>
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                        Gameplay Instructions
+                            <button
+                                type="button"
+                                className="close"
+                                data-dismiss="modal"
+                                aria-label="Close">
+                            </button>
+                        </div>
+                        <div className="modal-body mt-2 overflow-auto">
+                            <p className="font-weight-bold singlePlayer">SINGLE PLAYER MODE:</p>
+                            <p>{text}</p>
+                            <p className="font-weight-bold coopPlayer">COOP PLAYER MODE:</p>
+                            <p>{coopText}</p>
+                        </div>
+                        <div className="modal-footer">
+                            <button
+                                onClick={() => hideModalInstructions()}
+                                type="button"
+                                className="btn btn-secondary"
+                                data-dismiss="modal">
+                                Exit
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="modal-body mt-2">
-                <p className="font-weight-bold">SINGLE PLAYER MODE:</p>
-                <p>{text}</p>
-                <p className="font-weight-bold">COOP PLAYER MODE:</p>
-                <p>{coopText}</p>
-             
-            </div>
-            <div className="modal-footer">
-              <button
-                onClick={() => hideModalInstructions()}
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Exit
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
         </>
     );
 }
