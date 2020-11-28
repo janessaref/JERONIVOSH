@@ -23,7 +23,7 @@ function Instructions() {
     return(
         <>
             <button 
-            className="btn mr-1" 
+            className="btn btn-block" 
             id="InstructionsBtn" 
             onClick={() => {showInstructions()}}>
                 Instructions
