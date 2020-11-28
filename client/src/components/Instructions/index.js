@@ -16,7 +16,7 @@ function Instructions() {
 
     const showInstructions = () => {
         setModalInstructions("modal showModal");
-        setText("You are a cat exploring the city with nine lives and you need to make some tough decisions in order to survive. Make a wrong decision, and your cat loses a life! Your score is based on how many lives you have left by the end of the game.")
+        setText("You are a cat exploring the city with nine lives and you need to make some tough decisions in order to survive. Make a wrong decision, and your cat loses a life! Your score is based on how many lives you have left by the end of the game. P.S. Your game progress is auto-saved!")
         setCoopText("(COMING SOON)");
     }
 
