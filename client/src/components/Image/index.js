@@ -3,13 +3,26 @@ import "./style.css";
 
 function Image({ user, story }) {
   const [levels, setLevels] = useState({ status: "unmuted" });
-  // const [unmute, setMute] = useState()
+  const [visibleX, setVisibleX] = useState(true);
+
+  let style={display: "none"};
+  if(!visibleX) style.display = "block";
+
+  function showXImage() {
+    setVisibleX(false);
+  }
+
+  function hideXImage() {
+    setVisibleX(true);
+  }
 
   function handleMute() {
     if (levels.status === "muted") {
       unmute();
+      hideXImage();
     } else if (levels.status === "unmuted") {
       mute();
+      showXImage();
     }
   }
 
@@ -32,7 +45,7 @@ function Image({ user, story }) {
   return (
     <div>
       <div className="mute fixed">
-        <img src="./assets/redx.png" className="redX"/>
+        <img src="./assets/redx.png" className="redX" style={style} onClick={handleMute}/>
         <img src="./assets/audiosmall.png" onClick={handleMute} id="volIcon"/>
       </div>
       <div className="lives">
