@@ -19,7 +19,7 @@ html, body {
     width: 100%;
     font: 300 30px/1 ;
     font-family: "Press Start 2P";
-     text-align: center;
+    text-align: center;
     text-transform: uppercase;
     color: white;
   
@@ -34,7 +34,7 @@ html, body {
 
 @keyframes credits {
 from { transform:  translateY(0); }
-  to { transform: translateY(-12420px); }
+  to { transform: translateY(-12470px); }
 }
 
 .logo{
@@ -94,5 +94,5 @@ width: 27%;
 }
 
 span{
-color: rgb(239, 116, 255);
+color:#6f6188;
 }
