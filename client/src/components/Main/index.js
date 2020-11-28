@@ -13,7 +13,7 @@ function Main({start}) {
         
             <div className="col-auto ">
                 {/* <Link to={"/game"}><div className="btn mr-1">SOLO</div></Link> */}
-                <button className="btn mr-1" onClick={start}></button>
+                <button className="btn mr-1" onClick={start}>Single Player</button>
                 {/* <Link to={"/coopLogin"}> */}
                         <div className="btn ml-1">CO-OP (AVAILABLE SOON)</div>
                  {/* </Link> */}

@@ -29,7 +29,10 @@ function Game() {
     // const [refresh, setRefresh] = useState(false);
     // const [timer, setTimer] = useState("");
     const [endGame, setEndGame] = useState(true);
+
     const [startGame, setStart] = useState(false);
+    // state for end of credits
+    const [end, setEnd]= useState(false);
     // let history = useHistory();
 
     useEffect(() => {
@@ -167,6 +170,9 @@ function Game() {
             setUser({ ...user, level: 0, lives: 9 })
         }
     }
+    function endCredits(){
+        setEnd(true);
+    }
 
     function coopLogin(event) {
         event.preventDefault();
@@ -260,7 +266,7 @@ function Game() {
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/main">{startGame ? <Redirect to="/game" /> : <Main start={start} />} </Route>
-                    <Route exact path="/credits" render={(props) => <Credits {...props} />}></Route>
+                    <Route exact path="/credits">{end ? <Redirect to="/main" /> : <Credits end={endCredits} />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>

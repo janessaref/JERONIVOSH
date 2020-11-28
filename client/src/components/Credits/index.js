@@ -3,7 +3,7 @@ import "./style.css"
 import {Link, withRouter} from "react-router-dom"
 
 
-function Credits({reset}) {
+function Credits({end}) {
 
     const volume = useRef(null);
 
@@ -98,8 +98,8 @@ function Credits({reset}) {
         <br/>
         <br/>
         <br/>
-        {/* <div onClick={()=>reset()}><img className="name logo cat" src="./assets/logos/cattransparent.png" alt="catlogo"/></div> */}
-        <Link to={"/main"}> <img className="name logo cat" src="./assets/logos/cattransparent.png"  alt="catlogo"/> </Link>
+        <div onClick={end}><img className="name logo cat" src="./assets/logos/cattransparent.png" alt="catlogo"/></div>
+        {/* <Link to={"/main"}> <img className="name logo cat" src="./assets/logos/cattransparent.png"  alt="catlogo"/> </Link> */}
      
     </div>
   );
