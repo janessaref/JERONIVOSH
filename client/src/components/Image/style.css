@@ -1,17 +1,22 @@
-.gif{
+.gif {
     
     display: block;
     margin: 0 auto;
 }
 
-.mute{
+#volIcon {
+    width: 80px;
+}
+
+.mute {
     width: 100px;
     position: absolute;
     top: 3%;
     right: 3%;
 }
-.mute:hover{
+.mute:hover {
     cursor: pointer;
+    opacity: .7;
 }
 
 .lives {
@@ -20,4 +25,10 @@
     position: absolute;
     top: 3%;
     left: 3%;
+}
+
+.redX {
+   display: none;
+   position: absolute;
+   right: 20%;
 }
