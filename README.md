@@ -15,7 +15,8 @@
 
 ## Description 
 
-In this project...
+In this application, our team has created a choice-based novel game where users can experience a story in an interactive and fun way using React.js. Users will be making decisions as a cat that is lost in a big city, and is given 9 lives at the start of the game. Every decision the user makes can affect the number of lives left. Each scene is accompanied by pixilart animations to enhance the story. With every decision, the current page is being re-rendered using react.js. Users are given two options on what the cat should or shouldn't do and each decision button is given an ID that helps keep track on what scene to render next. The user's progress is being tracked and stored using MongoDB along with the number of lives the cat has left and the usernames of the player that signed up. The user's progress is being updated with put requests.
+
 
 ## Technologies Used
 * [react](https://reactjs.org/)
@@ -79,4 +80,5 @@ Ivan Torres
 
 ## Acknowledgments
 * [StackOverFlow](https://stackoverflow.com/)
+* We would like to acknowledge our instructors in the bootcamp, Jerome Chenette, , Roger Le, Manuel Nunes, Kerwin Hy, and Mahisha Gunasekaran.
 
