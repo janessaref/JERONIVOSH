@@ -177,6 +177,7 @@ function Game() {
         event.preventDefault();
         console.log("end event: ", event)
         console.log("user at credits: ", user);
+        setStart(false);
         setEnd(true);
         setEndGame(true);
     }
