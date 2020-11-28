@@ -43,10 +43,10 @@ Here is a GIF of our application viewed on a mobile device.
 ```
 
 ## Repository Link
-* [GitHub Repository](#)
+* [GitHub Repository](https://github.com/joshglugatch/JERONIVOSH)
 
 ## Deployed Link
-* [See Live Site](#)
+* [See Live Site](http://jeronivosh.herokuapp.com/)
 
 ## Authors 
 
