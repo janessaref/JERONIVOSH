@@ -3,7 +3,8 @@ import "./style.css";
 
 function Instructions() {
     const [modalInstructions, setModalInstructions] = useState("modal hideModal");
-    const [text, setText] = useState("instructions");
+    const [text, setText] = useState("");
+    const [coopText, setCoopText] = useState("");
 
     useEffect(() => {
     }, [modalInstructions]);
@@ -15,6 +16,8 @@ function Instructions() {
 
     const showInstructions = () => {
         setModalInstructions("modal showModal");
+        setText("You are a cat exploring the city with nine lives and you need to make some tough decisions in order to survive. Make a wrong decision, and your cat loses a life! Your score is based on how many lives you have left by the end of the game.")
+        setCoopText("(COMING SOON)");
     }
 
     return(
@@ -30,6 +33,7 @@ function Instructions() {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
+                Gameplay Instructions
               <button
                 type="button"
                 className="close"
@@ -38,7 +42,10 @@ function Instructions() {
               ></button>
             </div>
             <div className="modal-body mt-2">
-              {/* <p>{text}</p> */}
+                <p className="font-weight-bold">SINGLE PLAYER MODE:</p>
+                <p>{text}</p>
+                <p className="font-weight-bold">COOP PLAYER MODE:</p>
+                <p>{coopText}</p>
              
             </div>
             <div className="modal-footer">
