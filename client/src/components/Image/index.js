@@ -30,8 +30,8 @@ function Image({ user, story }) {
 
   return (
     <div>
-      <div className="mute">
-        <img src="./assets/audiosmall.png" onClick={handleMute} />
+      <div className="mute fixed">
+        <img src="./assets/audiosmall.png" onClick={handleMute} id="volIcon"/>
       </div>
       <div className="lives">
         <p>Lives: {user.lives}</p>
