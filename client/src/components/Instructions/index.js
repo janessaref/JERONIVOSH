@@ -24,7 +24,7 @@ function Instructions() {
         <>
             <button 
             className="btn btn-block" 
-            id="InstructionsBtn" 
+            id="instructionsBtn" 
             onClick={() => {showInstructions()}}>
                 How to play
             </button>
