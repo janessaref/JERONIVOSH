@@ -6,6 +6,7 @@
 
 #volIcon {
     width: 75px;
+    z-index: 0;
 }
 
 .mute {
@@ -16,6 +17,7 @@
 }
 .mute:hover {
     cursor: pointer;
+    opacity: .7;
 }
 
 .lives {
@@ -24,4 +26,12 @@
     position: absolute;
     top: 3%;
     left: 3%;
+}
+
+.redX {
+   display: none;
+   position: absolute;
+   right: 20%;
+   z-index: 1;
+
 }

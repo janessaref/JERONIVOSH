@@ -3,6 +3,7 @@ import "./style.css";
 
 function Image({ user, story }) {
   const [levels, setLevels] = useState({ status: "unmuted" });
+  // const [unmute, setMute] = useState()
 
   function handleMute() {
     if (levels.status === "muted") {
@@ -31,6 +32,7 @@ function Image({ user, story }) {
   return (
     <div>
       <div className="mute fixed">
+        <img src="./assets/redx.png" className="redX"/>
         <img src="./assets/audiosmall.png" onClick={handleMute} id="volIcon"/>
       </div>
       <div className="lives">
