@@ -128,7 +128,7 @@ function Credits({end}) {
         <br/>
         <br/>
         <br/>
-        <div onClick={end}><img className="name logo cat" src="./assets/logos/cattransparent.png" alt="catlogo"/></div>
+        <div onClick={end}><img className="name cat" src="./assets/logos/creditscat.png" alt="catlogo"/></div>
         {/* <Link to={"/main"}> <img className="name logo cat" src="./assets/logos/cattransparent.png"  alt="catlogo"/> </Link> */}
      
     </div>
