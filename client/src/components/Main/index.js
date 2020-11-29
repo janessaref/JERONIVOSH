@@ -19,11 +19,11 @@ function Main({start}) {
                     <div className="row">
                         <div className="col-md-5">
                             {/* <Link to={"/game"}><div className="btn mr-1">SOLO</div></Link> */}
-                            <button className="btn btn-block mr-1" id="soloBtn" onClick={start}>Single Player</button>
+                            <button className="btn btn-block mr-1 hvr-back-pulse" id="soloBtn" onClick={start}>Single Player</button>
                         </div>
                         <div className="col-md-7">
                             {/* <Link to={"/coopLogin"}> */}
-                            <div className="btn btn-block ml-1" id ="coopBtn">CO-OP (COMING SOON)</div>
+                            <div className="btn btn-block ml-1 hvr-back-pulse" id ="coopBtn">CO-OP (COMING SOON)</div>
                             {/* </Link> */}
                         </div>
                     </div>

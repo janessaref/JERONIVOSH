@@ -23,7 +23,7 @@ function Instructions() {
     return(
         <>
             <button 
-            className="btn btn-block" 
+            className="btn btn-block hvr-back-pulse" 
             id="instructionsBtn" 
             onClick={() => {showInstructions()}}>
                 How to play
