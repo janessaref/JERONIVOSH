@@ -179,16 +179,7 @@ function Game() {
         event.preventDefault();
         console.log("end event: ", event)
         console.log("user at credits: ", user);
-        API.findHighScore(user.username).then(res => {
-            console.log("highscore: ", res);
-            if (!res.data) {
-                API.newHighScore(user.username, user.level, user.lives)
-            } else {
-                if (res.data.lives < user.lives) {
-                    API.updateHighScore(res.data._id, user.level, user.lives)
-                }
-            }
-        })
+
         setStart(false);
         setEnd(true);
         setEndGame(true);
@@ -249,8 +240,18 @@ function Game() {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
             }
         } else if (storyline[user.level].end === true) {
-            setEndGame(false)
 
+            API.findHighScore(user.username).then(res => {
+                console.log("highscore: ", res);
+                if (!res.data) {
+                    API.newHighScore(user.username, user.level, user.lives)
+                } else {
+                    if (res.data.lives < user.lives) {
+                        API.updateHighScore(res.data._id, user.level, user.lives)
+                    }
+                }
+            })
+            setEndGame(false)
         } else {
             setUser({ ...user, "level": user.level + 1 });
         }
