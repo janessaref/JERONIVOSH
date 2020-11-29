@@ -10,12 +10,8 @@
     opacity: 0.98;
     box-shadow: 5px 5px 2px #514564;
     max-width: 100%;
-<<<<<<< HEAD
     /* max-height: 85%; */
     height: 50%;
-=======
-    max-height: 94%;
->>>>>>> 8041dcabf23af303637a7ed0fbf592baca01a2a7
 }
 .btn {
     border: 1px black solid;
