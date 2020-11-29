@@ -89,7 +89,7 @@ width: 27%;
 .gameTitle{
   animation-name: title;
   animation-delay: 8s;
-  font-size: 125px;
+  font-size: 100px;
   animation-fill-mode: forwards;
 }
 

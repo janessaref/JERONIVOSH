@@ -1,9 +1,12 @@
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import "./style.css"
 import {Link, withRouter} from "react-router-dom"
+import API from '../../utils/api';
 
 
 function Credits({end}) {
+
+  const [highScores, setHighScores] = useState({})
 
     const volume = useRef(null);
 
@@ -11,7 +14,21 @@ function Credits({end}) {
     volume.current.volume = 0.5;
   }, []);
 
-    const highScores=[
+  useEffect(() => {
+    API.allHighScores()
+        .then(res => {
+          console.log(res)
+          setHighScores(defaultHighScores)
+        })
+        .catch(err => {
+        console.log(err);
+        setHighScores(defaultHighScores)
+        });
+   
+
+}, [])
+
+    const defaultHighScores=[
       {name:"Jerry", lives: 9},
       {name:"MemeGod", lives: 9},
       {name:"Jerri", lives: 8},
@@ -89,7 +106,7 @@ function Credits({end}) {
        <br/>
        <br/>
        <br/>
-       {highScores.map(score=>{
+       {defaultHighScores.map(score=>{
             return(
                 <p className="name" key={score.name}>{score.name}: {score.lives}</p>
             )
