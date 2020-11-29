@@ -1,15 +1,14 @@
-import React from "react";
-import Settings from './Settings';
+import React, { useState } from "react";
 function Settings() {
 
-  const [modalSettings, setModalSettings] = useState("modal hiddenModal");
+  const [modalSettings, setModalSettings] = useState("modal hideModal");
 
   function hideModalSettings() {
-    setModalSettings("modal hiddenModal");
+    setModalSettings("modal hideModal");
 };
 
-  const showModalSettings() {
-    setModalSettings("modal popupModal")
+  const showModalSettings = () => {
+    setModalSettings("modal showModal")
   }
  
   return (
@@ -18,6 +17,13 @@ function Settings() {
       <audio controls autoplay loop>
         <source src="./assets/4_29.mp3" type="audio/mpeg" />
       </audio> */}
+
+      <button 
+            className="btn float-right" 
+            id="settingsBtn" 
+            onClick={() => {showModalSettings()}}>
+                Settings
+            </button>
     {/* Settings Modal */}
     <div className={modalSettings} id="settingsModal" role="dialog">
                 <div className="modal-dialog" role="document">

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Settings from "../Settings";
 import "./style.css";
 
 function Image({ user, story }) {
@@ -44,6 +45,7 @@ function Image({ user, story }) {
 
   return (
     <div>
+      <Settings />
       <div className="mute fixed">
         <img src="./assets/redx.png" className="redX" style={style} onClick={handleMute}/>
         <img src="./assets/audiosmall.png" onClick={handleMute} id="volIcon"/>
