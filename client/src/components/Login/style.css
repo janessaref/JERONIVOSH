@@ -10,7 +10,8 @@
     opacity: 0.98;
     box-shadow: 5px 5px 2px #514564;
     max-width: 100%;
-    max-height: 85%;
+    /* max-height: 85%; */
+    height: 50%;
 }
 .btn {
     border: 1px black solid;
@@ -35,6 +36,8 @@ hr {
     height: 100vh;
     display: flex;
     justify-content: center;
+    background-repeat: repeat-x;
+    background-position: 0ch;
 }
 @media (max-width: 768px) {
     .brand {

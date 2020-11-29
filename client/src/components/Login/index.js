@@ -7,7 +7,7 @@ function login({ login }) {
         <div className="homepage container">
             <div className="mainContent container d-flex justify-content-center">
                 <div class="card loginContainer ">
-                <div className="card-body h-50">
+                <div className="card-body">
                     <h1 className="px-auto mb-0 brand">
                         JERONIVOSH
                     </h1>
