@@ -31,6 +31,7 @@ router
 router
   .route("/newhighscore")
   .post(highscoreController.create)
+  
 router
   .route("/allscores")
   .get(highScoreController.findAll)

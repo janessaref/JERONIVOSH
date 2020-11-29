@@ -179,6 +179,9 @@ function Game() {
         event.preventDefault();
         console.log("end event: ", event)
         console.log("user at credits: ", user);
+        API.findHighScore(user.username).then(res=>{
+            console.log("highscore: ", res);
+        })
         setStart(false);
         setEnd(true);
         setEndGame(true);
