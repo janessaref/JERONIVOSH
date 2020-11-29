@@ -32,7 +32,7 @@ function Game() {
 
     const [startGame, setStart] = useState(false);
     // state for end of credits
-    const [end, setEnd]= useState(false);
+    const [end, setEnd] = useState(false);
     // let history = useHistory();
 
     useEffect(() => {
@@ -175,12 +175,19 @@ function Game() {
         console.log(endGame)
     }
 
-    function endCredits(event){
+    function endCredits(event) {
         event.preventDefault();
         console.log("end event: ", event)
         console.log("user at credits: ", user);
-        API.findHighScore(user.username).then(res=>{
+        API.findHighScore(user.username).then(res => {
             console.log("highscore: ", res);
+            if (!res.data) {
+                API.newHighScore(user.username, user.level, user.lives)
+            } else {
+                if (res.data.lives < user.lives) {
+                    API.updateHighScore(res.data._id, user.level, user.lives)
+                }
+            }
         })
         setStart(false);
         setEnd(true);
@@ -243,7 +250,7 @@ function Game() {
             }
         } else if (storyline[user.level].end === true) {
             setEndGame(false)
-            
+
         } else {
             setUser({ ...user, "level": user.level + 1 });
         }

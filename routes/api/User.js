@@ -22,16 +22,17 @@ router.route("/message")
     res.send({ response: "WORKING" }).status(200);
   })
 
+router.route("/findhighscores")
+  .post(highScoreController.findOne)
+
 router
   .route("/highscores")
-  .get(highScoreController.findOne)
-  .post(highScoreController.create)
   .put(highscoreController.update)
 
 router
   .route("/newhighscore")
   .post(highscoreController.create)
-  
+
 router
   .route("/allscores")
   .get(highScoreController.findAll)

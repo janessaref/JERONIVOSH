@@ -14,10 +14,16 @@ const API = {
         return axios.get("/api/user/all")
     },
     findHighScore: function(username){
-        return axios.post("/api/user/highscores", {username})
+        return axios.post("/api/user/findhighscores", {username})
     },
     newHighScore: function(username, level, lives){
         return axios.post("/api/user/newhighscore", {username, level, lives})
+    },
+    updateHighScore: function(id, level, lives){
+        return axios.put("/api/user/highscores", {id, level, lives})
+    },
+    allHighScores: function(){
+        return axios.get("/api/user/allscores")
     },
     startCoop: function (title) {
         return axios.post("/api/user/coop", { title });
