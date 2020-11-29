@@ -8,3 +8,20 @@
     width: 300px;
     color: white;
 }
+
+.message {
+ color: red;
+ text-align: center;
+}
+
+.hideMessage {
+    display: none;
+}
+
+.showMessage {
+    display: block;
+}
+
+.redInput {
+    border: 2px red solid;
+}
