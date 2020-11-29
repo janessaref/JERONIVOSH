@@ -76,3 +76,9 @@
         font-size: 8px;
     }
 }
+
+@keyframes hvr-back-pulse {
+    50% {
+      background-color:rgb(95,83,117);
+    }
+}
