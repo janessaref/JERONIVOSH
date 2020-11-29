@@ -25,7 +25,7 @@ function Login({ login, message, input }) {
                             </div>
                             <div className="form-group mx-auto text-center">
                                 <p className="h5 mt-4 passwordLabel">Password: </p>
-                                <input type="password" className="form-control" id="password" placeholder="Enter your password" />
+                                <input type="password" className={input} id="password" placeholder="Enter your password" />
                             </div>
                             <div className={message}>
                                     <p>Wrong username or email.</p>
