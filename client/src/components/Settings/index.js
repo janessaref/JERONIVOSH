@@ -1,6 +1,17 @@
 import React from "react";
 import Settings from './Settings';
 function Settings() {
+
+  const [modalSettings, setModalSettings] = useState("modal hiddenModal");
+
+  function hideModalSettings() {
+    setModalSettings("modal hiddenModal");
+};
+
+  const showModalSettings() {
+    setModalSettings("modal popupModal")
+  }
+ 
   return (
     <div>
       {/* <h1> JERONIVOSH</h1>
@@ -8,11 +19,11 @@ function Settings() {
         <source src="./assets/4_29.mp3" type="audio/mpeg" />
       </audio> */}
     {/* Settings Modal */}
-    <div className={modalInstructions} id="instuctionsModal" role="dialog">
+    <div className={modalSettings} id="settingsModal" role="dialog">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
-                        Gameplay Instructions
+                        SETTINGS
                             <button
                                 type="button"
                                 className="close"
@@ -21,14 +32,12 @@ function Settings() {
                             </button>
                         </div>
                         <div className="modal-body mt-2 overflow-auto">
-                            <p className="font-weight-bold singlePlayer">SINGLE PLAYER MODE:</p>
-                            <p>{text}</p>
-                            <p className="font-weight-bold coopPlayer">COOP PLAYER MODE:</p>
-                            <p>{coopText}</p>
+                            <button className="backtoMain">Go to Main Menu</button>
+                            <button className="Sign Out">Sign Out</button>
                         </div>
                         <div className="modal-footer">
                             <button
-                                onClick={() => hideModalInstructions()}
+                                onClick={() => hideModalSettings()}
                                 type="button"
                                 className="btn btn-secondary"
                                 data-dismiss="modal">
