@@ -4,9 +4,14 @@ import "./style.css";
 function Image({ user, story }) {
   const [levels, setLevels] = useState({ status: "unmuted" });
   const [visibleX, setVisibleX] = useState(false);
+  const [livesColor, setLivesColor] = useState({color: "white"});
 
-  let style={display: "block"};
+  let style = {display: "block"};
   if(!visibleX) style.display = "none";
+
+  let livesFontColor = {
+    color: "red"
+  }
 
   function showXImage() {
     setVisibleX(true);
@@ -48,7 +53,7 @@ function Image({ user, story }) {
         <img src="./assets/redx.png" className="redX" style={style} onClick={handleMute}/>
         <img src="./assets/audiosmall.png" onClick={handleMute} id="volIcon"/>
       </div>
-      <div className="lives">
+      <div className="lives" style={user.lives === 7 ? {color: "red"} : {color: "white"}}>
         <p>Lives: {user.lives}</p>
       </div>
       <audio className="float-right" autoPlay loop id="gameAudio" ref={volume}>
