@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-function login({ login }) {
+
+
+function Login({ login, message }) {
+
+    // const [message, setMessage] = useState('message hideMessage')
+
+
     return (
-        <div className="homepage container">
+        <div className="homepage container overflow-auto">
             <div className="mainContent container d-flex justify-content-center">
                 <div class="card loginContainer ">
                 <div className="card-body h-50">
@@ -21,6 +27,9 @@ function login({ login }) {
                                 <p className="h5 mt-4 passwordLabel">Password: </p>
                                 <input type="password" className="form-control" id="password" placeholder="Enter your password" />
                             </div>
+                            {/* <div className={message}>
+                                    <p>Wrong username or email.</p>
+                                </div> */}
                             <div className ="row mx-auto text-center">
                                 <div className="col-md">
                                     <button id="loginBtn" value="send" type="submit" className="btn mt-1 mb-1">Login
@@ -44,7 +53,7 @@ function login({ login }) {
     )
 };
 
-export default login;
+export default Login;
 
 
 {/* <div className="container logIn">
