@@ -157,7 +157,7 @@ function Game() {
                     setUser(res.data);
                     setAuth(true);
                 } else {
-                //  setMessage('message row showMessage')
+                 setMessage('message row showMessage')
                 }
 
             }).catch(err => {
