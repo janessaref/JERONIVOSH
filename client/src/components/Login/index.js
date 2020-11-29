@@ -27,9 +27,9 @@ function Login({ login, message }) {
                                 <p className="h5 mt-4 passwordLabel">Password: </p>
                                 <input type="password" className="form-control" id="password" placeholder="Enter your password" />
                             </div>
-                            {/* <div className={message}>
+                            <div className={message}>
                                     <p>Wrong username or email.</p>
-                                </div> */}
+                                </div>
                             <div className ="row mx-auto text-center">
                                 <div className="col-md">
                                     <button id="loginBtn" value="send" type="submit" className="btn mt-1 mb-1">Login
