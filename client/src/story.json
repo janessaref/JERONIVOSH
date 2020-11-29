@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "image": "./assets/introcity.gif",
+        "image": "https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/introcity.gif?raw=true",
         "story": "Would you like to explore the city?",
         "choices": [
             "Let's check it out."
@@ -9,7 +9,7 @@
     },
     {
         "id": 1,
-        "image": "./assets/alleywayv2.gif",
+        "image": "https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/alleywayv2.gif?raw=true",
         "story": "The trails are busy. You've never seen anything like this. Monstrous figures pass in a blur, their growls are loud and eyes are glowing. ",
         "choices": [
             "Hide in the nearby alley",
@@ -19,7 +19,7 @@
     },
     {
         "id": 2,
-        "image": "./assets/alleyrat.gif",
+        "image": "https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/alleyrat.gif?raw=true",
         "story": "You made it to calm space in between the towering mountains that surround you. The rumble of the monsters recedes into the background. Your stomach is growling... You haven't eaten for days. You notice some rats feeding on scraps. Fixated on your prey, you...",
         "choices": [
             "Go straight for the pounce.",
@@ -29,7 +29,7 @@
     },
     {
         "id": 3,
-        "image": "./assets/carscenev3.gif",
+        "image": "https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/carscenev3.gif?raw=true",
         "story": "You press forward on high alert. What is that beautiful light in the distance... You leap for your life, narrowly avoiding what seemed like sure death. The monster roared on, as if it did not even notice you. Lucky to have avoied the monster's gaze, you creep through the shadows to a narrow opening nearby.",
         "choices": [
             "Continue..."
@@ -40,7 +40,7 @@
     },
     {
         "id": 4,
-        "image": "./assets/alleyAfter.gif",
+        "image": "https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/alleyAfter.gif?raw=true",
         "story": "The paltry rodents scurry away before you come within a paws length. They take their scraps with them and you are left alone in the dark, hungry for the night...",
         "choices": [
             "Continue..."
@@ -50,7 +50,7 @@
     },
     {
         "id": 5,
-        "image": "./assets/alleyAfter.gif",
+        "image": "https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/alleyAfter.gif?raw=true",
         "story": "You sneak through the rough terrain, slowly creeping towards your prey. You wait for just the right moment and leap for your first chance of nourishment in days. The furry creatures scamper away, leaving their meager scraps behind. The taste of rot will be enough to hold you over.",
         "choices": [
             "Continue"
@@ -59,7 +59,7 @@
     },
     {
         "id": 6,
-        "image": "./assets/girlscene.gif",
+        "image": "https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/girlscene.gif?raw=true",
         "story": "There is a girl. Let her pet you?",
         "choices": [
             "Yes","No"
@@ -68,7 +68,7 @@
     },
     {
         "id": 7,
-        "image": "./assets/broomscene.gif",
+        "image": "https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/broomscene.gif?raw=true",
         "story": "You let her pet you? Get smacked with a broom",
         "choices": [
             "ok :("
