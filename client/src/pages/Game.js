@@ -34,6 +34,8 @@ function Game() {
     // state for end of credits
     const [end, setEnd] = useState(false);
     // let history = useHistory();
+    const [message, setMessage] = useState('message hideMessage')
+    // const [passInput, setPassInput]
 
     useEffect(() => {
         // setRefresh(true);
@@ -155,7 +157,7 @@ function Game() {
                     setUser(res.data);
                     setAuth(true);
                 } else {
-                    // modal/text popup alerting user that user doesnt exist
+                //  setMessage('message row showMessage')
                 }
 
             }).catch(err => {
@@ -281,7 +283,7 @@ function Game() {
 
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
-                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message}/>}</Route>
                     <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
