@@ -123,7 +123,7 @@ function Game() {
                     holder.push(res.data[i].username);
                 }
                 // check if username exists
-                if (!holder.includes(name)) {
+                if (!holder.includes(name) && pass.length > 7) {
                     // add new user
                     API.signUp({ username: name, password: pass })
                         .then(function (res) {
@@ -139,9 +139,11 @@ function Game() {
                             console.log("error: ", err);
                         })
 
-                } else {
-                    // modal popup or text change informing user
-                    // username is already taken
+                } else if (holder.includes(name))
+                    {
+                // message for name is already taken 
+                } else if (pass.length <= 7) {
+                    // write a message telling that password must be atleast 8 characters long. 
                 }
             })
         // console.log("user signup: ", user);
