@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
@@ -28,7 +28,7 @@ function Login({ login, message, input }) {
                                 <input type="password" className={input} id="password" placeholder="Enter your password" />
                             </div>
                             <div className={message}>
-                                    <p>Wrong username or email.</p>
+                                    <p>Wrong username or password.</p>
                                 </div>
                             <div className ="row mx-auto text-center">
                                 <div className="col-md">
