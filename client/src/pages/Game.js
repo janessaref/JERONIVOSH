@@ -159,7 +159,7 @@ function Game() {
                     setAuth(true);
                 } else {
                  setMessage('message row showMessage')
-                 setPassInput('')
+                 setPassInput('form-control redInput')
                 }
 
             }).catch(err => {
