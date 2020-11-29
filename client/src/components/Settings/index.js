@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-function Settings() {
+import { Link } from "react-router-dom";
+import Signout from "../Signout";
+
+function Settings({backToMain}) {
 
   const [modalSettings, setModalSettings] = useState("modal hideModal");
 
@@ -38,8 +41,10 @@ function Settings() {
                             </button>
                         </div>
                         <div className="modal-body mt-2 overflow-auto">
-                            <button className="backtoMain">Go to Main Menu</button>
-                            <button className="Sign Out">Sign Out</button>
+                            <button className="btn btn-block backtoMainMenu" onClick={backToMain}>Back to Main Menu
+                              {/* <Link to="/main">Back to Main Menu</Link> */}
+                              </button>
+                            <Signout />
                         </div>
                         <div className="modal-footer">
                             <button

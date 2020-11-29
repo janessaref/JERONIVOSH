@@ -41,5 +41,9 @@ router
   .get(coopController.findOne)
   .put(coopController.update)
 
+router
+.route("/logout")
+.get(userController.findOne)
+
 
 module.exports = router;

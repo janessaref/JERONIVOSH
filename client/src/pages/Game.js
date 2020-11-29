@@ -15,6 +15,7 @@ import CoopLogin from "../components/CoopLogin";
 // import Multiplayer from "../components/Multiplayer";
 import Main from "../components/Main";
 import Chat from '../components/chat';
+import Settings from '../components/Settings';
 
 // let time = 0;
 
@@ -175,6 +176,11 @@ function Game() {
         console.log(endGame)
     }
 
+    function backToMain(event) {
+        event.preventDefault();
+        setStart(false);
+    }
+
     function endCredits(event){
         event.preventDefault();
         console.log("end event: ", event)
@@ -271,13 +277,14 @@ function Game() {
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
+                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} /><Main start={start} /><Settings backtoMain={backToMain} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/main">{startGame ? <Redirect to="/game" /> : <Main start={start} />} </Route>
                     <Route exact path="/credits">{end ? <Redirect to="/main" /> : <Credits end={endCredits} />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route exact path="/logout"><Redirect to="/" /></Route>
                 </Switch>
             </div>
         </Router >
