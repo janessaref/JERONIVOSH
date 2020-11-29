@@ -35,7 +35,7 @@ function Game() {
     const [end, setEnd] = useState(false);
     // let history = useHistory();
     const [message, setMessage] = useState('message hideMessage')
-    // const [passInput, setPassInput]
+    const [passInput, setPassInput] = useState('')
 
     useEffect(() => {
         // setRefresh(true);

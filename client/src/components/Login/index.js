@@ -4,7 +4,7 @@ import "./style.css";
 
 
 
-function Login({ login, message }) {
+function Login({ login, message, input }) {
 
     // const [message, setMessage] = useState('message hideMessage')
 
