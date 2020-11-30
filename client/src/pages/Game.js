@@ -190,6 +190,11 @@ function Game() {
         setEndGame(true);
     }
 
+    function logoutUser(event) {
+         event.preventDefault();
+        setAuth(false);
+    };
+
     function coopLogin(event) {
         event.preventDefault();
         let title = event.target[0].value;
@@ -277,14 +282,14 @@ function Game() {
                 <Switch>
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} /><Main start={start} /><Settings backtoMain={backToMain} />
+                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} /><Main start={start} />
+                    {/* <Settings backToMain={backToMain} logoutUser={logoutUser}/> */}
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/main">{startGame ? <Redirect to="/game" /> : <Main start={start} />} </Route>
                     <Route exact path="/credits">{end ? <Redirect to="/main" /> : <Credits end={endCredits} />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
-                    <Route exact path="/logout"><Redirect to="/" /></Route>
                 </Switch>
             </div>
         </Router >

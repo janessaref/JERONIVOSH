@@ -27,9 +27,6 @@ const API = {
     },
     updateCoop: function (user) {
         return axios.put("api/user/coop", user)
-    },
-    signOut: function() {
-        return axios.get("/api/user/logout");
     }
 }
 
