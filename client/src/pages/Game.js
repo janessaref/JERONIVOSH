@@ -181,6 +181,10 @@ function Game() {
     function logoutUser(event) {
         event.preventDefault();
         setAuth(false);
+        setUserMessage('hideUserMsg signupMsg');
+        setPassMessage('hidePassMsg signupMsg');
+        setPassInput('form-control');
+        setMessage('message hideMessage');
     };
 
     
