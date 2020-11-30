@@ -1,39 +1,44 @@
-const user = require("../models/User");
+const highscores = require("../models/Highscores");
 
 module.exports = {
   findOne: function (req, res) {
-      
+    console.log("find score res", req.body)
+    console.log("req username", req.body.username)
     // console.log("find response: ", req.body)
-    user.findOne(req.body)
-      .then((user) => res.json(user))
+    highscores.findOne({ username: req.body.username })
+      .then((highscores) => res.json(highscores))
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
     // console.log("body: ", req.body)
-    user
-      .create(req.body)
-      .then((user) => res.json(user))
+    highscores
+      .create({
+        username: req.body.username,
+        level: req.body.level,
+        lives: req.body.lives
+      })
+      .then((highscores) => res.json(highscores))
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
     // console.log("level: ", req.body)
     // console.log("id: ", req.body._id)
-    user.findByIdAndUpdate(
-      req.body._id
+    highscores.findByIdAndUpdate(
+      req.body.id
       ,
       {
         level: req.body.level,
         lives: req.body.lives
       })
-      .then((user) => res.json(user))
+      .then((highscores) => res.json(highscores))
       .catch((err) => {
         // console.log("error: ", err);
         return res.status(422).json(err)
       });
   },
   findAll: function (req, res) {
-    user.find({})
-      .then((user) => res.json(user))
+    highscores.find({})
+      .then((highscores) => res.json(highscores))
       .catch((err) => res.status(422).json(err));
   },
 };

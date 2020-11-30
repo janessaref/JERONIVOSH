@@ -34,7 +34,7 @@ html, body {
 
 @keyframes credits {
 from { transform:  translateY(0); }
-  to { transform: translateY(-12470px); }
+  to { transform: translateY(-12580px); }
 }
 
 .logo{
@@ -89,8 +89,12 @@ width: 27%;
 .gameTitle{
   animation-name: title;
   animation-delay: 8s;
-  font-size: 125px;
+  font-size: 8vw;
   animation-fill-mode: forwards;
+}
+
+.titleContainer{
+  height: 300px;
 }
 
 span{

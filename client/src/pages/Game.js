@@ -33,14 +33,23 @@ function Game() {
 
     const [startGame, setStart] = useState(false);
     // state for end of credits
-    const [end, setEnd]= useState(false);
+    const [end, setEnd] = useState(false);
     // let history = useHistory();
+    const [message, setMessage] = useState('message hideMessage')
+    const [passInput, setPassInput] = useState('form-control')
+
+    const [userMessage, setUserMessage] = useState('hideUserMsg signupMsg')
+    const [passMessage, setPassMessage] = useState('hidePassMsg signupMsg')
+
+    // loading icon on gifs
+
 
     useEffect(() => {
         // setRefresh(true);
         setAuth(false);
         // coopTimer();
     }, [])
+
 
     useEffect(() => {
         // console.log("user before update: ", user)
@@ -62,50 +71,6 @@ function Game() {
         // coopTimer();
     }, [coopUser])
 
-    // useEffect(() => {
-    //     console.log("tick");
-    //     coopTimer();
-    // }, [timer])
-
-    // function coopTimer() {
-    //     console.log("tick");
-    //     // setTimeout(findGame(), 5000);
-    //     setTimer(time);
-    // }
-
-    // function reset() {
-    //     // event.preventDefault();
-    //     console.log("reset event:");
-    //     // API.findHighScore(user.username)
-    //     // .then(res=>{
-    //     //     console.log("highscore find: ", res);
-    //     //     if(res){
-    //     //         API.newHighScore(user.username, user.level, user.lives)
-    //     //     }
-    //     // })
-    //     // write code to push user level, name, lives to a new db table
-    //     setUser({ ...user, level: 0, lives: 9 });
-    //     setEndGame(true);
-    //     // history.push("/main");
-    // }
-
-
-    // function findGame() {
-    //     API.findGame(coopUser.title)
-    //         .then(res => {
-    //             if (res.data) {
-    //                 console.log("coop login response", res.data)
-    //                 setCoopUser(res.data);
-    //                 // coopTimer();
-    //                 // setAuth(true);
-    //                 // console.log("coopuser: ", coopUser);
-    //             } else {
-    //                 // modal/text popup alerting user that user doesnt exist
-    //             }
-    //         }).catch(err => {
-    //             console.log("error: ", err);
-    //         })
-    // }
 
     function signup(event) {
         event.preventDefault();
@@ -121,7 +86,7 @@ function Game() {
                     holder.push(res.data[i].username);
                 }
                 // check if username exists
-                if (!holder.includes(name)) {
+                if (!holder.includes(name) && pass.length > 7) {
                     // add new user
                     API.signUp({ username: name, password: pass })
                         .then(function (res) {
@@ -137,9 +102,13 @@ function Game() {
                             console.log("error: ", err);
                         })
 
-                } else {
-                    // modal popup or text change informing user
-                    // username is already taken
+                } else if (holder.includes(name))
+                    {
+                setUserMessage('showUserMsg signupMsg')
+                setPassMessage('hidePassMsg')
+                } else if (pass.length <= 7) {
+                    setPassMessage('showPassMsg signupMsg')
+                    setUserMessage('hideUserMsg')
                 }
             })
         // console.log("user signup: ", user);
@@ -156,7 +125,8 @@ function Game() {
                     setUser(res.data);
                     setAuth(true);
                 } else {
-                    // modal/text popup alerting user that user doesnt exist
+                    setMessage('message row showMessage')
+                    setPassInput('form-control redInput')
                 }
 
             }).catch(err => {
@@ -180,11 +150,12 @@ function Game() {
         event.preventDefault();
         setStart(false);
     }
-
-    function endCredits(event){
+  
+    function endCredits(event) {
         event.preventDefault();
         console.log("end event: ", event)
         console.log("user at credits: ", user);
+
         setStart(false);
         setEnd(true);
         setEndGame(true);
@@ -251,8 +222,18 @@ function Game() {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
             }
         } else if (storyline[user.level].end === true) {
+
+            API.findHighScore(user.username).then(res => {
+                console.log("highscore: ", res);
+                if (!res.data) {
+                    API.newHighScore(user.username, user.level, user.lives)
+                } else {
+                    if (res.data.lives < user.lives) {
+                        API.updateHighScore(res.data._id, user.level, user.lives)
+                    }
+                }
+            })
             setEndGame(false)
-            
         } else {
             setUser({ ...user, "level": user.level + 1 });
         }
@@ -274,6 +255,50 @@ function Game() {
         }
     }
 
+    // useEffect(() => {
+    //     console.log("tick");
+    //     coopTimer();
+    // }, [timer])
+
+    // function coopTimer() {
+    //     console.log("tick");
+    //     // setTimeout(findGame(), 5000);
+    //     setTimer(time);
+    // }
+
+    // function reset() {
+    //     // event.preventDefault();
+    //     console.log("reset event:");
+    //     // API.findHighScore(user.username)
+    //     // .then(res=>{
+    //     //     console.log("highscore find: ", res);
+    //     //     if(res){
+    //     //         API.newHighScore(user.username, user.level, user.lives)
+    //     //     }
+    //     // })
+    //     // write code to push user level, name, lives to a new db table
+    //     setUser({ ...user, level: 0, lives: 9 });
+    //     setEndGame(true);
+    //     // history.push("/main");
+    // }
+
+
+    // function findGame() {
+    //     API.findGame(coopUser.title)
+    //         .then(res => {
+    //             if (res.data) {
+    //                 console.log("coop login response", res.data)
+    //                 setCoopUser(res.data);
+    //                 // coopTimer();
+    //                 // setAuth(true);
+    //                 // console.log("coopuser: ", coopUser);
+    //             } else {
+    //                 // modal/text popup alerting user that user doesnt exist
+    //             }
+    //         }).catch(err => {
+    //             console.log("error: ", err);
+    //         })
+    // }
 
 
     return (
@@ -281,14 +306,19 @@ function Game() {
             <div className="con">
 
                 <Switch>
+
+                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage}/>}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput}/>}</Route>
+
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
+
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
                     <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} /><Main start={start} />
                     <Settings backToMain={backToMain} logoutUser={logoutUser}/>
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
-                    <Route exact path="/main">{startGame ? <Redirect to="/game" /> : <Main start={start} />} </Route>
-                    <Route exact path="/credits">{end ? <Redirect to="/main" /> : <Credits end={endCredits} />} </Route>
+                    <Route exact path="/main">{authorized ? startGame ? <Redirect to="/game" /> : <Main start={start} /> : <Redirect to="/login" />} </Route>
+                    <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>

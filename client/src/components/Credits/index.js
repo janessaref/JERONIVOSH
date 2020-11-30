@@ -1,9 +1,12 @@
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import "./style.css"
 import {Link, withRouter} from "react-router-dom"
+import API from '../../utils/api';
 
 
 function Credits({end}) {
+
+  const [highScores, setHighScores] = useState([])
 
     const volume = useRef(null);
 
@@ -11,7 +14,33 @@ function Credits({end}) {
     volume.current.volume = 0.5;
   }, []);
 
-    const highScores=[
+  useEffect(() => {
+    setTimeout(()=>
+      API.allHighScores()
+      .then(res => {
+        console.log(res)
+        
+          var sorted = res.data.sort(function(a,b){
+            if(a.lives < b.lives) { return 1; }
+            if(a.lives > b.lives) { return -1; }
+            return 0;
+          })
+          
+          var scores =[...sorted]
+          console.log(scores)
+        
+        setHighScores(scores.slice(0,10))
+        console.log(highScores)
+      })
+      .catch(err => {
+      console.log(err);
+      setHighScores(defaultHighScores)
+      }), 5000
+    ) 
+
+}, [])
+
+    const defaultHighScores=[
       {name:"Jerry", lives: 9},
       {name:"MemeGod", lives: 9},
       {name:"Jerri", lives: 8},
@@ -30,8 +59,11 @@ function Credits({end}) {
                 <source src="./assets/CreditsSong.mp3" type="audio/mpeg" />
             </audio>
         </div>
-
-        <p className="gameTitle" style={{color:"black"}}>Jeronivosh</p>
+      
+      <div className="titleContainer">
+        <p className="gameTitle img-fluid" style={{color:"black"}}>Jeronivosh</p>
+      </div>
+        
 
        <div className="break"/><div className="break"/>
        <br/><br/><br/><br/>
@@ -91,7 +123,7 @@ function Credits({end}) {
        <br/>
        {highScores.map(score=>{
             return(
-                <p className="name" key={score.name}>{score.name}: {score.lives}</p>
+                <p className="name" key={score.username}>{score.username}: {score.lives}</p>
             )
         })}
 
