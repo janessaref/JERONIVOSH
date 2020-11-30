@@ -137,42 +137,40 @@ function Game() {
         let pass = event.target[1].value;
         API.getUser(name, pass)
             .then(res => {
-                // console.log("login client res: ", res);
+                console.log("login client res: ", res);
                 if (res.data) {
                     setUser(res.data);
                     setAuth(true);
-                } else {
-                    setMessage('message row showMessage')
-                    setPassInput('form-control redInput')
                 }
-
             }).catch(err => {
                 console.log("login error: ", err);
+                setMessage('message row showMessage')
+                setPassInput('form-control redInput')
             })
     }
 
     function start(event) {
         event.preventDefault();
-        console.log("start event: ", event)
-        console.log("user at start: ", user);
+        // console.log("start event: ", event)
+        // console.log("user at start: ", user);
         setEnd(false);
         setStart(true);
         if (user.level === 35 || user.level === 24) {
             setUser({ ...user, level: 0, lives: 9 })
         }
-        console.log(endGame)
+        // console.log(endGame)
     }
 
     function backToMain(event) {
         event.preventDefault();
-        console.log("working")
+        // console.log("working")
         setStart(false);
     }
 
     function endCredits(event) {
         event.preventDefault();
-        console.log("end event: ", event)
-        console.log("user at credits: ", user);
+        // console.log("end event: ", event)
+        // console.log("user at credits: ", user);
         setStart(false);
         setEnd(true);
         setEndGame(true);
@@ -180,10 +178,15 @@ function Game() {
 
     function logoutUser(event) {
         event.preventDefault();
+        setStart(false);
         setAuth(false);
+        setUserMessage('hideUserMsg signupMsg');
+        setPassMessage('hidePassMsg signupMsg');
+        setPassInput('form-control');
+        setMessage('message hideMessage');
     };
 
-    
+
 
     // if story line lever end return false, then return false
     function choice(event) {
@@ -200,9 +203,9 @@ function Game() {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
             }
         } else if (storyline[user.level].end === true) {
-            
+
             API.findHighScore(user.username).then(res => {
-                console.log("highscore: ", res);
+                // console.log("highscore: ", res);
                 if (!res.data) {
                     API.newHighScore(user.username, user.level, user.lives)
                 } else {
@@ -327,11 +330,7 @@ function Game() {
 
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} />}</Route>
-                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-
-                   
-
                     <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
 
                         <Settings backToMain={backToMain} logoutUser={logoutUser} />
@@ -340,7 +339,7 @@ function Game() {
                     <Route exact path="/main">{authorized ? startGame ? <Redirect to="/game" /> : <Main start={start} /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
-                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
             </div>
         </Router >

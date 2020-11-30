@@ -2,8 +2,8 @@ const highscores = require("../models/Highscores");
 
 module.exports = {
   findOne: function (req, res) {
-    console.log("find score res", req.body)
-    console.log("req username", req.body.username)
+    // console.log("find score res", req.body)
+    // console.log("req username", req.body.username)
     // console.log("find response: ", req.body)
     highscores.findOne({ username: req.body.username })
       .then((highscores) => res.json(highscores))

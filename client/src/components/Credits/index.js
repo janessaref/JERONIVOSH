@@ -18,7 +18,7 @@ function Credits({end}) {
     setTimeout(()=>
       API.allHighScores()
       .then(res => {
-        console.log(res)
+        // console.log(res)
         
           var sorted = res.data.sort(function(a,b){
             if(a.lives < b.lives) { return 1; }
@@ -27,10 +27,10 @@ function Credits({end}) {
           })
           
           var scores =[...sorted]
-          console.log(scores)
+          // console.log(scores)
         
         setHighScores(scores.slice(0,10))
-        console.log(highScores)
+        // console.log(highScores)
       })
       .catch(err => {
       console.log(err);

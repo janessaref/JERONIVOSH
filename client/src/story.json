@@ -168,18 +168,18 @@
     {
         "id": 16,
         "image": "./assets/compressed/chimney-min.gif",
-        "story": "that looks warm.. i am tired",
+        "story": "You wander the stucture's peak and encounter a mysterious column emitting heat. There is a weird dark could looming above it. You are cold and need a place to stay warm for the night.",
         "choices": [
-            "lay in the warmth","find a way down"
+            "Lay in the warmth","Search for a way down"
         ],
         "decision": [17,18]
     },
     {
         "id": 17,
         "image": "./assets/compressed/toomuchsmoke-min.gif",
-        "story": "*cough cough* maybe its a bit much",
+        "story": "You lay down in the comforting heat and feel at ease for once. After a short time the looming cloud above you becomes too much to handle. Your lungs begin to hurt and you cannot breathe. You run off and must seek new shelter.",
         "choices": [
-            "plz no more"
+            "Continue..."
         ],
         "decision": [18],
         "badchoice": true
@@ -187,18 +187,18 @@
     {
         "id": 18,
         "image": "./assets/compressed/boxchoice-min.gif",
-        "story": "ooo a box up here too? i really need to lay down...",
+        "story": "You are so tired, your eyes feel they need to close. There is an old box sitting in front of you. It looks wet and old, but better than sleeping out in the cold.",
         "choices": [
-            "if i fitz, i sitz","get me off this roof."
+            "Seek shelter in the box","Look for a way down"
         ],
         "decision": [19,20]
     },
     {
         "id": 19,
         "image": "./assets/compressed/boxspiders-min.gif",
-        "story": "AHHHHHHH SPIIIIIDDDEEEEEEERRRRRRSSSSS",
+        "story": "You jump inside the box and something doesn't feel right. You feel slight movement all around you. You realize what is happening and suddenly you leap out of the box. Spiders are already crawling on you as you try to shake them off your fur. Looks like you need to find another spot for the night.",
         "choices": [
-            "ok that one really freaked me out."
+            "Continue..."
         ],
         "decision": [20],
         "badchoice": true
@@ -206,27 +206,27 @@
     {
         "id": 20,
         "image": "./assets/compressed/roofjumpdecide-min.gif",
-        "story": "I found the edge... looks kinda high up... maybe if i jump to the next building i can get down easily",
+        "story": "You find the edge of the towering cliff. Across the gap to the other structure there is a way down. It seems far but you have made larger leaps before.",
         "choices": [
-            "leap of faith","find another way"
+            "Take the leap","Find another way"
         ],
         "decision": [22,21]
     },
     {
         "id": 21,
         "image": "./assets/compressed/roofjumpdecide-min.gif",
-        "story": "You look around and theres an easy way down right in front of you the whole time.",
+        "story": "You circle the perimeter of the structure one more time and find another way down. You climb down the rusty stairs until you reach the ground.",
         "choices": [
-            "get down"
+            "Continue..."
         ],
         "decision": [23]
     },
     {
         "id": 22,
         "image": "./assets/compressed/roofjumpafter-min.gif",
-        "story": "jumped and missed... ouch... at least you landed in a dumpster that cushioned the fall",
+        "story": "You make the leap to the structure across from you. Maybe it was a poor take off or maybe you were just unaware of the physical toll tonight has had on your body. You fall short of the jump, clawing at your metal escape route to no avail. You free fall down the side of the structure, plummeting towards the ground. Luckily you land in an open bin below you filled with human trash. The pain is significant but their rubbish cushioned the fall enough to walk away.",
         "choices": [
-            "plz kill me"
+            "Continue..."
         ],
         "decision": [23],
         "badchoice": true
@@ -234,9 +234,9 @@
     {
         "id": 23,
         "image": "./assets/findman.png",
-        "story": "im tired feel like death blah blah blah.. oh wait ive seen this man before",
+        "story": "You feel on the brink of collapsing. You need to find some warmth or shelter first, or who knows if you will survive the night. You notice a familiar smell. A comforting smell. You peer around and the strange man from earlier lays before you again.",
         "choices": [
-            "I rly just wanna sleep"
+            "Continue..."
         ],
         "decision": [24]
       
@@ -244,9 +244,9 @@
     {
         "id": 24,
         "image": "./assets/compressed/ending1noloop-min.gif",
-        "story": "idk if i trust him but desparation so ima snug. he takes you in and makes you cozy. see? happy ending after all.",
+        "story": "You don't trust humans, but this one seems special. Out of desparation you make your way to him and lay on the warmth of the cloth surrounding him. You notice him look at you and make slow movements. He takes the cloth and gently places it around you. It is warmer than you have felt all night.",
         "choices": [
-            "Game Over thanks 4 bein a playr (<- check out the playr app)"
+            "Goodnight..."
         ],
 
         "end": true
@@ -254,9 +254,9 @@
     {
         "id": 25,
         "image": "./assets/compressed/parkscene-min.gif",
-        "story": "Wow, this place is pretty. No scary monsters over here.",
+        "story": "You observe your surroundings. Trees tower over you left and right. In the distance a light flickers. It seems the monsters don't live here.",
         "choices": [
-            "Continue"
+            "Continue..."
         ],
         "decision": [26]
        
@@ -266,25 +266,25 @@
         "image": "./assets/compressed/shadowscene-min.gif",
         "story": "Wait, what is that? It's so dark but I think I see something over there. HELLOOOOO, I come in peace!",
         "choices": [
-            "Run away to the bridge!!!", "Go closer?"
+            "Better not risk it", "Check it out"
         ],
         "decision": [27,28]
     },
     {
         "id": 27,
         "image": "./assets/compressed/boxscene-min.gif",
-        "story": "Soooo cold, I shiverssss. I just want to rest. Ooooh a box, this might keep me warm.",
+        "story": "The air around you sends shivers down your spine. The temperature is dropping quickly. There is a cave ahead.",
         "choices": [
-            "Go inside the box", "Find other shelter"
+            "Seek shelter in the cave", "Keep looking"
         ],
         "decision": [29,30]
     },
     {
         "id": 28,
         "image": "./assets/compressed/dogparkscene-min.gif",
-        "story": "OH MY!!! MY WORST ENEMY!!!",
+        "story": "A figure emerges from the darkness, snarling and foaming by the mouth. You don't want to stick around to find out what it is.",
         "choices": [
-            "Run run RUN!!!"
+            "Continue..."
         ],
         "decision": [27],
         "badchoice": true
@@ -292,27 +292,27 @@
     {
         "id": 29,
         "image": "./assets/compressed/insideboxscene-min.gif",
-        "story": "You stay in the box for warmth and started to groom the poor little kitten that was living in there and on high alert, you hear something coming towards the box. It's another cat who started to growl!",
+        "story": "Inside the cave you are caught off guard. In front of you a little one is taking shelter from the elements, probably alone, just like you. How could it be here alone? You nuzzle up and try to keep it warm when you notice a scent surrounding you. Must be the scent of its mother...",
         "choices": [
-            "CAT FIGHT!!!", "Bye, Felicia!"
+            "Stand your ground", "Abandon your only shelter"
         ],
         "decision": [31,32]
     }, 
     {
         "id": 30,
         "image": "./assets/compressed/kittenboxscene-min.gif",
-        "story": "You were walking away until you heard a little meow coming from inside and you see a little kitten all alone. You decided to go inside the box instead.",
+        "story": "You turn your back to the cave and begin to walk when you hear a faint noise behind you. Did you hear that right? There it is again. The faint cry of a young one... You investigate the cave.",
         "choices": [
-            "Stay with the kitten"
+            "Continue..."
         ],
         "decision": [29]
     },
     {
         "id": 31,
         "image": "./assets/compressed/mothercatscene-min.gif",
-        "story": "A brawl happens and the cat hisses at you angrily. Things are getting crazy, so you decided to run away from the fight badly hurt.",
+        "story": "The mother has returned. Upon seeing you she extends her claws, ready to defend her young. She swipes at you but you escape with only a scratch.",
         "choices": [
-            "I'm a pussy, I gots to run."
+            "Continue..."
         ],
         "decision": [32],
         "badchoice": true
@@ -320,27 +320,27 @@
     {
         "id": 32,
         "image": "./assets/compressed/animalcontrolscene-min.gif",
-        "story": "You run back into the city and find yourself back into the streets. There's a hooman staring at you, calling you over. You're on guard and you don't move. You watch him as he comes closer. He's getting too close...",
+        "story": "As you escape you scurry through the streets. The sounds of your pursuer become faint. Just as you think you are safe you notice you have a new pursuer. A human. It seems like he is trying to speak to you...",
         "choices": [
-            "STRANGER DANGER GET OUT NOW!", "Trust the hooman?"
+            "Escape to the darkness", "Let him approach"
         ],
         "decision": [33,34]
     },
     {
         "id": 33,
         "image": "./assets/compressed/cemeteryscene-min.gif",
-        "story": "You're tired, hungry, and thirsty all over again but all you want is some peace and quiet. You lie on the dirt looking up at the moon. Nothing scary over here.",
+        "story": "You keep running until you can't anymore. A cool breeze sweeps the grass around you and cold stones protrude from the ground. There are only a few humans here. They are somber and quiet. The atmosphere is calm here.",
         "choices": [
-            "Go to sleep"
+            "Continue..."
         ],
         "decision": [35]
     },
     {
         "id": 34,
         "image": "./assets/compressed/runfromacscene-min.gif",
-        "story": "You made a HUGE mistake trusting the hooman!!! You're wrestling your way out and manage to bring out your hunting weapons and slicing the hooman and using your munchers to break free and escape!",
+        "story": "The human lunges, aggresively grabbing at you. You leap away but he catches you by the tail. You swing your body around and manage to claw through his grip. He winces in pain as you run for your life.",
         "choices": [
-            "Escape to the quiet park!"
+            "Continue..."
         ],
         "decision": [33],
         "badchoice": true
@@ -350,7 +350,7 @@
         "image": "./assets/compressed/endingcemeteryscene-min.gif",
         "story": "You lay on the cold stone thinking, \"finally some peace.\"",
         "choices": [
-            "Game Over thanks 4 bein a playr (<- check out the playr app)"
+            "Goodnight..."
         ],
         "end": true
     }
