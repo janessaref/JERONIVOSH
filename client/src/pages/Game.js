@@ -33,13 +33,16 @@ function Game() {
     // state for end of credits
     const [end, setEnd] = useState(false);
     // let history = useHistory();
-    const [message, setMessage] = useState('message hideMessage')
-    const [passInput, setPassInput] = useState('form-control')
+    const [message, setMessage] = useState('message hideMessage');
+    const [passInput, setPassInput] = useState('form-control');
 
-    const [userMessage, setUserMessage] = useState('hideUserMsg signupMsg')
-    const [passMessage, setPassMessage] = useState('hidePassMsg signupMsg')
-    const [livesStyle, setLivesStyle] = useState('lives lives-color1')
+    // state for validation messages
+    const [userMessage, setUserMessage] = useState('hideUserMsg signupMsg');
+    const [passMessage, setPassMessage] = useState('hidePassMsg signupMsg');
+    const [livesStyle, setLivesStyle] = useState('lives lives-color1');
 
+    // state for viewing personal high scores
+    const [userScores, setUserScores] = useState(false);
     // loading icon on gifs
 
 
@@ -147,6 +150,18 @@ function Game() {
                 setMessage('message row showMessage')
                 setPassInput('form-control redInput')
             })
+    }
+
+    function viewHighScores(event) {
+        event.preventDefault();
+        console.log("view high scores working");
+        setUserScores(true);
+    }
+
+    function exitScores(event) {
+        event.preventDefault();
+        console.log("exit high scores working");
+        setUserScores(false);
     }
 
     function start(event) {
@@ -332,13 +347,12 @@ function Game() {
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
                     <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
-
                         <Settings backToMain={backToMain} logoutUser={logoutUser} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/main"></Redirect> : <Redirect to="/login" />}
                     </Route>
-                    <Route exact path="/main">{authorized ? startGame ? <Redirect to="/game" /> : <Main start={start} /> : <Redirect to="/login" />} </Route>
+                    <Route exact path="/main">{authorized ? !userScores ? startGame ? <Redirect to="/game" /> : <Main start={start} viewHighScores={viewHighScores} /> : <Redirect to="/highscores" /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>
-                    <Route exact path="/highscores">{authorized ? <><Highscores user={user}/></> : <Redirect to="/login" />} </Route>
+                    <Route exact path="/highscores">{authorized ? userScores ? <><Highscores user={user} exitScores={exitScores} /></> : <Redirect to="/main" /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>

@@ -25,6 +25,9 @@ const API = {
     allHighScores: function(){
         return axios.get("/api/user/allscores")
     },
+    allScoresByUser: function(username){
+        return axios.get("/api/user/allscores", {username})
+    },
     startCoop: function (title) {
         return axios.post("/api/user/coop", { title });
     },

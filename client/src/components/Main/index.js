@@ -1,16 +1,15 @@
 import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
 import CoopLogin from '../CoopLogin';
 import Instructions from '../Instructions';
 import './style.css'
 
-function Main({start}) {
+function Main({start, viewHighScores}) {
 
 
    return(
     <div className="container mainMenu">
         <div className="d-flex justify-content-center">
-            <div class="card gameTypeContainer col-auto">
+            <div className="card gameTypeContainer col-auto">
                 <div className="card-body">
                     <h1 className="px-auto mb-0 brand">
                     JERONIVOSH
@@ -28,6 +27,7 @@ function Main({start}) {
                         </div>
                     </div>
                     <Instructions />
+                    <button className="btn btn-block hvr-back-pulse" onClick={viewHighScores}>High Scores</button>
                 </div>  
             </div> 
         </div>
@@ -36,6 +36,6 @@ function Main({start}) {
    ) 
 }
 
-export default withRouter(Main);
+export default Main;
 
 
