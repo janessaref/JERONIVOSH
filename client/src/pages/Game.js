@@ -36,7 +36,12 @@ function Game() {
     // let history = useHistory();
     const [message, setMessage] = useState('message hideMessage')
     const [passInput, setPassInput] = useState('form-control')
+
+    const [userMessage, setUserMessage] = useState('hideUserMsg signupMsg')
+    const [passMessage, setPassMessage] = useState('hidePassMsg signupMsg')
+
     // loading icon on gifs
+
 
     useEffect(() => {
         // setRefresh(true);
@@ -80,7 +85,7 @@ function Game() {
                     holder.push(res.data[i].username);
                 }
                 // check if username exists
-                if (!holder.includes(name)) {
+                if (!holder.includes(name) && pass.length > 7) {
                     // add new user
                     API.signUp({ username: name, password: pass })
                         .then(function (res) {
@@ -96,9 +101,13 @@ function Game() {
                             console.log("error: ", err);
                         })
 
-                } else {
-                    // modal popup or text change informing user
-                    // username is already taken
+                } else if (holder.includes(name))
+                    {
+                setUserMessage('showUserMsg signupMsg')
+                setPassMessage('hidePassMsg')
+                } else if (pass.length <= 7) {
+                    setPassMessage('showPassMsg signupMsg')
+                    setUserMessage('hideUserMsg')
                 }
             })
         // console.log("user signup: ", user);
@@ -285,8 +294,13 @@ function Game() {
             <div className="con">
 
                 <Switch>
+
+                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage}/>}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput}/>}</Route>
+
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} />}</Route>
+
                     <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>

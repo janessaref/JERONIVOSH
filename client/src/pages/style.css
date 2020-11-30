@@ -25,3 +25,24 @@
 .redInput {
     border: 2px red solid;
 }
+
+.hideUserMsg {
+    display: none;
+}
+
+.hidePassMsg {
+    display: none;
+}
+
+.signupMsg {
+    color: red;
+    text-align: center;
+}
+
+.showUserMsg {
+    display: block;
+}
+
+.showPassMsg {
+    display: block;
+}
