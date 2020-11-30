@@ -11,12 +11,11 @@ function Instructions() {
 
     function hideModalInstructions() {
         setModalInstructions("modal hideModal");
-
     };
 
     const showInstructions = () => {
         setModalInstructions("modal showModal");
-    }
+    };
 
     return(
         <>

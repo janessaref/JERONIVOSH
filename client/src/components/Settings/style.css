@@ -2,15 +2,16 @@
     position: absolute;
     top: 2%;
     right: 1%;
+    opacity: 0.98;
 }
 
 #settingsGear {
     width: 80px;
 }
 
-.settingsButton:hover {
+#settingsGear:hover {
     cursor: pointer;
-    opacity: .8;
+    opacity: 0.7;
 }
 
 #settingsModal {
