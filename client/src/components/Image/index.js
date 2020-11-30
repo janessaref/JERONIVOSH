@@ -10,6 +10,10 @@ function Image({ user, story, spinner }) {
   let style = { display: "block" };
   if (!visibleX) style.display = "none";
 
+  useEffect(() => {
+    setLoading(true);
+  }, [story[user.level].image])
+
   function spinner() {
     setLoading(false);
   }
@@ -60,11 +64,11 @@ function Image({ user, story, spinner }) {
       <audio className="float-right" autoPlay loop id="gameAudio" ref={volume}>
         <source src="./assets/4_29.mp3" type="audio/mpeg" />
       </audio>
-      <div className="gif img-fluid" style={{ display: loading ? "block" : "none" }}>
+      <div className="loading" style={{ display: loading ? "block" : "none" }}>
         Loading Images
     </div>
       <div style={{ display: loading ? "none" : "block" }}>
-        <img className="gif img-fluid" src={story[user.level].image} onLoad={spinner}></img>
+        <img className="gif img-fluid" src={story[user.level].image} onLoad={()=>spinner()}></img>
       </div>
     </div>
   );

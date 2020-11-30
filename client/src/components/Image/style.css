@@ -3,6 +3,12 @@
     margin: 0 auto;
 }
 
+.loading{
+    color: white;
+    position: fixed;
+    left: 45%;
+    top: 25%;
+}
 #volIcon {
     width: 80px;
 }
