@@ -3,7 +3,7 @@
     margin: 0 auto;
 }
 
-.loading{
+.loading {
     color: white;
     position: fixed;
     left: 48%;
@@ -36,4 +36,25 @@
    display: none;
    position: absolute;
    right: 20%;
+}
+
+/* @media (max-width:480px) {
+    #volIcon {
+        width: 40px;
+        right: 0%;
+    }
+    .mute {
+        top: 1%;
+        right: 0%;
+    }
+    .redX {
+        width: 50px;
+        right: 61%;
+    }
+} */
+
+@media (max-width:900px) {
+    .mute {
+        right: 5%;
+    }
 }

@@ -1,5 +1,25 @@
-.settingsButton{
-    position: fixed;
-    top: 8%;
-    right: 2%;
+.settingsButton {
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    opacity: 0.98;
 }
+
+#settingsGear {
+    width: 80px;
+}
+
+#settingsGear:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#settingsModal {
+    font-family: 'Press Start 2P', cursive;
+}
+/* 
+@media (max-width:480px) {
+    #settingsGear {
+        width: 40px;
+    }
+} */

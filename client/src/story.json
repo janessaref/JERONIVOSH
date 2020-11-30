@@ -263,8 +263,8 @@
     },
     {
         "id": 26,
-        "image": "./assets/compressed/parkscene-min.gif",
-        "story": "In the distance a shadow is cast. Curiousity creeps over you but you are still cautious. What could it be?",
+        "image": "./assets/compressed/shadowscene-min.gif",
+        "story": "Wait, what is that? It's so dark but I think I see something over there. HELLOOOOO, I come in peace!",
         "choices": [
             "Better not risk it", "Check it out"
         ],
