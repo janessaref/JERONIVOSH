@@ -135,26 +135,26 @@ function Game() {
 
     function start(event) {
         event.preventDefault();
-        console.log("start event: ", event)
-        console.log("user at start: ", user);
+        // console.log("start event: ", event)
+        // console.log("user at start: ", user);
         setEnd(false);
         setStart(true);
         if (user.level === 35 || user.level === 24) {
             setUser({ ...user, level: 0, lives: 9 })
         }
-        console.log(endGame)
+        // console.log(endGame)
     }
 
     function backToMain(event) {
         event.preventDefault();
-        console.log("working")
+        // console.log("working")
         setStart(false);
     }
 
     function endCredits(event) {
         event.preventDefault();
-        console.log("end event: ", event)
-        console.log("user at credits: ", user);
+        // console.log("end event: ", event)
+        // console.log("user at credits: ", user);
         setStart(false);
         setEnd(true);
         setEndGame(true);
@@ -184,7 +184,7 @@ function Game() {
         } else if (storyline[user.level].end === true) {
             
             API.findHighScore(user.username).then(res => {
-                console.log("highscore: ", res);
+                // console.log("highscore: ", res);
                 if (!res.data) {
                     API.newHighScore(user.username, user.level, user.lives)
                 } else {
@@ -318,7 +318,7 @@ function Game() {
                     <Route exact path="/main">{authorized ? startGame ? <Redirect to="/game" /> : <Main start={start} /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
-                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
             </div>
         </Router >
