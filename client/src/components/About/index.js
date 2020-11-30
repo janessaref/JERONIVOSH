@@ -38,9 +38,45 @@ function About() {
                         <div className="modal-body mt-2 overflow-auto">
                             <p className="font-weight-bold">JERRI FONG</p>
                             <p>She is blah blah.</p>
-                            <p>Jerri's Portfolio </p>
+                            <a 
+                            href="http://janessaref.herokuapp.com" 
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mb-3 text-center">
+                                Jerri's Portfolio
+                            {/* <img 
+                                src=
+                                alt="GitHub Logo"
+                                className="mr-2 mb-2 ghLogo" /> */}
+
+                        </a>
                             <p className="font-weight-bold">JON SANPEDRO</p>
                             <p>He is blah blah.</p>
+                            <a 
+                            href="#" 
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mb-3 text-center">
+                                Jon's Portfolio
+                            </a>
+                            <p className="font-weight-bold">IVAN TORRES</p>
+                            <p>He is blah blah.</p>
+                            <a 
+                            href="#" 
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mb-3 text-center">
+                                Ivan's Portfolio
+                            </a>
+                            <p className="font-weight-bold">JOSH GLUGATCH</p>
+                            <p>He is blah blah.</p>
+                            <a 
+                            href="#" 
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mb-3 text-center">
+                                Josh's Portfolio
+                            </a>
                         </div>
                         <div className="modal-footer">
                             <button
