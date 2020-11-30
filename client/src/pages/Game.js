@@ -311,9 +311,9 @@ function Game() {
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
 
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
+                    <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} />
                         <Settings backToMain={backToMain} logoutUser={logoutUser} />
-                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
+                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/main"></Redirect> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/main">{authorized ? startGame ? <Redirect to="/game" /> : <Main start={start} /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>
