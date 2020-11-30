@@ -102,10 +102,9 @@ function Game() {
                             console.log("error: ", err);
                         })
 
-                } else if (holder.includes(name))
-                    {
-                setUserMessage('showUserMsg signupMsg')
-                setPassMessage('hidePassMsg')
+                } else if (holder.includes(name)) {
+                    setUserMessage('showUserMsg signupMsg')
+                    setPassMessage('hidePassMsg')
                 } else if (pass.length <= 7) {
                     setPassMessage('showPassMsg signupMsg')
                     setUserMessage('hideUserMsg')
@@ -150,7 +149,7 @@ function Game() {
         event.preventDefault();
         setStart(false);
     }
-  
+
     function endCredits(event) {
         event.preventDefault();
         console.log("end event: ", event)
@@ -163,7 +162,7 @@ function Game() {
 
     function logoutUser() {
         //  event.preventDefault();
-         console.log("BISH WORK WITH ME")
+        console.log("BISH WORK WITH ME")
         setAuth(false);
     };
 
@@ -307,14 +306,14 @@ function Game() {
 
                 <Switch>
 
-                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage}/>}</Route>
-                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput}/>}</Route>
+                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} />}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} />}</Route>
 
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
 
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} /><Main start={start} />
-                    <Settings backToMain={backToMain} logoutUser={logoutUser}/>
+                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
+                        <Settings backToMain={backToMain} logoutUser={logoutUser} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/main">{authorized ? startGame ? <Redirect to="/game" /> : <Main start={start} /> : <Redirect to="/login" />} </Route>
