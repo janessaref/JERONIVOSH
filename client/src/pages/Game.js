@@ -50,21 +50,21 @@ function Game() {
     }, [])
 
     useEffect(() => {
-        if (user.lives === 8) {
+        if (user.lives === 9) {
             setLivesStyle('lives lives-color1')
-        } else if (user.lives === 7) {
+        } else if (user.lives === 8) {
             setLivesStyle('lives lives-color2')
-        } else if (user.lives === 6) {
+        } else if (user.lives === 7) {
             setLivesStyle('lives lives-color3')
-        } else if (user.lives === 5) {
+        } else if (user.lives === 6) {
             setLivesStyle('lives lives-color4')
-        } else if (user.lives === 4) {
+        } else if (user.lives === 5) {
             setLivesStyle('lives lives-color5')
-        } else if (user.lives === 3) {
+        } else if (user.lives === 4) {
             setLivesStyle('lives lives-color6')
-        } else if (user.lives === 2) {
+        } else if (user.lives === 3) {
             setLivesStyle('lives lives-color7')
-        } else if (user.lives === 1) {
+        } else if (user.lives <= 2) {
             setLivesStyle('lives lives-color8')
         }
     }, [user.lives])
