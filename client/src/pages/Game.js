@@ -17,8 +17,6 @@ import Main from "../components/Main";
 import Chat from '../components/chat';
 import Settings from '../components/Settings';
 
-// let time = 0;
-
 
 function Game() {
     // when logging in, setUser to data from mongodb
@@ -51,6 +49,13 @@ function Game() {
         // coopTimer();
     }, [])
 
+    useEffect(() => {
+        if (user.lives === 8) {
+            setLivesStyle('lives lives-color1')
+        } else if (user.lives === 7) {
+            setLivesStyle('lives lives-color2')
+        }
+    }, [user.lives])
 
     useEffect(() => {
         // console.log("user before update: ", user)
