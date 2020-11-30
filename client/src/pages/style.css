@@ -46,3 +46,11 @@
 .showPassMsg {
     display: block;
 }
+
+.lives {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+}
