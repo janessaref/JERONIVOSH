@@ -350,7 +350,7 @@ function Game() {
                         <Settings backToMain={backToMain} logoutUser={logoutUser} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/main"></Redirect> : <Redirect to="/login" />}
                     </Route>
-                    <Route exact path="/main">{authorized ? !userScores ? startGame ? <Redirect to="/game" /> : <Main start={start} viewHighScores={viewHighScores} /> : <Redirect to="/highscores" /> : <Redirect to="/login" />} </Route>
+                    <Route exact path="/main">{authorized ? !userScores ? startGame ? <Redirect to="/game" /> : <Main start={start} logout={logoutUser} viewHighScores={viewHighScores} /> : <Redirect to="/highscores" /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/highscores">{authorized ? userScores ? <><Highscores user={user} exitScores={exitScores} /></> : <Redirect to="/main" /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
