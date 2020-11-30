@@ -1,6 +1,4 @@
 .noScore{
-    color: white;
-    background:purple;
     text-align: center;
     position: fixed;
     top: 40%;
@@ -8,6 +6,8 @@
     
 }
 .username{
-    color: white;
-    background: purple;
+    text-align: center;
+}
+.scores{
+    font-size: 20px;
 }

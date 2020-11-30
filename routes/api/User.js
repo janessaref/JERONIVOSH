@@ -37,6 +37,9 @@ router
   .route("/allscores")
   .get(highScoreController.findAll)
 
+router.route("/allscoresbyuser")
+  .post(highscoreController.findAllByUser)
+
 router
   .route("/coop")
   .post(coopController.create)

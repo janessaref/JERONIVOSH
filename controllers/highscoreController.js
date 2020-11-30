@@ -37,15 +37,15 @@ module.exports = {
       });
   },
   findAll: function (req, res) {
-    console.log(req.body.username)
-    if (req.body.username) {
-      highscores.find({ username: req.body.username })
-        .then((highscores) => res.json(highscores))
-        .catch((err) => res.status(422).json(err));
-    } else {
-      highscores.find({})
-        .then((highscores) => res.json(highscores))
-        .catch((err) => res.status(422).json(err));
-    }
+    highscores.find({})
+      .then((highscores) => res.json(highscores))
+      .catch((err) => res.status(422).json(err));
   },
+  findAllByUser: function (req, res) {
+    console.log("username: ", req.body.username)
+    highscores.find({ username: req.body.username })
+      .then((highscores) => res.json(highscores))
+      .catch((err) => res.status(422).json(err));
+
+  }
 };
