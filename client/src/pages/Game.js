@@ -16,7 +16,7 @@ import CoopLogin from "../components/CoopLogin";
 import Main from "../components/Main";
 import Chat from '../components/chat';
 import Settings from '../components/Settings';
-
+import Highscores from "../components/Highscores";
 
 function Game() {
     // when logging in, setUser to data from mongodb
@@ -338,6 +338,7 @@ function Game() {
                     </Route>
                     <Route exact path="/main">{authorized ? startGame ? <Redirect to="/game" /> : <Main start={start} /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>
+                    <Route exact path="/highscores">{authorized ? <><Highscores user={user}/></> : <Redirect to="/login" />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>
