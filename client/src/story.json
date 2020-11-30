@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "image": "./assets/introcity.gif",
+        "image": "./assets/compressed/introcity-min.gif",
         "story": "Would you like to explore the city?",
         "choices": [
             "Let's check it out."
@@ -9,7 +9,7 @@
     },
     {
         "id": 1,
-        "image": "./assets/alleywayv2.gif",
+        "image": "./assets/compressed/alleywayv2-min.gif",
         "story": "The trails are busy. You've never seen anything like this. Monstrous figures pass in a blur, their growls are loud and eyes are glowing. ",
         "choices": [
             "Hide in the nearby alley",
@@ -19,7 +19,7 @@
     },
     {
         "id": 2,
-        "image": "./assets/alleyrat.gif",
+        "image": "./assets/compressed/alleyrat-min.gif",
         "story": "You made it to calm space in between the towering mountains that surround you. The rumble of the monsters recedes into the background. Your stomach is growling... You haven't eaten for days. You notice some rats feeding on scraps. Fixated on your prey, you...",
         "choices": [
             "Go straight for the pounce.",
@@ -29,7 +29,7 @@
     },
     {
         "id": 3,
-        "image": "./assets/carscenev3.gif",
+        "image": "./assets/compressed/carscenev3-min.gif",
         "story": "You press forward on high alert. What is that beautiful light in the distance... You leap for your life, narrowly avoiding what seemed like sure death. The monster roared on, as if it did not even notice you. Lucky to have avoied the monster's gaze, you creep through the shadows to a narrow opening nearby.",
         "choices": [
             "Continue..."
@@ -40,7 +40,7 @@
     },
     {
         "id": 4,
-        "image": "./assets/alleyAfter.gif",
+        "image": "./assets/compressed/alleyAfter-min.gif",
         "story": "The paltry rodents scurry away before you come within a paws length. They take their scraps with them and you are left alone in the dark, hungry for the night...",
         "choices": [
             "Continue..."
@@ -50,7 +50,7 @@
     },
     {
         "id": 5,
-        "image": "./assets/alleyAfter.gif",
+        "image": "./assets/compressed/alleyAfter-min.gif",
         "story": "You sneak through the rough terrain, slowly creeping towards your prey. You wait for just the right moment and leap for your first chance of nourishment in days. The furry creatures scamper away, leaving their meager scraps behind. The taste of rot will be enough to hold you over.",
         "choices": [
             "Continue"
@@ -59,7 +59,7 @@
     },
     {
         "id": 6,
-        "image": "./assets/girlscene.gif",
+        "image": "./assets/compressed/girlscene-min.gif",
         "story": "There is a girl. Let her pet you?",
         "choices": [
             "Yes","No"
@@ -68,7 +68,7 @@
     },
     {
         "id": 7,
-        "image": "./assets/broomscene.gif",
+        "image": "./assets/compressed/broomscene-min.gif",
         "story": "You let her pet you? Get smacked with a broom",
         "choices": [
             "ok :("
@@ -78,7 +78,7 @@
     },
     {
         "id": 8,
-        "image": "./assets/piescene.gif",
+        "image": "./assets/compressed/piescene-min.gif",
         "story": "Found a pie... Eat the pie? It's okay.. try it... No... must resist... Maybe??? SMELLS SCRUMPTIOUS!!! come on.. you know you want to...",
         "choices": [
             "ummmm yes?","thats gonna be a no from me dawg"
@@ -87,7 +87,7 @@
     },
     {
         "id": 9,
-        "image": "./assets/eatpiescene.gif",
+        "image": "./assets/compressed/eatpiescene-min.gif",
         "story": "NOM NOM MUNCH MUNCH YUMMY FREAKIN PIE!!!!!",
         "choices": [
             "WOOOHOOOOO!"
@@ -114,7 +114,7 @@
     },
     {
         "id": 12,
-        "image": "./assets/birdintree.gif",
+        "image": "./assets/compressed/birdintree-min.gif",
         "story": "O...M...G... BIRB. Chase it?",
         "choices": [
             "yess","nah"
@@ -123,7 +123,7 @@
     },
     {
         "id": 13,
-        "image": "./assets/catintree.gif",
+        "image": "./assets/compressed/catintree-min.gif",
         "story": "darn birb got away. Looks like i can climb up the building tho...",
         "choices": [
             "jump out?","raise the roof bb"
@@ -132,7 +132,7 @@
     },
     {
         "id": 14,
-        "image": "./assets/jumpfromtree.gif",
+        "image": "./assets/compressed/jumpfromtree-min.gif",
         "story": "ouchie, that hurt",
         "choices": [
             "explore the park"
@@ -142,7 +142,7 @@
     },
     {
         "id": 15,
-        "image": "./assets/roofview.gif",
+        "image": "./assets/compressed/roofview-min.gif",
         "story": "monsters are tiny from up here...",
         "choices": [
             "continue"
@@ -151,7 +151,7 @@
     },
     {
         "id": 16,
-        "image": "./assets/chimney.gif",
+        "image": "./assets/compressed/chimney-min.gif",
         "story": "that looks warm.. i am tired",
         "choices": [
             "lay in the warmth","find a way down"
@@ -160,7 +160,7 @@
     },
     {
         "id": 17,
-        "image": "./assets/toomuchsmoke.gif",
+        "image": "./assets/compressed/toomuchsmoke-min.gif",
         "story": "*cough cough* maybe its a bit much",
         "choices": [
             "plz no more"
@@ -170,7 +170,7 @@
     },
     {
         "id": 18,
-        "image": "./assets/boxchoice.gif",
+        "image": "./assets/compressed/boxchoice-min.gif",
         "story": "ooo a box up here too? i really need to lay down...",
         "choices": [
             "if i fitz, i sitz","get me off this roof."
@@ -179,7 +179,7 @@
     },
     {
         "id": 19,
-        "image": "./assets/boxspiders.gif",
+        "image": "./assets/compressed/boxspiders-min.gif",
         "story": "AHHHHHHH SPIIIIIDDDEEEEEEERRRRRRSSSSS",
         "choices": [
             "ok that one really freaked me out."
@@ -189,7 +189,7 @@
     },
     {
         "id": 20,
-        "image": "./assets/roofjumpdecide.gif",
+        "image": "./assets/compressed/roofjumpdecide-min.gif",
         "story": "I found the edge... looks kinda high up... maybe if i jump to the next building i can get down easily",
         "choices": [
             "leap of faith","find another way"
@@ -198,7 +198,7 @@
     },
     {
         "id": 21,
-        "image": "./assets/roofjumpdecide.gif",
+        "image": "./assets/compressed/roofjumpdecide-min.gif",
         "story": "You look around and theres an easy way down right in front of you the whole time.",
         "choices": [
             "get down"
@@ -207,7 +207,7 @@
     },
     {
         "id": 22,
-        "image": "./assets/roofjumpafter.gif",
+        "image": "./assets/compressed/roofjumpafter-min.gif",
         "story": "jumped and missed... ouch... at least you landed in a dumpster that cushioned the fall",
         "choices": [
             "plz kill me"
@@ -227,7 +227,7 @@
     },
     {
         "id": 24,
-        "image": "./assets/ending1noloop.gif",
+        "image": "./assets/compressed/ending1noloop-min.gif",
         "story": "idk if i trust him but desparation so ima snug. he takes you in and makes you cozy. see? happy ending after all.",
         "choices": [
             "Game Over thanks 4 bein a playr (<- check out the playr app)"
@@ -237,7 +237,7 @@
     },
     {
         "id": 25,
-        "image": "./assets/parkscene.gif",
+        "image": "./assets/compressed/parkscene-min.gif",
         "story": "Wow, this place is pretty. No scary monsters over here.",
         "choices": [
             "Continue"
@@ -247,7 +247,7 @@
     },
     {
         "id": 26,
-        "image": "./assets/parkscene.gif",
+        "image": "./assets/compressed/parkscene-min.gif",
         "story": "Wait, what is that? It's so dark but I think I see something over there. HELLOOOOO, I come in peace!",
         "choices": [
             "Run away to the bridge!!!", "Go closer?"
@@ -256,7 +256,7 @@
     },
     {
         "id": 27,
-        "image": "./assets/boxscene.gif",
+        "image": "./assets/compressed/boxscene-min.gif",
         "story": "Soooo cold, I shiverssss. I just want to rest. Ooooh a box, this might keep me warm.",
         "choices": [
             "Go inside the box", "Find other shelter"
@@ -265,7 +265,7 @@
     },
     {
         "id": 28,
-        "image": "./assets/dogparkscene.gif",
+        "image": "./assets/compressed/dogparkscene-min.gif",
         "story": "OH MY!!! MY WORST ENEMY!!!",
         "choices": [
             "Run run RUN!!!"
@@ -275,7 +275,7 @@
     },
     {
         "id": 29,
-        "image": "./assets/insideboxscene.gif",
+        "image": "./assets/compressed/insideboxscene-min.gif",
         "story": "You stay in the box for warmth and started to groom the poor little kitten that was living in there and on high alert, you hear something coming towards the box. It's another cat who started to growl!",
         "choices": [
             "CAT FIGHT!!!", "Bye, Felicia!"
@@ -284,7 +284,7 @@
     }, 
     {
         "id": 30,
-        "image": "./assets/kittenboxscene.gif",
+        "image": "./assets/compressed/kittenboxscene-min.gif",
         "story": "You were walking away until you heard a little meow coming from inside and you see a little kitten all alone. You decided to go inside the box instead.",
         "choices": [
             "Stay with the kitten"
@@ -293,7 +293,7 @@
     },
     {
         "id": 31,
-        "image": "./assets/mothercatscene.gif",
+        "image": "./assets/compressed/mothercatscene-min.gif",
         "story": "A brawl happens and the cat hisses at you angrily. Things are getting crazy, so you decided to run away from the fight badly hurt.",
         "choices": [
             "I'm a pussy, I gots to run."
@@ -303,7 +303,7 @@
     },
     {
         "id": 32,
-        "image": "./assets/animalcontrolscene.gif",
+        "image": "./assets/compressed/animalcontrolscene-min.gif",
         "story": "You run back into the city and find yourself back into the streets. There's a hooman staring at you, calling you over. You're on guard and you don't move. You watch him as he comes closer. He's getting too close...",
         "choices": [
             "STRANGER DANGER GET OUT NOW!", "Trust the hooman?"
@@ -312,7 +312,7 @@
     },
     {
         "id": 33,
-        "image": "./assets/cemeteryscene.gif",
+        "image": "./assets/compressed/cemeteryscene-min.gif",
         "story": "You're tired, hungry, and thirsty all over again but all you want is some peace and quiet. You lie on the dirt looking up at the moon. Nothing scary over here.",
         "choices": [
             "Go to sleep"
@@ -321,7 +321,7 @@
     },
     {
         "id": 34,
-        "image": "./assets/runfromacscene.gif",
+        "image": "./assets/compressed/runfromacscene-min.gif",
         "story": "You made a HUGE mistake trusting the hooman!!! You're wrestling your way out and manage to bring out your hunting weapons and slicing the hooman and using your munchers to break free and escape!",
         "choices": [
             "Escape to the quiet park!"
@@ -331,7 +331,7 @@
     },
     {
         "id": 35,
-        "image": "./assets/endingcemeteryscene.gif",
+        "image": "./assets/compressed/endingcemeteryscene-min.gif",
         "story": "You lay on the cold stone thinking, \"finally some peace.\"",
         "choices": [
             "Game Over thanks 4 bein a playr (<- check out the playr app)"
