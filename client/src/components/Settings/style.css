@@ -1,5 +1,14 @@
-.settingsButton{
-    position: fixed;
-    top: 8%;
-    right: 2%;
+.settingsButton {
+    position: absolute;
+    top: 2%;
+    right: 1%;
+}
+
+#settingsGear {
+    width: 80px;
+}
+
+.settingsButton:hover {
+    cursor: pointer;
+    opacity: .8;
 }

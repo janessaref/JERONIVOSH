@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Signout from "../Signout";
-import "./style.css"
+import "./style.css";
+
 function Settings({backToMain, logoutUser}) {
 
   const [modalSettings, setModalSettings] = useState("modal hideModal");
@@ -20,13 +20,8 @@ function Settings({backToMain, logoutUser}) {
       <audio controls autoplay loop>
         <source src="./assets/4_29.mp3" type="audio/mpeg" />
       </audio> */}
+               <img src="./assets/settingsgear.png" onClick={() => {showModalSettings()}} id="settingsGear"/>
 
-      <button 
-            className="btn float-right" 
-            id="settingsBtn" 
-            onClick={() => {showModalSettings()}}>
-                Settings
-            </button>
     {/* Settings Modal */}
     <div className={modalSettings} id="settingsModal" role="dialog">
                 <div className="modal-dialog" role="document">
