@@ -117,7 +117,7 @@ function Credits({end}) {
        <br/>
        {highScores.map(score=>{
             return(
-                <p className="name" key={score.username}>{score.username}: {score.lives}</p>
+                <p className="name" key={score.id}>{score.username}: {score.lives}</p>
             )
         })}
 
