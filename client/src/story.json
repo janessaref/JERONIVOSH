@@ -168,18 +168,18 @@
     {
         "id": 16,
         "image": "./assets/compressed/chimney-min.gif",
-        "story": "that looks warm.. i am tired",
+        "story": "You wander the stucture's peak and encounter a mysterious column emitting heat. There is a weird dark could looming above it. You are cold and need a place to stay warm for the night.",
         "choices": [
-            "lay in the warmth","find a way down"
+            "Lay in the warmth","Search for a way down"
         ],
         "decision": [17,18]
     },
     {
         "id": 17,
         "image": "./assets/compressed/toomuchsmoke-min.gif",
-        "story": "*cough cough* maybe its a bit much",
+        "story": "You lay down in the comforting heat and feel at ease for once. After a short time the looming cloud above you becomes too much to handle. Your lungs begin to hurt and you cannot breathe. You run off and must seek new shelter.",
         "choices": [
-            "plz no more"
+            "Continue..."
         ],
         "decision": [18],
         "badchoice": true
@@ -187,18 +187,18 @@
     {
         "id": 18,
         "image": "./assets/compressed/boxchoice-min.gif",
-        "story": "ooo a box up here too? i really need to lay down...",
+        "story": "You are so tired, your eyes feel they need to close. There is an old box sitting in front of you. It looks wet and old, but better than sleeping out in the cold.",
         "choices": [
-            "if i fitz, i sitz","get me off this roof."
+            "Seek shelter in the box","Look for a way down"
         ],
         "decision": [19,20]
     },
     {
         "id": 19,
         "image": "./assets/compressed/boxspiders-min.gif",
-        "story": "AHHHHHHH SPIIIIIDDDEEEEEEERRRRRRSSSSS",
+        "story": "You jump inside the box and something doesn't feel right. You feel slight movement all around you. You realize what is happening and suddenly you leap out of the box. Spiders are already crawling on you as you try to shake them off your fur. Looks like you need to find another spot for the night.",
         "choices": [
-            "ok that one really freaked me out."
+            "Continue..."
         ],
         "decision": [20],
         "badchoice": true
@@ -206,27 +206,27 @@
     {
         "id": 20,
         "image": "./assets/compressed/roofjumpdecide-min.gif",
-        "story": "I found the edge... looks kinda high up... maybe if i jump to the next building i can get down easily",
+        "story": "You find the edge of the towering cliff. Across the gap to the other structure there is a way down. It seems far but you have made larger leaps before.",
         "choices": [
-            "leap of faith","find another way"
+            "Take the leap","Find another way"
         ],
         "decision": [22,21]
     },
     {
         "id": 21,
         "image": "./assets/compressed/roofjumpdecide-min.gif",
-        "story": "You look around and theres an easy way down right in front of you the whole time.",
+        "story": "You circle the perimeter of the structure one more time and find another way down. You climb down the rusty stairs until you reach the ground.",
         "choices": [
-            "get down"
+            "Continue..."
         ],
         "decision": [23]
     },
     {
         "id": 22,
         "image": "./assets/compressed/roofjumpafter-min.gif",
-        "story": "jumped and missed... ouch... at least you landed in a dumpster that cushioned the fall",
+        "story": "You make the leap to the structure across from you. Maybe it was a take off or maybe you were just unaware of the physical toll tonight has had on your body. You fall short of the jump, clawing at your metal escape route to no avail. You free fall down the side of the structure, plummeting towards the ground. Luckily you land in an open bin below you filled with human trash. The pain is significant but their rubbish cushioned the fall enough to walk away.",
         "choices": [
-            "plz kill me"
+            "Continue..."
         ],
         "decision": [23],
         "badchoice": true
@@ -234,9 +234,9 @@
     {
         "id": 23,
         "image": "./assets/findman.png",
-        "story": "im tired feel like death blah blah blah.. oh wait ive seen this man before",
+        "story": "You feel on the brink of collapsing. You need to find some warmth or shelter first or who knows if you will survive the night. You notice a familiar smell. A comforting smell. You peer around and the strange man from earlier lays before you again.",
         "choices": [
-            "I rly just wanna sleep"
+            "Continue..."
         ],
         "decision": [24]
       
@@ -244,9 +244,9 @@
     {
         "id": 24,
         "image": "./assets/compressed/ending1noloop-min.gif",
-        "story": "idk if i trust him but desparation so ima snug. he takes you in and makes you cozy. see? happy ending after all.",
+        "story": "You don't trust humans, but this one seems special. Out of desparation you make your way to him and lay on the warmth of the cloth surrounding him. You notice him look at you and make slow movements. He takes the cloth and gently places is around you. It is warmer than you have felt all night.",
         "choices": [
-            "Game Over thanks 4 bein a playr (<- check out the playr app)"
+            "Goodnight..."
         ],
 
         "end": true
