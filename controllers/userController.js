@@ -1,4 +1,5 @@
 const user = require("../models/User");
+const bcrypt = require("bcryptjs");
 
 module.exports = {
   findOne: function (req, res) {
@@ -8,11 +9,17 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    // console.log("body: ", req.body)
+    console.log("body: ", req.body)
+    console.log("user/pass: ", req.body.username, " ", req.body.password)
+
+    req.body.password = bcrypt.hashSync(req.body.password, 10);
+    console.log("encrypted pass: ", req.body.password)
     user
-      .create(req.body)
+      .create({ username: req.body.username, password: req.body.password })
       .then((user) => res.json(user))
       .catch((err) => res.status(422).json(err));
+
+
   },
   update: function (req, res) {
     // console.log("level: ", req.body)
