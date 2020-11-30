@@ -224,7 +224,7 @@
     {
         "id": 22,
         "image": "./assets/compressed/roofjumpafter-min.gif",
-        "story": "You make the leap to the structure across from you. Maybe it was a take off or maybe you were just unaware of the physical toll tonight has had on your body. You fall short of the jump, clawing at your metal escape route to no avail. You free fall down the side of the structure, plummeting towards the ground. Luckily you land in an open bin below you filled with human trash. The pain is significant but their rubbish cushioned the fall enough to walk away.",
+        "story": "You make the leap to the structure across from you. Maybe it was a poor take off or maybe you were just unaware of the physical toll tonight has had on your body. You fall short of the jump, clawing at your metal escape route to no avail. You free fall down the side of the structure, plummeting towards the ground. Luckily you land in an open bin below you filled with human trash. The pain is significant but their rubbish cushioned the fall enough to walk away.",
         "choices": [
             "Continue..."
         ],
@@ -234,7 +234,7 @@
     {
         "id": 23,
         "image": "./assets/findman.png",
-        "story": "You feel on the brink of collapsing. You need to find some warmth or shelter first or who knows if you will survive the night. You notice a familiar smell. A comforting smell. You peer around and the strange man from earlier lays before you again.",
+        "story": "You feel on the brink of collapsing. You need to find some warmth or shelter first, or who knows if you will survive the night. You notice a familiar smell. A comforting smell. You peer around and the strange man from earlier lays before you again.",
         "choices": [
             "Continue..."
         ],
@@ -244,7 +244,7 @@
     {
         "id": 24,
         "image": "./assets/compressed/ending1noloop-min.gif",
-        "story": "You don't trust humans, but this one seems special. Out of desparation you make your way to him and lay on the warmth of the cloth surrounding him. You notice him look at you and make slow movements. He takes the cloth and gently places is around you. It is warmer than you have felt all night.",
+        "story": "You don't trust humans, but this one seems special. Out of desparation you make your way to him and lay on the warmth of the cloth surrounding him. You notice him look at you and make slow movements. He takes the cloth and gently places it around you. It is warmer than you have felt all night.",
         "choices": [
             "Goodnight..."
         ],
