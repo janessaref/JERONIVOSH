@@ -36,29 +36,26 @@ function About() {
                             </button>
                         </div>
                         <div className="modal-body mt-2 overflow-auto">
-                            <p className="font-weight-bold">JERRI FONG</p>
-                            <p>She is blah blah.</p>
+                           
+                           
                             <a 
                             href="http://janessaref.herokuapp.com" 
                             target="_blank"
                             rel="noreferrer"
-                            className="mb-3 text-center">
-                                Jerri's Portfolio
-                            {/* <img 
-                                src=
-                                alt="GitHub Logo"
-                                className="mr-2 mb-2 ghLogo" /> */}
-
+                            className="mb-3 text-center"> <img src="./assets/developers/dog.png" />
                         </a>
-                            <p className="font-weight-bold">JON SANPEDRO</p>
-                            <p>He is blah blah.</p>
+                        <p className="font-weight-bold">JERRI FONG</p>
+
+                           
                             <a 
                             href="#" 
                             target="_blank"
                             rel="noreferrer"
                             className="mb-3 text-center">
-                                Jon's Portfolio
+                                <img src="./assets/developers/bird.png" />
                             </a>
+                            <p className="font-weight-bold">JON SANPEDRO</p>
+
                             <p className="font-weight-bold">IVAN TORRES</p>
                             <p>He is blah blah.</p>
                             <a 
