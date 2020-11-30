@@ -254,9 +254,9 @@
     {
         "id": 25,
         "image": "./assets/compressed/parkscene-min.gif",
-        "story": "Wow, this place is pretty. No scary monsters over here.",
+        "story": "You observe your surroundings. Trees tower over you left and right. In the distance a light flickers. It seems the monsters don't live here.",
         "choices": [
-            "Continue"
+            "Continue..."
         ],
         "decision": [26]
        
@@ -264,27 +264,27 @@
     {
         "id": 26,
         "image": "./assets/compressed/parkscene-min.gif",
-        "story": "Wait, what is that? It's so dark but I think I see something over there. HELLOOOOO, I come in peace!",
+        "story": "In the distance a shadow is cast. Curiousity creeps over you but you are still cautious. What could it be?",
         "choices": [
-            "Run away to the bridge!!!", "Go closer?"
+            "Better not risk it", "Check it out"
         ],
         "decision": [27,28]
     },
     {
         "id": 27,
         "image": "./assets/compressed/boxscene-min.gif",
-        "story": "Soooo cold, I shiverssss. I just want to rest. Ooooh a box, this might keep me warm.",
+        "story": "The air around you sends shivers down your spine. The temperature is dropping quickly. There is a cave ahead.",
         "choices": [
-            "Go inside the box", "Find other shelter"
+            "Seek shelter in the cave", "Keep looking"
         ],
         "decision": [29,30]
     },
     {
         "id": 28,
         "image": "./assets/compressed/dogparkscene-min.gif",
-        "story": "OH MY!!! MY WORST ENEMY!!!",
+        "story": "A figure emerges from the darkness, snarling and foaming by the mouth. You don't want to stick around to find out what it is.",
         "choices": [
-            "Run run RUN!!!"
+            "Continue..."
         ],
         "decision": [27],
         "badchoice": true
@@ -292,27 +292,27 @@
     {
         "id": 29,
         "image": "./assets/compressed/insideboxscene-min.gif",
-        "story": "You stay in the box for warmth and started to groom the poor little kitten that was living in there and on high alert, you hear something coming towards the box. It's another cat who started to growl!",
+        "story": "Inside the cave you are caught off guard. In front of you a little one is taking shelter from the elements, probably alone, just like you. How could it be here alone? You nuzzle up and try to keep it warm when you notice a scent surrounding you. Must be the scent of its mother...",
         "choices": [
-            "CAT FIGHT!!!", "Bye, Felicia!"
+            "Stand your ground", "Abandon your only shelter"
         ],
         "decision": [31,32]
     }, 
     {
         "id": 30,
         "image": "./assets/compressed/kittenboxscene-min.gif",
-        "story": "You were walking away until you heard a little meow coming from inside and you see a little kitten all alone. You decided to go inside the box instead.",
+        "story": "You turn your back to the cave and begin to walk when you hear a faint noise behind you. Did you hear that right? There it is again. The faint cry of a young one... You investigate the cave.",
         "choices": [
-            "Stay with the kitten"
+            "Continue..."
         ],
         "decision": [29]
     },
     {
         "id": 31,
         "image": "./assets/compressed/mothercatscene-min.gif",
-        "story": "A brawl happens and the cat hisses at you angrily. Things are getting crazy, so you decided to run away from the fight badly hurt.",
+        "story": "The mother has returned. Upon seeing you she extends her claws, ready to defend her young. She swipes at you but you escape with only a scratch.",
         "choices": [
-            "I'm a pussy, I gots to run."
+            "Continue..."
         ],
         "decision": [32],
         "badchoice": true
@@ -320,27 +320,27 @@
     {
         "id": 32,
         "image": "./assets/compressed/animalcontrolscene-min.gif",
-        "story": "You run back into the city and find yourself back into the streets. There's a hooman staring at you, calling you over. You're on guard and you don't move. You watch him as he comes closer. He's getting too close...",
+        "story": "As you escape you scurry through the streets. The sounds of your pursuer become faint. Just as you think you are safe you notice you have a new pursuer. A human. It seems like he is trying to speak to you...",
         "choices": [
-            "STRANGER DANGER GET OUT NOW!", "Trust the hooman?"
+            "Escape to the darkness", "Let him approach"
         ],
         "decision": [33,34]
     },
     {
         "id": 33,
         "image": "./assets/compressed/cemeteryscene-min.gif",
-        "story": "You're tired, hungry, and thirsty all over again but all you want is some peace and quiet. You lie on the dirt looking up at the moon. Nothing scary over here.",
+        "story": "You keep running until you can't anymore. A cool breeze sweeps the grass around you and cold stones protrude from the ground. There are only a few humans here. They are somber and quiet. The atmosphere is calm here.",
         "choices": [
-            "Go to sleep"
+            "Continue..."
         ],
         "decision": [35]
     },
     {
         "id": 34,
         "image": "./assets/compressed/runfromacscene-min.gif",
-        "story": "You made a HUGE mistake trusting the hooman!!! You're wrestling your way out and manage to bring out your hunting weapons and slicing the hooman and using your munchers to break free and escape!",
+        "story": "The human lunges, aggresively grabbing at you. You leap away but he catches you by the tail. You swing your body around and manage to claw through his grip. He winces in pain as you run for your life.",
         "choices": [
-            "Escape to the quiet park!"
+            "Continue..."
         ],
         "decision": [33],
         "badchoice": true
@@ -350,7 +350,7 @@
         "image": "./assets/compressed/endingcemeteryscene-min.gif",
         "story": "You lay on the cold stone thinking, \"finally some peace.\"",
         "choices": [
-            "Game Over thanks 4 bein a playr (<- check out the playr app)"
+            "Goodnight..."
         ],
         "end": true
     }
