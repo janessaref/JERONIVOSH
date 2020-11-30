@@ -20,14 +20,8 @@ function Credits({end}) {
       .then(res => {
         // console.log(res)
         
-          var sorted = res.data.sort(function(a,b){
-            if(a.lives < b.lives) { return 1; }
-            if(a.lives > b.lives) { return -1; }
-            return 0;
-          })
-          
-          var scores =[...sorted]
-          // console.log(scores)
+          var scores = res.data.reverse()
+          console.log(scores)
         
         setHighScores(scores.slice(0,10))
         // console.log(highScores)
@@ -116,7 +110,7 @@ function Credits({end}) {
        <br/>
        <br/>
        <br/>
-        <p className="name">High Scores:</p>
+        <p className="name">Recent Scores:</p>
        <br/>
        <br/>
        <br/>
