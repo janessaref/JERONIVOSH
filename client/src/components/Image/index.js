@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./style.css";
-
+import Spinner from 'react-bootstrap/Spinner';
 function Image({ user, story, spinner }) {
   const [levels, setLevels] = useState({ status: "unmuted" });
   const [visibleX, setVisibleX] = useState(false);
@@ -64,11 +64,16 @@ function Image({ user, story, spinner }) {
       <audio className="float-right" autoPlay loop id="gameAudio" ref={volume}>
         <source src="./assets/4_29.mp3" type="audio/mpeg" />
       </audio>
-      <div className="loading" style={{ display: loading ? "block" : "none" }}>
-        Loading Images
-    </div>
+      {/* <div style={{ display: loading ? "block" : "none" }} className="spinner-border loading" role="status">
+        <span class="sr-only">Loading...</span>
+        TEST
+      </div> */}
+      <Spinner variant="primary" className="loading" style={{ display: loading ? "block" : "none" }} animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+
       <div style={{ display: loading ? "none" : "block" }}>
-        <img className="gif img-fluid" src={story[user.level].image} onLoad={()=>spinner()}></img>
+        <img className="gif img-fluid" src={story[user.level].image} onLoad={() => spinner()}></img>
       </div>
     </div>
   );
