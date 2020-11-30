@@ -15,6 +15,7 @@ import CoopLogin from "../components/CoopLogin";
 // import Multiplayer from "../components/Multiplayer";
 import Main from "../components/Main";
 import Chat from '../components/chat';
+import Settings from '../components/Settings';
 
 // let time = 0;
 
@@ -145,6 +146,11 @@ function Game() {
         console.log(endGame)
     }
 
+    function backToMain(event) {
+        event.preventDefault();
+        setStart(false);
+    }
+  
     function endCredits(event) {
         event.preventDefault();
         console.log("end event: ", event)
@@ -154,6 +160,12 @@ function Game() {
         setEnd(true);
         setEndGame(true);
     }
+
+    function logoutUser() {
+        //  event.preventDefault();
+         console.log("BISH WORK WITH ME")
+        setAuth(false);
+    };
 
     function coopLogin(event) {
         event.preventDefault();
@@ -299,9 +311,10 @@ function Game() {
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput}/>}</Route>
 
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
-                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} />}</Route>
 
-                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
+                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} /><Main start={start} />
+                    <Settings backToMain={backToMain} logoutUser={logoutUser}/>
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/main">{authorized ? startGame ? <Redirect to="/game" /> : <Main start={start} /> : <Redirect to="/login" />} </Route>

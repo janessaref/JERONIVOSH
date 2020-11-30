@@ -43,5 +43,4 @@ router
   .get(coopController.findOne)
   .put(coopController.update)
 
-
 module.exports = router;

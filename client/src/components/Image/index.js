@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Settings from "../Settings";
 import "./style.css";
 import Spinner from 'react-bootstrap/Spinner';
 function Image({ user, story, spinner }) {
@@ -17,6 +18,7 @@ function Image({ user, story, spinner }) {
   function spinner() {
     setLoading(false);
   }
+
 
   function showXImage() {
     setVisibleX(true);
@@ -54,6 +56,7 @@ function Image({ user, story, spinner }) {
 
   return (
     <div>
+      <Settings />
       <div className="mute fixed">
         <img src="./assets/redx.png" className="redX" style={style} onClick={handleMute} />
         <img src="./assets/audiosmall.png" onClick={handleMute} id="volIcon" />

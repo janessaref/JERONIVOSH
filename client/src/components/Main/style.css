@@ -17,6 +17,10 @@
     color: white;
 }
 
+.eight {
+    color: rgb(231, 177, 177);
+}
+
 .gameTypeContainer {
     margin-top: 120px;
     background-color: #6f6188;
