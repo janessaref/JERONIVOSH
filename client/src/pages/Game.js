@@ -155,7 +155,6 @@ function Game() {
         event.preventDefault();
         console.log("end event: ", event)
         console.log("user at credits: ", user);
-
         setStart(false);
         setEnd(true);
         setEndGame(true);
@@ -183,7 +182,7 @@ function Game() {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
             }
         } else if (storyline[user.level].end === true) {
-            setStart(false);
+            
             API.findHighScore(user.username).then(res => {
                 console.log("highscore: ", res);
                 if (!res.data) {
