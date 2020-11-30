@@ -54,6 +54,18 @@ function Game() {
             setLivesStyle('lives lives-color1')
         } else if (user.lives === 7) {
             setLivesStyle('lives lives-color2')
+        } else if (user.lives === 6) {
+            setLivesStyle('lives lives-color3')
+        } else if (user.lives === 5) {
+            setLivesStyle('lives lives-color4')
+        } else if (user.lives === 4) {
+            setLivesStyle('lives lives-color5')
+        } else if (user.lives === 3) {
+            setLivesStyle('lives lives-color6')
+        } else if (user.lives === 2) {
+            setLivesStyle('lives lives-color7')
+        } else if (user.lives === 1) {
+            setLivesStyle('lives lives-color8')
         }
     }, [user.lives])
 
