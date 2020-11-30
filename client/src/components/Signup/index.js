@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-function signup({ signup, authorized }) {
+function signup({ signup, authorized, userMessage, passMessage }) {
     return (
         <div className="homepage container">
         <div className="mainContent container d-flex justify-content-center">
@@ -26,6 +26,12 @@ function signup({ signup, authorized }) {
                         <div className="form-group mx-auto text-center">
                             <p className="h5 mt-4 passwordLabel">Password: </p>
                             <input type="password" className="form-control" id="password" placeholder="Create password" />
+                        </div>
+                        <div className={userMessage}>
+                           <p>Sorry that user Name is Taken</p>
+                        </div>
+                        <div className={passMessage}>
+                            <p>Sorry password should be atleast 8 characters long</p>
                         </div>
                         <div className ="row mx-auto text-center">
                             <div className="col-md">
