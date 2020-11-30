@@ -21,11 +21,11 @@ module.exports = {
     //   .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    console.log("body: ", req.body)
-    console.log("user/pass: ", req.body.username, " ", req.body.password)
+    // console.log("body: ", req.body)
+    // console.log("user/pass: ", req.body.username, " ", req.body.password)
 
     req.body.password = bcrypt.hashSync(req.body.password, 10);
-    console.log("encrypted pass: ", req.body.password)
+    // console.log("encrypted pass: ", req.body.password)
     user
       .create({ username: req.body.username, password: req.body.password })
       .then((user) => res.json(user))
