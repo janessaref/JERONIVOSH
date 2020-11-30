@@ -31,7 +31,7 @@ function signup({ signup, authorized, userMessage, passMessage }) {
                            <p>Username is taken.</p>
                         </div>
                         <div className={passMessage}>
-                            <p>Password must be <br /> at least 8 characters.</p>
+                            <p>Password must be <br /> at least <strong>8</strong> characters.</p>
                         </div>
                         <div className ="row mx-auto text-center">
                             <div className="col-md">
