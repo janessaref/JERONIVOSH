@@ -6,7 +6,7 @@ function Signout({logoutUser}) {
     return(
 
     
-        <button className="btn btn-block signOut" onClick={logoutUser} id="signOutBtn">Logout 
+        <button className="btn btn-block signOut" type="submit" onSubmit={logoutUser} id="signOutBtn">Logout 
         </button>
 
     )
