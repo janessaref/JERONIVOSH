@@ -33,7 +33,7 @@ function Settings({backToMain, logoutUser}) {
               </div>
               <div className="modal-body mt-2 overflow-auto">
                 <button 
-                  className="btn btn-block backtoMainMenu" 
+                  className="btn btn-block backtoMainMenu hvr-back-pulse" 
                   onClick={backToMain}>Back to Main Menu
                 </button>
 

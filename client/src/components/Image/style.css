@@ -37,3 +37,16 @@
    position: absolute;
    right: 20%;
 }
+
+@media (max-width:480px) {
+    #volIcon {
+        width: 40px;
+    }
+    .mute{
+        top: 1%;
+        right: 1%;
+    }
+    .redX {
+        width: 70px;
+    }
+}
