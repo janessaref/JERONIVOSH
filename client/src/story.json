@@ -263,7 +263,7 @@
     },
     {
         "id": 26,
-        "image": "./assets/compressed/parkscene-min.gif",
+        "image": "./assets/compressed/shadowscene-min.gif",
         "story": "Wait, what is that? It's so dark but I think I see something over there. HELLOOOOO, I come in peace!",
         "choices": [
             "Run away to the bridge!!!", "Go closer?"
@@ -319,7 +319,7 @@
     },
     {
         "id": 32,
-        "image": "./assets/animalcontrol.png",
+        "image": "./assets/compressed/animalcontrolscene-min.gif",
         "story": "You run back into the city and find yourself back into the streets. There's a hooman staring at you, calling you over. You're on guard and you don't move. You watch him as he comes closer. He's getting too close...",
         "choices": [
             "STRANGER DANGER GET OUT NOW!", "Trust the hooman?"
