@@ -165,6 +165,7 @@ function Game() {
 
     function backToMain(event) {
         event.preventDefault();
+        console.log("working")
         setStart(false);
     }
 
@@ -172,17 +173,65 @@ function Game() {
         event.preventDefault();
         console.log("end event: ", event)
         console.log("user at credits: ", user);
-
         setStart(false);
         setEnd(true);
         setEndGame(true);
     }
 
-    function logoutUser() {
-        //  event.preventDefault();
-        console.log("BISH WORK WITH ME")
+    function logoutUser(event) {
+        event.preventDefault();
         setAuth(false);
     };
+
+    
+
+    // if story line lever end return false, then return false
+    function choice(event) {
+        event.preventDefault();
+        // setStart(false);
+        // console.log(user._id);
+        let value = event.target.value;
+        if (storyline[user.level].decision) {
+            if (storyline[user.level].badchoice) {
+                // console.log("working");
+                setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
+            }
+            else {
+                setUser({ ...user, "level": storyline[user.level].decision[value] });
+            }
+        } else if (storyline[user.level].end === true) {
+            
+            API.findHighScore(user.username).then(res => {
+                console.log("highscore: ", res);
+                if (!res.data) {
+                    API.newHighScore(user.username, user.level, user.lives)
+                } else {
+                    if (res.data.lives < user.lives) {
+                        API.updateHighScore(res.data._id, user.level, user.lives)
+                    }
+                }
+            })
+            setEndGame(false)
+        } else {
+            setUser({ ...user, "level": user.level + 1 });
+        }
+    }
+
+    function coopChoice(event) {
+        event.preventDefault();
+        // console.log(user._id);
+        let value = event.target.value;
+        if (storyline[coopUser.level].decision) {
+            if (storyline[coopUser.level].badchoice) {
+                // console.log("working");
+                setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value], "lives": coopUser.lives - 1 });
+            } else {
+                setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value] });
+            }
+        } else {
+            setCoopUser({ ...coopUser, "level": coopUser.level + 1 });
+        }
+    }
 
     function coopLogin(event) {
         event.preventDefault();
@@ -222,54 +271,6 @@ function Game() {
             }).catch(err => {
                 console.log("login error: ", err);
             })
-    }
-
-    // if story line lever end return false, then return false
-    function choice(event) {
-        event.preventDefault();
-        setStart(false);
-        // console.log(user._id);
-        let value = event.target.value;
-        if (storyline[user.level].decision) {
-            if (storyline[user.level].badchoice) {
-                // console.log("working");
-                setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
-            }
-            else {
-                setUser({ ...user, "level": storyline[user.level].decision[value] });
-            }
-        } else if (storyline[user.level].end === true) {
-
-            API.findHighScore(user.username).then(res => {
-                console.log("highscore: ", res);
-                if (!res.data) {
-                    API.newHighScore(user.username, user.level, user.lives)
-                } else {
-                    if (res.data.lives < user.lives) {
-                        API.updateHighScore(res.data._id, user.level, user.lives)
-                    }
-                }
-            })
-            setEndGame(false)
-        } else {
-            setUser({ ...user, "level": user.level + 1 });
-        }
-    }
-
-    function coopChoice(event) {
-        event.preventDefault();
-        // console.log(user._id);
-        let value = event.target.value;
-        if (storyline[coopUser.level].decision) {
-            if (storyline[coopUser.level].badchoice) {
-                // console.log("working");
-                setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value], "lives": coopUser.lives - 1 });
-            } else {
-                setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value] });
-            }
-        } else {
-            setCoopUser({ ...coopUser, "level": coopUser.level + 1 });
-        }
     }
 
     // useEffect(() => {
@@ -326,13 +327,15 @@ function Game() {
 
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} />}</Route>
-
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
-
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
+
+                   
+
+                    <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
+
                         <Settings backToMain={backToMain} logoutUser={logoutUser} />
-                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
+                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/main"></Redirect> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path="/main">{authorized ? startGame ? <Redirect to="/game" /> : <Main start={start} /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>

@@ -1,6 +1,7 @@
 .mainMenu {
     background-image: url("https://github.com/joshglugatch/JERONIVOSH/blob/main/client/public/assets/introcity.gif?raw=true");
     height: 100vh;
+    background-repeat: repeat-x;
 }
 .btn {
     border: 1px black solid;

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Settings from "../Settings";
 import "./style.css";
 // import Spinner from 'react-bootstrap/Spinner';
 function Image({ user, story, spinner, lives }) {

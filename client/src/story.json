@@ -6,7 +6,7 @@
 
         "story": "Would you like to explore the city?",
         "choices": [
-            "Let's check it out."
+            "Venture forward"
         ]
     },
     {
@@ -17,7 +17,7 @@
         "story": "The trails are busy. You've never seen anything like this. Monstrous figures pass in a blur, their growls are loud and eyes are glowing. ",
         "choices": [
             "Hide in the nearby alley",
-            "Continue exploring."
+            "Continue exploring..."
         ],
         "decision": [2, 3]
     },
@@ -28,8 +28,8 @@
 
         "story": "You made it to calm space in between the towering mountains that surround you. The rumble of the monsters recedes into the background. Your stomach is growling... You haven't eaten for days. You notice some rats feeding on scraps. Fixated on your prey, you...",
         "choices": [
-            "Go straight for the pounce.",
-            "Play it slow, sneak up behind the dumpster."
+            "Go straight for the pounce",
+            "Play it slow, sneak up behind the dumpster"
         ],
         "decision": [4, 5]
     },
@@ -65,7 +65,7 @@
 
         "story": "You sneak through the rough terrain, slowly creeping towards your prey. You wait for just the right moment and leap for your first chance of nourishment in days. The furry creatures scamper away, leaving their meager scraps behind. The taste of rot will be enough to hold you over.",
         "choices": [
-            "Continue"
+            "Continue..."
         ],
         "decision": [6]
     },
@@ -74,9 +74,9 @@
 
         "image": "./assets/compressed/girlscene-min.gif",
 
-        "story": "There is a girl. Let her pet you?",
+        "story": "You emerge from the pass to find trails full of life. You have only heard of the rumored humans before but now they stand before you. A small one approaches you. She looks harmless.",
         "choices": [
-            "Yes","No"
+            "Let her approach","Scurry away"
         ],
         "decision": [7,8]
     },
@@ -85,9 +85,9 @@
 
         "image": "./assets/compressed/broomscene-min.gif",
 
-        "story": "You let her pet you? Get smacked with a broom",
+        "story": "The small human reaches towards you slowly in a calm manner. Behind her a larger human approaches. She seems less gentle. Must be the humans mother. In a swift movement the mother swings at you with a large stick. You escape with minor injury. That was a close call.",
         "choices": [
-            "ok :("
+            "Continue..."
         ],
         "decision": [8],
         "badchoice": true
@@ -95,9 +95,9 @@
     {
         "id": 8,
         "image": "./assets/compressed/piescene-min.gif",
-        "story": "Found a pie... Eat the pie? It's okay.. try it... No... must resist... Maybe??? SMELLS SCRUMPTIOUS!!! come on.. you know you want to...",
+        "story": "You flee around the corner of the large structures surrounding you. A mouth watering smell wafts through the air. Atop a hole in the structure beside you sits a feast you have never seen before. It smells so good, but you can hear more humans inside.",
         "choices": [
-            "ummmm yes?","thats gonna be a no from me dawg"
+            "Eat it","Better not take another risk"
         ],
         "decision": [9,10]
     },
@@ -113,45 +113,45 @@
     {
         "id": 10,
         "image": "./assets/homelessv2before.png",
-        "story": "Theres a weird dude laying down in an alley. This dummy just wasted perfectly good water and poured it in a bowl. Drink it?",
+        "story": "You move along, avoiding mucky puddles and the loud noises that surround you. You turn a corner and in front of you is another human. He is different than the others. His scent is closer to yours than the others. He looks at you and then turns around to grab something. He pulls out a container of water and pours it in a bowl. He looks at you one more time before he turns back around and lays down. You could definitely use some fresh water to drink.",
         "choices": [
-            "I trust the hooman, He smells like me","never trust hoomans..."
+            "Drink the water","You can't trust him"
         ],
         "decision": [11,12]
     },
     {
         "id": 11,
         "image": "./assets/homelessv2after.png",
-        "story": "Sucker.. my water now",
+        "story": "You approach the bowl and finally drink the water your body needs so badly. The man doesn't move an inch.",
         "choices": [
-            "gulp gulp gulp"
+            "Continue..."
         ],
         "decision": [12]
     },
     {
         "id": 12,
         "image": "./assets/compressed/birdintree-min.gif",
-        "story": "O...M...G... BIRB. Chase it?",
+        "story": "You think back to your time in the woods, how you would enjoy chasing the lizards and birds around. What kind of predicament have you gotten yourself into? As you try to gain composure a bird swoops by you and lands on a nearby tree.",
         "choices": [
-            "yess","nah"
+            "Chase it","There are other things to focus on"
         ],
         "decision": [13,25]
     },
     {
         "id": 13,
         "image": "./assets/compressed/catintree-min.gif",
-        "story": "darn birb got away. Looks like i can climb up the building tho...",
+        "story": "You make a giant leap at the bird, feeling the thrill of hunting you used to get. Just as your killer instincts flood your veins the feeling vanishes. The bird gets away as you come to terms with the real mess you are in. You sit, perched on the branch where the bird once was. You realize how high up you actually are. To your right there is a safe way to get even higher up.",
         "choices": [
-            "jump out?","raise the roof bb"
+            "Jump back down to the ground","Climb to the top of the structure"
         ],
         "decision": [14,15]
     },
     {
         "id": 14,
         "image": "./assets/compressed/jumpfromtree-min.gif",
-        "story": "ouchie, that hurt",
+        "story": "You leap from the tree to the hard ground. As you hit the ground you realize how much this 'adventure' has taken a toll on your body.",
         "choices": [
-            "explore the park"
+            "Continue..."
         ],
         "decision": [25],
         "badchoice": true
@@ -159,9 +159,9 @@
     {
         "id": 15,
         "image": "./assets/compressed/roofview-min.gif",
-        "story": "monsters are tiny from up here...",
+        "story": "You can see so far. The monsters don't even look scary from up here. You take a moment of peace watching the tiny humans pass before pressing on.",
         "choices": [
-            "continue"
+            "Continue..."
         ],
         "decision": [16]
     },
