@@ -7,12 +7,14 @@ module.exports = {
     try {
       var check = await user.findOne({ username: req.body.username }).exec();
       if (!check) {
-        return res.status(400).send("Username does not exist")
+        return res.status(400).send("bad username")
       }
       if (!bcrypt.compareSync(req.body.password, check.password)) {
-        return res.status(400).send("Password is invalid")
+        return res.status(400).send("bad password")
       }
+
       res.send(check)
+
     } catch (error) {
       res.status(500).send(error);
     }

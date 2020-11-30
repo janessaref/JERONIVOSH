@@ -137,17 +137,15 @@ function Game() {
         let pass = event.target[1].value;
         API.getUser(name, pass)
             .then(res => {
-                // console.log("login client res: ", res);
+                console.log("login client res: ", res);
                 if (res.data) {
                     setUser(res.data);
                     setAuth(true);
-                } else {
-                    setMessage('message row showMessage')
-                    setPassInput('form-control redInput')
                 }
-
             }).catch(err => {
                 console.log("login error: ", err);
+                setMessage('message row showMessage')
+                setPassInput('form-control redInput')
             })
     }
 
@@ -183,7 +181,7 @@ function Game() {
         setAuth(false);
     };
 
-    
+
 
     // if story line lever end return false, then return false
     function choice(event) {
@@ -200,7 +198,7 @@ function Game() {
                 setUser({ ...user, "level": storyline[user.level].decision[value] });
             }
         } else if (storyline[user.level].end === true) {
-            
+
             API.findHighScore(user.username).then(res => {
                 // console.log("highscore: ", res);
                 if (!res.data) {
@@ -330,7 +328,7 @@ function Game() {
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
 
-                   
+
 
                     <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
 
