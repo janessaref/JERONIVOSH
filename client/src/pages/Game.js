@@ -36,8 +36,13 @@ function Game() {
     // let history = useHistory();
     const [message, setMessage] = useState('message hideMessage')
     const [passInput, setPassInput] = useState('form-control')
+
     const [userMessage, setUserMessage] = useState('hideUserMsg signupMsg')
     const [passMessage, setPassMessage] = useState('hidePassMsg signupMsg')
+
+    // loading icon on gifs
+
+
     useEffect(() => {
         // setRefresh(true);
         setAuth(false);
@@ -65,50 +70,6 @@ function Game() {
         // coopTimer();
     }, [coopUser])
 
-    // useEffect(() => {
-    //     console.log("tick");
-    //     coopTimer();
-    // }, [timer])
-
-    // function coopTimer() {
-    //     console.log("tick");
-    //     // setTimeout(findGame(), 5000);
-    //     setTimer(time);
-    // }
-
-    // function reset() {
-    //     // event.preventDefault();
-    //     console.log("reset event:");
-    //     // API.findHighScore(user.username)
-    //     // .then(res=>{
-    //     //     console.log("highscore find: ", res);
-    //     //     if(res){
-    //     //         API.newHighScore(user.username, user.level, user.lives)
-    //     //     }
-    //     // })
-    //     // write code to push user level, name, lives to a new db table
-    //     setUser({ ...user, level: 0, lives: 9 });
-    //     setEndGame(true);
-    //     // history.push("/main");
-    // }
-
-
-    // function findGame() {
-    //     API.findGame(coopUser.title)
-    //         .then(res => {
-    //             if (res.data) {
-    //                 console.log("coop login response", res.data)
-    //                 setCoopUser(res.data);
-    //                 // coopTimer();
-    //                 // setAuth(true);
-    //                 // console.log("coopuser: ", coopUser);
-    //             } else {
-    //                 // modal/text popup alerting user that user doesnt exist
-    //             }
-    //         }).catch(err => {
-    //             console.log("error: ", err);
-    //         })
-    // }
 
     function signup(event) {
         event.preventDefault();
@@ -163,8 +124,8 @@ function Game() {
                     setUser(res.data);
                     setAuth(true);
                 } else {
-                 setMessage('message row showMessage')
-                 setPassInput('form-control redInput')
+                    setMessage('message row showMessage')
+                    setPassInput('form-control redInput')
                 }
 
             }).catch(err => {
@@ -282,6 +243,50 @@ function Game() {
         }
     }
 
+    // useEffect(() => {
+    //     console.log("tick");
+    //     coopTimer();
+    // }, [timer])
+
+    // function coopTimer() {
+    //     console.log("tick");
+    //     // setTimeout(findGame(), 5000);
+    //     setTimer(time);
+    // }
+
+    // function reset() {
+    //     // event.preventDefault();
+    //     console.log("reset event:");
+    //     // API.findHighScore(user.username)
+    //     // .then(res=>{
+    //     //     console.log("highscore find: ", res);
+    //     //     if(res){
+    //     //         API.newHighScore(user.username, user.level, user.lives)
+    //     //     }
+    //     // })
+    //     // write code to push user level, name, lives to a new db table
+    //     setUser({ ...user, level: 0, lives: 9 });
+    //     setEndGame(true);
+    //     // history.push("/main");
+    // }
+
+
+    // function findGame() {
+    //     API.findGame(coopUser.title)
+    //         .then(res => {
+    //             if (res.data) {
+    //                 console.log("coop login response", res.data)
+    //                 setCoopUser(res.data);
+    //                 // coopTimer();
+    //                 // setAuth(true);
+    //                 // console.log("coopuser: ", coopUser);
+    //             } else {
+    //                 // modal/text popup alerting user that user doesnt exist
+    //             }
+    //         }).catch(err => {
+    //             console.log("error: ", err);
+    //         })
+    // }
 
 
     return (
@@ -289,13 +294,18 @@ function Game() {
             <div className="con">
 
                 <Switch>
+
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage}/>}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput}/>}</Route>
+
+                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} />}</Route>
+
                     <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
-                    <Route exact path="/main">{startGame ? <Redirect to="/game" /> : <Main start={start} />} </Route>
-                    <Route exact path="/credits">{end ? <Redirect to="/main" /> : <Credits end={endCredits} />} </Route>
+                    <Route exact path="/main">{authorized ? startGame ? <Redirect to="/game" /> : <Main start={start} /> : <Redirect to="/login" />} </Route>
+                    <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Chat /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
                 </Switch>

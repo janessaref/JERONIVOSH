@@ -59,8 +59,11 @@ function Credits({end}) {
                 <source src="./assets/CreditsSong.mp3" type="audio/mpeg" />
             </audio>
         </div>
-
-        <p className="gameTitle" style={{color:"black"}}>Jeronivosh</p>
+      
+      <div className="titleContainer">
+        <p className="gameTitle img-fluid" style={{color:"black"}}>Jeronivosh</p>
+      </div>
+        
 
        <div className="break"/><div className="break"/>
        <br/><br/><br/><br/>
