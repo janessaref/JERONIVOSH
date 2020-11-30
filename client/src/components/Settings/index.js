@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Signout from "../Signout";
-
+import "./style.css"
 function Settings({backToMain, logoutUser}) {
 
   const [modalSettings, setModalSettings] = useState("modal hideModal");
@@ -15,7 +15,7 @@ function Settings({backToMain, logoutUser}) {
   }
  
   return (
-    <div>
+    <div className="settingsButton">
       {/* <h1> JERONIVOSH</h1>
       <audio controls autoplay loop>
         <source src="./assets/4_29.mp3" type="audio/mpeg" />

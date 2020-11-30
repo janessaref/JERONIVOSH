@@ -160,9 +160,8 @@ function Game() {
         setEndGame(true);
     }
 
-    function logoutUser() {
-        //  event.preventDefault();
-        console.log("BISH WORK WITH ME")
+    function logoutUser(event) {
+        event.preventDefault();
         setAuth(false);
     };
 
