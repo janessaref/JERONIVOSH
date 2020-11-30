@@ -5,8 +5,7 @@ const HighScoreSchema = new Schema({
     username: {
         type: String,
         trim: true,
-        required: true,
-        unique: true
+        required: true
     },
     level: {
         type: Number,
