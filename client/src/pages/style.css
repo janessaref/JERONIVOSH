@@ -48,9 +48,24 @@
 }
 
 .lives {
-    color: white;
     font-family: 'Press Start 2P', cursive;
     position: absolute;
     top: 3%;
     left: 3%;
+}
+
+.lives-color1 {
+    color: white;
+}
+
+.lives-color2 {
+    color: #ff9999;
+}
+
+.lives-color3 {
+color:  #ff6666;
+}
+
+.lives-color4 {
+    color: #ff0000;
 }

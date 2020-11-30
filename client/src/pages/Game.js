@@ -40,7 +40,7 @@ function Game() {
 
     const [userMessage, setUserMessage] = useState('hideUserMsg signupMsg')
     const [passMessage, setPassMessage] = useState('hidePassMsg signupMsg')
-    const [livesStyle, setLivesStyle] = useState('lives')
+    const [livesStyle, setLivesStyle] = useState('lives lives-color1')
 
     // loading icon on gifs
 
