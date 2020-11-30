@@ -17,8 +17,6 @@ import Main from "../components/Main";
 import Chat from '../components/chat';
 import Settings from '../components/Settings';
 
-// let time = 0;
-
 
 function Game() {
     // when logging in, setUser to data from mongodb
@@ -40,6 +38,7 @@ function Game() {
 
     const [userMessage, setUserMessage] = useState('hideUserMsg signupMsg')
     const [passMessage, setPassMessage] = useState('hidePassMsg signupMsg')
+    const [livesStyle, setLivesStyle] = useState('lives lives-color1')
 
     // loading icon on gifs
 
@@ -50,6 +49,25 @@ function Game() {
         // coopTimer();
     }, [])
 
+    useEffect(() => {
+        if (user.lives === 9) {
+            setLivesStyle('lives lives-color1')
+        } else if (user.lives === 8) {
+            setLivesStyle('lives lives-color2')
+        } else if (user.lives === 7) {
+            setLivesStyle('lives lives-color3')
+        } else if (user.lives === 6) {
+            setLivesStyle('lives lives-color4')
+        } else if (user.lives === 5) {
+            setLivesStyle('lives lives-color5')
+        } else if (user.lives === 4) {
+            setLivesStyle('lives lives-color6')
+        } else if (user.lives === 3) {
+            setLivesStyle('lives lives-color7')
+        } else if (user.lives <= 2) {
+            setLivesStyle('lives lives-color8')
+        }
+    }, [user.lives])
 
     useEffect(() => {
         // console.log("user before update: ", user)
@@ -311,7 +329,11 @@ function Game() {
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} />}</Route>
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} />
+
+                   
+
+                    <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
+
                         <Settings backToMain={backToMain} logoutUser={logoutUser} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/main"></Redirect> : <Redirect to="/login" />}
                     </Route>

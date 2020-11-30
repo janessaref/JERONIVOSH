@@ -46,3 +46,38 @@
 .showPassMsg {
     display: block;
 }
+
+.lives {
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+}
+
+.lives-color1 {
+    color: white;
+}
+
+.lives-color2 {
+    color: #ffcccc;
+}
+
+.lives-color3 {
+color: #ff9999;
+}
+
+.lives-color4 {
+    color:  #ff8080
+}
+.lives-color5 {
+    color: 	 #ff6666;
+}
+.lives-color6 {
+    color: #ff3333
+}
+.lives-color7 {
+    color:  #ff0000
+}
+.lives-color8 {
+    color: #cc0000;
+}
