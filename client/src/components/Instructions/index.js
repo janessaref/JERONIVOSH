@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 
+
+// How to play instructions displayed on the main page with a modal
 function Instructions() {
     const [modalInstructions, setModalInstructions] = useState("modal hideModal");
-    const [text, setText] = useState("");
-    const [coopText, setCoopText] = useState("");
 
     useEffect(() => {
     }, [modalInstructions]);
@@ -16,8 +16,6 @@ function Instructions() {
 
     const showInstructions = () => {
         setModalInstructions("modal showModal");
-        setText("You are a cat exploring the city with nine lives and you need to make some tough decisions in order to survive. Make a wrong decision, and your cat loses a life! Your score is based on how many lives you have left by the end of the game. P.S. Your game progress is auto-saved!")
-        setCoopText("(COMING SOON)");
     }
 
     return(
@@ -43,9 +41,12 @@ function Instructions() {
                         </div>
                         <div className="modal-body mt-2 overflow-auto">
                             <p className="font-weight-bold singlePlayer">SINGLE PLAYER MODE:</p>
-                            <p>{text}</p>
+                            <p>You are a cat exploring the city with nine lives and you need to make some tough decisions in order to survive.</p>
+                            <p>Make a wrong decision and your cat loses a life! </p>
+                            <p>Your score is based on how many lives you have left by the end of the game.</p> 
+                            <p>P.S. Your game progress is auto-saved!</p>
                             <p className="font-weight-bold coopPlayer">COOP PLAYER MODE:</p>
-                            <p>{coopText}</p>
+                            <p>(COMING SOON)</p>
                         </div>
                         <div className="modal-footer">
                             <button
@@ -61,6 +62,6 @@ function Instructions() {
             </div>
         </>
     );
-}
+};
 
 export default Instructions;
