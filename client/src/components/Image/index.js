@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Settings from "../Settings";
 import "./style.css";
 // import Spinner from 'react-bootstrap/Spinner';
-function Image({ user, story, spinner }) {
+function Image({ user, story, spinner, lives }) {
   const [levels, setLevels] = useState({ status: "unmuted" });
   const [visibleX, setVisibleX] = useState(false);
   // loading icon
@@ -61,7 +61,7 @@ function Image({ user, story, spinner }) {
         <img src="./assets/redx.png" className="redX" style={style} onClick={handleMute} />
         <img src="./assets/audiosmall.png" onClick={handleMute} id="volIcon" />
       </div>
-      <div className="lives">
+      <div className={lives}>
         <p>Lives: {user.lives}</p>
       </div>
       <audio className="float-right" autoPlay loop id="gameAudio" ref={volume}>
