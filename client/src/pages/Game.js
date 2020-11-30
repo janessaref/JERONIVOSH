@@ -206,13 +206,13 @@ function Game() {
 
             API.findHighScore(user.username).then(res => {
                 // console.log("highscore: ", res);
-                if (!res.data) {
-                    API.newHighScore(user.username, user.level, user.lives)
-                } else {
-                    if (res.data.lives < user.lives) {
-                        API.updateHighScore(res.data._id, user.level, user.lives)
-                    }
-                }
+                // if (!res.data) {
+                API.newHighScore(user.username, user.level, user.lives)
+                // } else {
+                //     if (res.data.lives < user.lives) {
+                //         API.updateHighScore(res.data._id, user.level, user.lives)
+                //     }
+                // }
             })
             setEndGame(false)
         } else {
