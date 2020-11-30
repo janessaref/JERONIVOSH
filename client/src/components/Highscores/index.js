@@ -58,7 +58,6 @@ function Highscores({ user, exitScores }) {
                             </h1>
                             <hr />
                             <div className="row">
-
                                 <div className="scores">
                                     {data ? highScores.map(score => {
                                         return (
@@ -67,9 +66,8 @@ function Highscores({ user, exitScores }) {
                                                 <p className="name">{"Score: " + score.lives}</p>
                                             </div>
                                         )
-                                    }) : <div className="noScore">No High Scores</div>}
+                                    }) : <div>No High Scores</div>}
                                     <button className="btn btn-block hvr-back-pulse" onClick={exitScores}>Main Menu</button>
-
                                 </div>
                             </div>
 
