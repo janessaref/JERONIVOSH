@@ -28,10 +28,10 @@ function signup({ signup, authorized, userMessage, passMessage }) {
                             <input type="password" className="form-control" id="password" placeholder="Create password" />
                         </div>
                         <div className={userMessage}>
-                           <p>Sorry that user Name is Taken</p>
+                           <p>that user Name is Taken</p>
                         </div>
                         <div className={passMessage}>
-                            <p>Sorry password should be atleast 8 characters long</p>
+                            <p>Sorry password should be <br /> atleast 8 characters long</p>
                         </div>
                         <div className ="row mx-auto text-center">
                             <div className="col-md">
