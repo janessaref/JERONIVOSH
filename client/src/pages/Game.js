@@ -40,6 +40,7 @@ function Game() {
 
     const [userMessage, setUserMessage] = useState('hideUserMsg signupMsg')
     const [passMessage, setPassMessage] = useState('hidePassMsg signupMsg')
+    const [livesStyle, setLivesStyle] = useState('lives')
 
     // loading icon on gifs
 
@@ -312,7 +313,7 @@ function Game() {
                     <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} />}</Route>
 
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} />
+                    <Route exact path="/game">{authorized ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
                         <Settings backToMain={backToMain} logoutUser={logoutUser} />
                         <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/login" />}
                     </Route>
