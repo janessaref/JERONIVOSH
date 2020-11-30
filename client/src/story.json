@@ -319,7 +319,7 @@
     },
     {
         "id": 32,
-        "image": "./assets/compressed/animalcontrolscene-min.gif",
+        "image": "./assets/animalcontrol.png",
         "story": "You run back into the city and find yourself back into the streets. There's a hooman staring at you, calling you over. You're on guard and you don't move. You watch him as he comes closer. He's getting too close...",
         "choices": [
             "STRANGER DANGER GET OUT NOW!", "Trust the hooman?"
