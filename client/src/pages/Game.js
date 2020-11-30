@@ -180,6 +180,10 @@ function Game() {
         event.preventDefault();
         setStart(false);
         setAuth(false);
+        setUserMessage('hideUserMsg signupMsg');
+        setPassMessage('hidePassMsg signupMsg');
+        setPassInput('form-control');
+        setMessage('message hideMessage');
     };
 
 
