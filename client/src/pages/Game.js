@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
-// import history from "../utils/history";
-// import {useHistory} from "react-router";
 import Image from "../components/Image";
 import Text from "../components/Text";
 import storyline from "../story.json";
@@ -12,27 +10,22 @@ import Login from "../components/Login";
 import Credits from "../components/Credits";
 import Polls from "../components/Polls";
 import CoopLogin from "../components/CoopLogin";
-// import Multiplayer from "../components/Multiplayer";
 import Main from "../components/Main";
-// import Chat from '../components/chat';
 import Settings from '../components/Settings';
 import Highscores from "../components/Highscores";
 
 function Game() {
+
     // when logging in, setUser to data from mongodb
     // pass level prop to image and text components to display
     const [user, setUser] = useState({});
     const [authorized, setAuth] = useState(false);
     const [coopUser, setCoopUser] = useState({});
-    // state to deal with refresh during game
-    // const [refresh, setRefresh] = useState(false);
-    // const [timer, setTimer] = useState("");
     const [endGame, setEndGame] = useState(true);
-
     const [startGame, setStart] = useState(false);
+
     // state for end of credits
     const [end, setEnd] = useState(false);
-    // let history = useHistory();
     const [message, setMessage] = useState('message hideMessage');
     const [passInput, setPassInput] = useState('form-control');
 
@@ -44,16 +37,10 @@ function Game() {
 
     // state for viewing personal high scores
     const [userScores, setUserScores] = useState(false);
-    // loading icon on gifs
 
-
-    useEffect(() => {
-        // setRefresh(true);
+    useEffect(() => {       
         setAuth(false);
-        // coopTimer();
     }, [])
-
-
 
     useEffect(() => {
         if (user.lives === 9) {
@@ -82,13 +69,9 @@ function Game() {
     }, [user])
 
     useEffect(() => {
-        // console.log("new coop user: ", coopUser)
-
         API.updateCoop(coopUser)
             .then(res => console.log("coop update response: ", res))
             .catch(err => console.log(err));
-        // console.log("Authorization: ", authorized);
-        // coopTimer();
     }, [coopUser])
 
 
@@ -98,7 +81,6 @@ function Game() {
         holder.length = 0;
         let name = event.target[0].value.toLowerCase();
         let pass = event.target[1].value.trim();
-        // console.log("username, password: ", name, pass)
         // check all users
         API.findAll()
             .then(res => {
@@ -120,7 +102,7 @@ function Game() {
                         }).catch(err => {
                             console.log("error: ", err);
                         })
-
+                        // Conditions for validation messages
                 } else if (holder.includes(name)) {
                     setUserMessage('showUserMsg signupMsg')
                     setPassMessage('hidePassMsg')
@@ -134,10 +116,11 @@ function Game() {
                     setUserMessage('hideUserMsg')
                     setPassMessage('hidePassMsg')
                 }
-            })
-        // console.log("user signup: ", user);
+            }
+        )
     }
 
+    // function to login user
     function login(event) {
         event.preventDefault();
         setUserScores(false);
@@ -151,51 +134,52 @@ function Game() {
                     setAuth(true);
                 }
             }).catch(err => {
+                // validation messages and error handling
                 console.log("login error: ", err);
                 setMessage('message row showMessage')
                 setPassInput('form-control redInput')
-            })
+            }
+        )
     }
 
+    // Function to view highscores. 
     function viewHighScores(event) {
         event.preventDefault();
         // console.log("view high scores working");
         setUserScores(true);
     }
-
+    // Function to exit highscores
     function exitScores(event) {
         event.preventDefault();
         // console.log("exit high scores working");
         setUserScores(false);
     }
 
+    // Function to start game, send user back to the beginning if the user finished the game. 
     function start(event) {
         event.preventDefault();
-        // console.log("start event: ", event)
-        // console.log("user at start: ", user);
         setEnd(false);
         setStart(true);
         if (user.level === 35 || user.level === 24) {
             setUser({ ...user, level: 0, lives: 9 })
         }
-        // console.log(endGame)
     }
 
+    // Function to Go back to the main page.
     function backToMain(event) {
         event.preventDefault();
-        // console.log("working")
         setStart(false);
     }
 
+    // Function for end credits scene. 
     function endCredits(event) {
         event.preventDefault();
-        // console.log("end event: ", event)
-        // console.log("user at credits: ", user);
         setStart(false);
         setEnd(true);
         setEndGame(true);
     }
 
+    // Function to log user out.
     function logoutUser(event) {
         event.preventDefault();
         setStart(false);
@@ -207,12 +191,11 @@ function Game() {
         setUserLength('hidePassMsg signupMsg')
     };
 
-
-
-    // if story line lever end return false, then return false
+    // Function for game logic, checks if for the decision the user made
     function choice(event) {
         event.preventDefault();
         let value = event.target.value;
+        // Checks for bad decisions and if the user is at the end of the game.
         if (storyline[user.level].decision) {
             if (storyline[user.level].badchoice) {
                 setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
@@ -229,13 +212,12 @@ function Game() {
         }
     }
 
+    // Function for Future coop game logic.
     function coopChoice(event) {
         event.preventDefault();
-        // console.log(user._id);
         let value = event.target.value;
         if (storyline[coopUser.level].decision) {
             if (storyline[coopUser.level].badchoice) {
-                // console.log("working");
                 setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value], "lives": coopUser.lives - 1 });
             } else {
                 setCoopUser({ ...coopUser, "level": storyline[coopUser.level].decision[value] });
@@ -245,47 +227,82 @@ function Game() {
         }
     }
 
+    // Function for future coop login.
     function coopLogin(event) {
         event.preventDefault();
         let title = event.target[0].value;
-        // console.log("title: ", title);
         API.startCoop(title)
             .then(res => {
-                // console.log("login client res: ", res);
                 if (res.data) {
-                    // console.log("coop login response", res.data)
                     setCoopUser(res.data);
                     setAuth(true);
-                    // coopTimer();
-                    // console.log("coopuser: ", coopUser);
                 } else {
-                    // modal/text popup alerting user that user doesnt exist
+                    // Future validation messages.
                 }
             }).catch(err => {
                 console.log("login error: ", err);
-            })
+            }
+        )
     }
 
+    // Function for future coop joining
     function coopJoin(event) {
         event.preventDefault();
-        // console.log(event.target.form[0].value);
         API.findGame(event.target.form[0].value)
             .then(res => {
                 if (res.data) {
-                    // console.log("coop login response", res.data)
                     setCoopUser(res.data);
                     setAuth(true);
-                    // coopTimer();
-                    // console.log("coopuser: ", coopUser);
                 } else {
-                    // modal/text popup alerting user that user doesnt exist
+                // Future validation messages. 
                 }
             }).catch(err => {
                 console.log("login error: ", err);
-            })
+            }
+        )
     }
 
-    // coop code
+    // erases the validation messages when button is clicked. 
+    function erase() {
+        setUserMessage('hideUserMsg signupMsg');
+        setPassMessage('hidePassMsg signupMsg');
+        setPassInput('form-control');
+        setMessage('message hideMessage');
+        setUserLength('hidePassMsg signupMsg')
+    }
+
+
+    return (
+        <Router>
+            <div className="con">
+
+                <Switch>
+
+                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} erase={erase} userLengthMessage={userLength} />}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} erase={erase} />}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
+                    <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
+                        <Settings backToMain={backToMain} logoutUser={logoutUser} />
+                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/main"></Redirect> : <Redirect to="/login" />}
+                    </Route>
+                    <Route exact path="/main">{authorized ? !userScores ? startGame ? <Redirect to="/game" /> : <Main start={start} logout={logoutUser} viewHighScores={viewHighScores} /> : <Redirect to="/highscores" /> : <Redirect to="/login" />} </Route>
+                    <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>
+                    <Route exact path="/highscores">{authorized ? userScores ? <><Highscores user={user} exitScores={exitScores} /></> : <Redirect to="/main" /> : <Redirect to="/login" />} </Route>
+                    <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
+                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route><Redirect to="/login" /></Route>
+                </Switch>
+            </div>
+        </Router >
+    )
+}
+
+
+export default Game;
+
+
+
+// coop code
     // useEffect(() => {
     //     console.log("tick");
     //     coopTimer();
@@ -330,40 +347,3 @@ function Game() {
     //             console.log("error: ", err);
     //         })
     // }
-
-    // erases the validation messages when button is clicked. 
-    function erase() {
-        setUserMessage('hideUserMsg signupMsg');
-        setPassMessage('hidePassMsg signupMsg');
-        setPassInput('form-control');
-        setMessage('message hideMessage');
-        setUserLength('hidePassMsg signupMsg')
-    }
-
-    return (
-        <Router>
-            <div className="con">
-
-                <Switch>
-
-                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} erase={erase} userLengthMessage={userLength} />}</Route>
-                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} erase={erase} />}</Route>
-                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
-                    <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
-                        <Settings backToMain={backToMain} logoutUser={logoutUser} />
-                        <Text user={user} story={storyline} click={choice} /></> : <Redirect to="/credits" /> : <Redirect to="/main"></Redirect> : <Redirect to="/login" />}
-                    </Route>
-                    <Route exact path="/main">{authorized ? !userScores ? startGame ? <Redirect to="/game" /> : <Main start={start} logout={logoutUser} viewHighScores={viewHighScores} /> : <Redirect to="/highscores" /> : <Redirect to="/login" />} </Route>
-                    <Route exact path="/credits">{authorized ? end ? <Redirect to="/main" /> : <Credits end={endCredits} /> : <Redirect to="/login" />} </Route>
-                    <Route exact path="/highscores">{authorized ? userScores ? <><Highscores user={user} exitScores={exitScores} /></> : <Redirect to="/main" /> : <Redirect to="/login" />} </Route>
-                    <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
-                    <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
-                    <Route><Redirect to="/login" /></Route>
-                </Switch>
-            </div>
-        </Router >
-    )
-}
-
-
-export default Game;

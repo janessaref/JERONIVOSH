@@ -8,64 +8,50 @@
     width: 300px;
     color: white;
 }
-
 .message {
  color: rgb(110, 0, 0);
  text-align: center;
 }
-
 .hideMessage {
     display: none;
 }
-
 .showMessage {
     display: block;
 }
-
 .redInput {
     border: 2px red solid;
 }
-
 .hideUserMsg {
     display: none;
 }
-
 .hidePassMsg {
     display: none;
 }
-
 .signupMsg {
     color:  rgb(110, 0, 0);
     text-align: center;
 }
-
 .showUserMsg {
     display: block;
 }
-
 .showPassMsg {
     display: block;
 }
-
 .lives {
     font-family: 'Press Start 2P', cursive;
     position: absolute;
     top: 3%;
     left: 3%;
 }
-
 .lives-color1 {
     color: white;
 }
-
 .lives-color2 {
     color: #ffcccc;
 }
-
 .lives-color3 {
 color: #ff9999;
 }
-
 .lives-color4 {
     color:  #ff8080
 }
