@@ -104,16 +104,16 @@
     {
         "id": 9,
         "image": "./assets/compressed/eatpiescene-min.gif",
-        "story": "NOM NOM MUNCH MUNCH YUMMY FREAKIN PIE!!!!!",
+        "story": "You leap up to the precarious ledge, careful not to make any noise. In front of you is the treasure you have been smelling. You take cautious nibbles but after tasting it you cannot hold back. You dig in to the treat before you, filling your empty stomach. You have never tasted anything so sweet.",
         "choices": [
-            "WOOOHOOOOO!"
+            "Continue..."
         ],
         "decision": [10]
     },
     {
         "id": 10,
         "image": "./assets/homelessv2before.png",
-        "story": "You move along, avoiding mucky puddles and the loud noises that surround you. You turn a corner and in front of you is another human. He is different than the others. His scent is closer to yours than the others. He looks at you and then turns around to grab something. He pulls out a container of water and pours it in a bowl. He looks at you one more time before he turns back around and lays down. You could definitely use some fresh water to drink.",
+        "story": "You move along, avoiding mucky puddles and the loud noises that surround you. You turn a corner and in front of you is another human. He is different than the humans you have encountered. His scent is closer to yours than the others. He looks at you and then turns around to grab something. He pulls out a container of water and pours it in a bowl. He looks at you one more time before he turns back around and lays down. You could definitely use some fresh water to drink.",
         "choices": [
             "Drink the water","You can't trust him"
         ],
@@ -244,7 +244,7 @@
     {
         "id": 24,
         "image": "./assets/compressed/ending1noloop-min.gif",
-        "story": "You don't trust humans, but this one seems special. Out of desparation you make your way to him and lay on the warmth of the cloth surrounding him. You notice him look at you and make slow movements. He takes the cloth and gently places it around you. It is warmer than you have felt all night.",
+        "story": "You don't trust humans, but this one seems special. Out of desperation you make your way to him and lay on the warmth of the cloth surrounding him. You notice him look at you and make slow movements. He takes the cloth and gently places it around you. It is warmer than you have felt all night.",
         "choices": [
             "Goodnight..."
         ],
