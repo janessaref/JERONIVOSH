@@ -25,7 +25,6 @@
     "hover.css": "^2.3.2",
     "if-env": "^1.0.4",
     "mongoose": "^5.10.15",
-    "mongoose-unique-validator": "^2.0.3",
     "morgan": "^1.10.0",
     "react-polls": "^1.2.0",
     "react-router-dom": "^5.2.0",

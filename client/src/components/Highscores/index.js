@@ -8,7 +8,11 @@ function Highscores({ user, exitScores }) {
     const [data, setData] = useState(false);
 
     useEffect(() => {
-        API.allHighScores(user.username)
+        let sorted = [];
+        sorted.length = 0;
+        console.log("username: ", user.username)
+        console.log("score useffect running");
+        API.allScoresByUser(user.username)
             .then(res => {
                 console.log("find all scores: ", res)
                 if (res.data.length !== 0) {
@@ -16,16 +20,24 @@ function Highscores({ user, exitScores }) {
                     setData(true);
 
 
-                    var sorted = res.data.sort(function (a, b) {
+                    sorted = res.data.sort(function (a, b) {
                         if (a.lives < b.lives) { return 1; }
                         if (a.lives > b.lives) { return -1; }
                         return 0;
                     })
 
                     var scores = [...sorted]
-                    console.log(scores)
+                    let final = scores.map(scores => {
+                        if (scores.level === 35) {
+                            return ({ ...scores, ending: "Cemetary Ending" })
+                        } else {
+                            return ({ ...scores, ending: "Home Ending" })
+                        }
 
-                    setHighScores(scores.slice(0, 10))
+                    })
+                    console.log("scores: ", final)
+
+                    setHighScores(final.slice(0, 10))
                     console.log(highScores)
                 }
             })
@@ -37,15 +49,32 @@ function Highscores({ user, exitScores }) {
 
     return (
         <div>
-            <div className="username">{user.username}</div>
-            <div className="scores">
-                {data ? highScores.map(score => {
-                    return (
-                        <p className="name" key={score.username}>{score.username}: {score.lives}</p>
-                    )
-                }) : <div className="noScore">No High Scores</div>}
+            <div className="container mainMenu">
+                <div className="d-flex justify-content-center">
+                    <div className="card gameTypeContainer col-auto">
+                        <div className="card-body">
+                            <h1 className="px-auto mb-0 brand username">
+                                {user.username}
+                            </h1>
+                            <hr />
+                            <div className="row">
+                                <div className="scores">
+                                    {data ? highScores.map(score => {
+                                        return (
+                                            <div>
+                                                <p className="name" key={score._id}>{"Ending: " + score.ending}</p>
+                                                <p className="name">{"Score: " + score.lives}</p>
+                                            </div>
+                                        )
+                                    }) : <div>No High Scores</div>}
+                                    <button className="btn btn-block hvr-back-pulse" onClick={exitScores}>Main Menu</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button className="btn btn-block hvr-back-pulse" onClick={exitScores}>Main Menu</button>
+
         </div>
     )
 }

@@ -136,6 +136,7 @@ function Game() {
 
     function login(event) {
         event.preventDefault();
+        setUserScores(false);
         let name = event.target[0].value;
         let pass = event.target[1].value;
         API.getUser(name, pass)
@@ -291,6 +292,7 @@ function Game() {
             })
     }
 
+    // coop code
     // useEffect(() => {
     //     console.log("tick");
     //     coopTimer();
@@ -355,6 +357,7 @@ function Game() {
                     <Route exact path="/highscores">{authorized ? userScores ? <><Highscores user={user} exitScores={exitScores} /></> : <Redirect to="/main" /> : <Redirect to="/login" />} </Route>
                     <Route exact path="/coopLogin">{authorized ? <Redirect to="/multiplayer" /> : <CoopLogin coopLogin={coopLogin} coopJoin={coopJoin} user={user} />}  </Route>
                     <Route exact path="/multiplayer">{authorized ? <><Image user={coopUser} story={storyline} /><Polls user={coopUser} story={storyline} click={coopChoice} /></> : <Redirect to="/coopLogin" />} </Route>
+                    <Route><Redirect to="/login" /></Route>
                 </Switch>
             </div>
         </Router >
