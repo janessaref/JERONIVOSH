@@ -3,41 +3,28 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
   findOne: async function (req, res) {
-    // console.log("find response: ", req.body)
     try {
       var check = await user.findOne({ username: req.body.username }).exec();
-      if (!check) {
-        return res.status(400).send("bad username")
+      if (bcrypt.compareSync(req.body.password, check.password)) {
+        res.send(check)
+      } else {
+        return res.status(422).send("bad password")
       }
-      if (!bcrypt.compareSync(req.body.password, check.password)) {
-        return res.status(400).send("bad password")
-      }
-
-      res.send(check)
-
     } catch (error) {
       res.status(500).send(error);
     }
-    // user.findOne(req.body)
-    //   .then((user) => res.json(user))
-    //   .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    // console.log("body: ", req.body)
-    // console.log("user/pass: ", req.body.username, " ", req.body.password)
-
-    req.body.password = bcrypt.hashSync(req.body.password, 10);
-    // console.log("encrypted pass: ", req.body.password)
+    let salt = bcrypt.genSaltSync(saltRounds);
+    let hash = bcrypt.hashSync(req.body.password, salt);
     user
-      .create({ username: req.body.username, password: req.body.password })
+      .create({ username: req.body.username, password: hash })
       .then((user) => res.json(user))
       .catch((err) => res.status(422).json(err));
 
 
   },
   update: function (req, res) {
-    // console.log("level: ", req.body)
-    // console.log("id: ", req.body._id)
     user.findByIdAndUpdate(
       req.body._id
       ,

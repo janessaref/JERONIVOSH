@@ -76,13 +76,9 @@ function Game() {
     }, [user.lives])
 
     useEffect(() => {
-        // console.log("user before update: ", user)
-
         API.updateUser(user)
             .then(res => console.log("updated user"))
             .catch(err => console.log("update user error: ", err));
-        // console.log("Authorization: ", authorized);
-
     }, [user])
 
     useEffect(() => {
