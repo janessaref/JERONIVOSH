@@ -41,14 +41,14 @@ function About() {
                            
                            
                             <a 
-                            href="http://janessaref.herokuapp.com" 
+                            href="https://janessaref.herokuapp.com" 
                             target="_blank"
                             rel="noreferrer"
                             className="text-center"> <img src="./assets/developers/dog.png" className="developers" id="dog" />
                         </a>
                         <p className="font-weight-bold">JERRI FONG</p>
                             <a 
-                            href="#" 
+                            href="https://jsp-react-portfolio.herokuapp.com/" 
                             target="_blank"
                             rel="noreferrer"
                             className="text-center">
@@ -57,7 +57,7 @@ function About() {
                             <p className="font-weight-bold mt-2">JON SANPEDRO</p>
             
                             <a 
-                            href="#" 
+                            href="https://ivan-torres-mia.herokuapp.com/" 
                             target="_blank"
                             rel="noreferrer"
                             className="text-center">
@@ -66,7 +66,7 @@ function About() {
                             <p className="font-weight-bold mt-2">IVAN TORRES</p>
                          
                             <a 
-                            href="#" 
+                            href="https://josh-glugatch.herokuapp.com/" 
                             target="_blank"
                             rel="noreferrer"
                             className="text-center">
@@ -79,8 +79,7 @@ function About() {
                                 onClick={() => hideDevelopersModal()}
                                 type="button"
                                 className="btn btn-secondary"
-                                data-dismiss="modal"
-                                id="aboutDevs">
+                                data-dismiss="modal">
                                 Exit
                             </button>
                         </div>
