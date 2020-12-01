@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from "react";
 import "./style.css";
 import { withRouter } from "react-router-dom";
@@ -6,7 +7,9 @@ import API from '../../utils/api';
 
 function Credits({ end }) {
 
-  const [highScores, setHighScores] = useState([]);
+
+  const [recentScores, setRecentScores] = useState([])
+
 
   const volume = useRef(null);
 
@@ -20,38 +23,37 @@ function Credits({ end }) {
       .then(res => {
         // console.log(res)
         
-          var sorted = res.data.sort(function(a,b) {
-            if(a.lives < b.lives) { return 1; }
-            if(a.lives > b.lives) { return -1; }
-            return 0;
-          });
-          
-          var scores =[...sorted];
-          // console.log(scores)
+
+          var scores = res.data.reverse()
+          console.log(scores)
         
-        setHighScores(scores.slice(0,10));
-        // console.log(highScores)
+        setRecentScores(scores.slice(0,10))
+        // console.log(RecentScores)
+
       })
       .catch(err => {
+        const defaultRecentScores=[
+          {name:"Jerry", lives: 9},
+          {name:"MemeGod", lives: 9},
+          {name:"Jerri", lives: 8},
+          {name:"NyanCat", lives: 7},
+          {name:"bluecat", lives: 6},
+          {name:"acedragon48", lives: 6},
+          {name:"Tom", lives: 5},
+          {name:"Bob", lives: 5},
+          {name:"Jill", lives: 4},
+          {name:"Rat", lives: 1}
+        ]
       console.log(err);
-      setHighScores(defaultHighScores);
+
+      setRecentScores(defaultRecentScores)
+
       }), 5000
     ) 
 
 }, []);
 
-    const defaultHighScores = [
-      {name:"Jerry", lives: 9},
-      {name:"MemeGod", lives: 9},
-      {name:"Jerri", lives: 8},
-      {name:"NyanCat", lives: 7},
-      {name:"bluecat", lives: 6},
-      {name:"acedragon48", lives: 6},
-      {name:"Tom", lives: 5},
-      {name:"Bob", lives: 5},
-      {name:"Jill", lives: 4},
-      {name:"Rat", lives: 1}
-    ]
+
   return (
     <div className="wrapper img-fluid">
         <div>
@@ -116,14 +118,15 @@ function Credits({ end }) {
        <br/>
        <br/>
        <br/>
-        <p className="name">High Scores:</p>
+        <p className="name">Recent Scores:</p>
        <br/>
        <br/>
        <br/>
        <br/>
-       {highScores.map(score => {
+
+       {recentScores.map(score=>{
             return(
-                <p className="name" key={score.username}>{score.username}: {score.lives}</p>
+                <p className="name" key={score.id}>{score.username}: {score.lives}</p>
             )
         })}
 
