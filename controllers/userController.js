@@ -15,7 +15,7 @@ module.exports = {
     }
   },
   create: function (req, res) {
-    let salt = bcrypt.genSaltSync(saltRounds);
+    let salt = bcrypt.genSaltSync(10);
     let hash = bcrypt.hashSync(req.body.password, salt);
     user
       .create({ username: req.body.username, password: hash })
