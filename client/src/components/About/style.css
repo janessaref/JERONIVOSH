@@ -3,6 +3,10 @@
     opacity: 0.7;
 }
 
+#aboutBtn {
+    margin-top: 10px;
+}
+
 #dog:hover {
     width: 125px;
 }

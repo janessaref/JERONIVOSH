@@ -79,7 +79,8 @@ function About() {
                                 onClick={() => hideDevelopersModal()}
                                 type="button"
                                 className="btn btn-secondary"
-                                data-dismiss="modal">
+                                data-dismiss="modal"
+                                id="aboutDevs">
                                 Exit
                             </button>
                         </div>

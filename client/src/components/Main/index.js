@@ -28,9 +28,9 @@ function Main({ start, viewHighScores, logout }) {
                             </div>
                         </div>
                         <Instructions />
+                        <button className="btn btn-block hvr-back-pulse" onClick={viewHighScores} id="highscoresBtn">High Scores</button>
                         <About />
-                        <button className="btn btn-block hvr-back-pulse" onClick={viewHighScores}>High Scores</button>
-                        <button className="btn btn-block hvr-back-pulse" onClick={logout}>Log Out</button>
+                        <button className="btn btn-block hvr-back-pulse" onClick={logout} id="signOutBtn">Log Out</button>
                     </div>
                 </div>
             </div>
