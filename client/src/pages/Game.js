@@ -50,6 +50,10 @@ function Game() {
         // setRefresh(true);
         setAuth(false);
         // coopTimer();
+        setPassMessage('hidePassMsg signupMsg');
+        setUserMessage('hideUserMsg signupMsg');
+        setPassInput('form-control')
+        setMessage('message hideMessage')
     }, [])
 
     useEffect(() => {
