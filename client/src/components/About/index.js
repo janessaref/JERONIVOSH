@@ -21,14 +21,14 @@ function About() {
             className="btn btn-block hvr-back-pulse" 
             id="aboutBtn" 
             onClick={() => {showDevelopersModal()}}>
-                About the Developers
+                About the Creators
             </button>
             {/* Developers Modal */}
             <div className={modalDevelopers} id="developersModal" role="dialog">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
-                        MEET JERONIVOSH
+                        Meet Jeronivosh
                             <button
                                 type="button"
                                 className="close"
@@ -36,6 +36,7 @@ function About() {
                                 aria-label="Close">
                             </button>
                         </div>
+                        <small className="mt-2">Click on the icon to check out their portfolio!</small>
                         <div className="modal-body mt-2 overflow-auto">
                            
                            
