@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-function signup({ signup, authorized, userMessage, passMessage }) {
+function signup({ signup, authorized, userMessage, passMessage, erase, userLengthMessage }) {
     return (
         <div className="homepage container">
         <div className="mainContent container d-flex justify-content-center">
@@ -33,6 +33,9 @@ function signup({ signup, authorized, userMessage, passMessage }) {
                         <div className={passMessage}>
                             <p>Password must be <br /> at least <strong>8</strong> characters.</p>
                         </div>
+                        <div className={userLengthMessage}>
+                            <p>Username must be <br /> longer than 15 characters.</p>
+                        </div>
                         <div className ="row mx-auto text-center">
                             <div className="col-md">
                                 <button id="signUpBtn" value="send" type="submit" className="btn mt-1 mb-1">Sign Up
@@ -43,7 +46,7 @@ function signup({ signup, authorized, userMessage, passMessage }) {
                         <div className ="row mx-auto text-center">
                             <div className="col-md">
                                 <p className="mt-1 mb-1 alreadyUser">Already a user?</p>
-                                <Link className="button" to="/login">
+                                <Link className="button" onClick={erase} to="/login">
                                     <button className="btn mt-1" id="loginBtn">Login Here</button>
                                 </Link>
                             </div>

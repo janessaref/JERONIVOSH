@@ -39,6 +39,7 @@ function Game() {
     // state for validation messages
     const [userMessage, setUserMessage] = useState('hideUserMsg signupMsg');
     const [passMessage, setPassMessage] = useState('hidePassMsg signupMsg');
+    const [userLength, setUserLength] = useState('hidePassMsg signupMsg')
     const [livesStyle, setLivesStyle] = useState('lives lives-color1');
 
     // state for viewing personal high scores
@@ -51,6 +52,8 @@ function Game() {
         setAuth(false);
         // coopTimer();
     }, [])
+
+
 
     useEffect(() => {
         if (user.lives === 9) {
@@ -97,8 +100,8 @@ function Game() {
         event.preventDefault();
         let holder = [];
         holder.length = 0;
-        let name = event.target[0].value;
-        let pass = event.target[1].value;
+        let name = event.target[0].value.toLowerCase();
+        let pass = event.target[1].value.trim();
         // console.log("username, password: ", name, pass)
         // check all users
         API.findAll()
@@ -107,7 +110,7 @@ function Game() {
                     holder.push(res.data[i].username);
                 }
                 // check if username exists
-                if (!holder.includes(name) && pass.length > 7) {
+                if (!holder.includes(name) && pass.length > 7 && name.length < 15) {
                     // add new user
                     API.signUp({ username: name, password: pass })
                         .then(function (res) {
@@ -126,9 +129,15 @@ function Game() {
                 } else if (holder.includes(name)) {
                     setUserMessage('showUserMsg signupMsg')
                     setPassMessage('hidePassMsg')
+                    setUserLength('hidePassMsg signupMsg')
                 } else if (pass.length <= 7) {
                     setPassMessage('showPassMsg signupMsg')
                     setUserMessage('hideUserMsg')
+                    setUserLength('hidePassMsg signupMsg')
+                } else if (name.length >= 15) {
+                    setUserLength('showPassMsg signupMsg')
+                    setUserMessage('hideUserMsg')
+                    setPassMessage('hidePassMsg')
                 }
             })
         // console.log("user signup: ", user);
@@ -137,8 +146,8 @@ function Game() {
     function login(event) {
         event.preventDefault();
         setUserScores(false);
-        let name = event.target[0].value;
-        let pass = event.target[1].value;
+        let name = event.target[0].value.toLowerCase();
+        let pass = event.target[1].value.trim();
         API.getUser(name, pass)
             .then(res => {
                 console.log("login client res: ", res);
@@ -200,6 +209,7 @@ function Game() {
         setPassMessage('hidePassMsg signupMsg');
         setPassInput('form-control');
         setMessage('message hideMessage');
+        setUserLength('hidePassMsg signupMsg')
     };
 
 
@@ -338,6 +348,14 @@ function Game() {
     //         })
     // }
 
+// erases the validation messages when button is clicked. 
+    function erase() {
+        setUserMessage('hideUserMsg signupMsg');
+        setPassMessage('hidePassMsg signupMsg');
+        setPassInput('form-control');
+        setMessage('message hideMessage');
+        setUserLength('hidePassMsg signupMsg')
+    }
 
     return (
         <Router>
@@ -345,8 +363,8 @@ function Game() {
 
                 <Switch>
 
-                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} />}</Route>
-                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} />}</Route>
+                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} erase={erase} userLengthMessage={userLength}/>}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} erase={erase}/>}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
                     <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
                         <Settings backToMain={backToMain} logoutUser={logoutUser} />
