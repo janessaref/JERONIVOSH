@@ -14,7 +14,7 @@ import Polls from "../components/Polls";
 import CoopLogin from "../components/CoopLogin";
 // import Multiplayer from "../components/Multiplayer";
 import Main from "../components/Main";
-import Chat from '../components/chat';
+// import Chat from '../components/chat';
 import Settings from '../components/Settings';
 import Highscores from "../components/Highscores";
 
@@ -230,16 +230,7 @@ function Game() {
             }
         } else if (storyline[user.level].end === true) {
 
-            API.findHighScore(user.username).then(res => {
-                // console.log("highscore: ", res);
-                // if (!res.data) {
-                API.newHighScore(user.username, user.level, user.lives)
-                // } else {
-                //     if (res.data.lives < user.lives) {
-                //         API.updateHighScore(res.data._id, user.level, user.lives)
-                //     }
-                // }
-            })
+            API.newHighScore(user.username, user.level, user.lives)
             setEndGame(false)
         } else {
             setUser({ ...user, "level": user.level + 1 });
@@ -348,7 +339,7 @@ function Game() {
     //         })
     // }
 
-// erases the validation messages when button is clicked. 
+    // erases the validation messages when button is clicked. 
     function erase() {
         setUserMessage('hideUserMsg signupMsg');
         setPassMessage('hidePassMsg signupMsg');
@@ -363,8 +354,8 @@ function Game() {
 
                 <Switch>
 
-                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} erase={erase} userLengthMessage={userLength}/>}</Route>
-                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} erase={erase}/>}</Route>
+                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} erase={erase} userLengthMessage={userLength} />}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} erase={erase} />}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
                     <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
                         <Settings backToMain={backToMain} logoutUser={logoutUser} />

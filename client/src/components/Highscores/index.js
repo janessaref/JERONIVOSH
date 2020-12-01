@@ -35,10 +35,10 @@ function Highscores({ user, exitScores }) {
                         }
 
                     })
-                    console.log("scores: ", final)
+                    // console.log("scores: ", final)
 
                     setHighScores(final.slice(0, 10))
-                    console.log(highScores)
+                    // console.log(highScores)
                 }
             })
             .catch(err => {
@@ -67,8 +67,10 @@ function Highscores({ user, exitScores }) {
                                             </div>
                                         )
                                     }) : <div>No High Scores</div>}
-                                    <button className="btn btn-block hvr-back-pulse" onClick={exitScores}>Main Menu</button>
+                                    
                                 </div>
+                                <div className="col-sm-4"></div>
+                                <button className="col-sm-4 btn btn-block hvr-back-pulse" onClick={exitScores}>Main Menu</button>
                             </div>
                         </div>
                     </div>
