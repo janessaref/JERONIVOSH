@@ -110,7 +110,7 @@ function Game() {
                     holder.push(res.data[i].username);
                 }
                 // check if username exists
-                if (!holder.includes(name) && pass.length > 7 && name.length <= 15) {
+                if (!holder.includes(name) && pass.length > 7 && name.length < 15) {
                     // add new user
                     API.signUp({ username: name, password: pass })
                         .then(function (res) {
