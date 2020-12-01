@@ -50,11 +50,9 @@ function Game() {
         // setRefresh(true);
         setAuth(false);
         // coopTimer();
-        setPassMessage('hidePassMsg signupMsg');
-        setUserMessage('hideUserMsg signupMsg');
-        setPassInput('form-control')
-        setMessage('message hideMessage')
     }, [])
+
+
 
     useEffect(() => {
         if (user.lives === 9) {
@@ -343,14 +341,21 @@ function Game() {
     // }
 
 
+    function erase() {
+        setUserMessage('hideUserMsg signupMsg');
+        setPassMessage('hidePassMsg signupMsg');
+        setPassInput('form-control');
+        setMessage('message hideMessage');
+    }
+
     return (
         <Router>
             <div className="con">
 
                 <Switch>
 
-                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} />}</Route>
-                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} />}</Route>
+                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} erase={erase}/>}</Route>
+                    <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} erase={erase}/>}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
                     <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
                         <Settings backToMain={backToMain} logoutUser={logoutUser} />
