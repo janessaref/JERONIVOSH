@@ -51,27 +51,31 @@ function Highscores({ user, exitScores }) {
         <div>
             <div className="container mainMenu">
                 <div className="row d-flex justify-content-center container">
-                    <div className="card myScoresContainer col-lg-8">
+                    <div className="card myScoresContainer col-lg-7">
                         <div className="card-body">
                             <h2 className="px-auto mb-0 username">
                                 {user.username}
                             </h2>
                             <hr />
                             <div className="row">
-                                <div className="scores">
+                                <div className="scores col-md">
                                     {data ? highScores.map(score => {
                                         return (
                                             <div>
-                                                <p className="name" key={score._id}>{"Ending: " + score.ending}</p>
-                                                <p className="name">{"Score: " + score.lives}</p>
+                                                <p className="endType" key={score._id}>{"Ending: " + score.ending}</p>
+                                                <p className="myScore">{"Score: " + score.lives}</p>
+                                                <hr className="divider"/>
                                             </div>
                                         )
                                     }) : <div>No High Scores</div>}
                                     
-                                </div>
-                                <div className="col-sm-4"></div>
-                                <button className="col-sm-4 btn btn-block hvr-back-pulse" onClick={exitScores}>Main Menu</button>
+                                </div>       
                             </div>
+                            <div className="modal-footer">
+                                <button className="btn hvr-back-pulse" onClick={exitScores}>
+                                    Main Menu
+                                </button>
+                            </div>   
                         </div>
                     </div>
                 </div>
