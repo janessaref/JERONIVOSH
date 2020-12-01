@@ -4,7 +4,7 @@ import "./style.css";
 
 
 
-function Login({ login, message, input }) {
+function Login({ login, message, input, erase }) {
 
     // const [message, setMessage] = useState('message hideMessage')
 
@@ -41,7 +41,7 @@ function Login({ login, message, input }) {
                                 <div className="col-md">
                                     <p className="mt-1 mb-1 notUser">Not a user?</p>
                                     <Link className="button" to="/">
-                                        <button className="btn mt-1" id="signUpBtn">Sign Up Here</button>
+                                        <button className="btn mt-1" onClick={erase} id="signUpBtn">Sign Up Here</button>
                                     </Link>
                                 </div>
                             </div>
