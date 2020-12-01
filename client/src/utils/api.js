@@ -26,7 +26,7 @@ const API = {
         return axios.get("/api/user/allscores")
     },
     allScoresByUser: function(username){
-        return axios.get("/api/user/allscores", {username})
+        return axios.post("/api/user/allscoresbyuser", {username})
     },
     startCoop: function (title) {
         return axios.post("/api/user/coop", { title });

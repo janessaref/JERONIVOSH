@@ -6,7 +6,7 @@
 .btn {
     border: 1px black solid;
     padding: 10px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     background-color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
     color: black;
@@ -18,8 +18,8 @@
     color: white;
 }
 
-.eight {
-    color: rgb(231, 177, 177);
+#highscoresBtn {
+    margin-top: 10px;
 }
 
 .gameTypeContainer {

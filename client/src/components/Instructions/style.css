@@ -18,6 +18,11 @@
     color: white;
 }
 
+#instructionsBtn,
+#signOutBtn {
+    margin-top: 10px;
+}
+
 .singlePlayer,
 .coopPlayer {
     color: black;
