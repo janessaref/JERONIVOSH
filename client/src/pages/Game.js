@@ -133,7 +133,7 @@ function Game() {
                     setPassMessage('showPassMsg signupMsg')
                     setUserMessage('hideUserMsg')
                 } else if (name.length > 15) {
-
+                    setUserLength('showPassMsg signupMsg')
                 }
             })
         // console.log("user signup: ", user);
