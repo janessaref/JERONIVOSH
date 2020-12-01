@@ -29,7 +29,7 @@ function Highscores({ user, exitScores }) {
                     var scores = [...sorted]
                     let final = scores.map(scores => {
                         if (scores.level === 35) {
-                            return ({ ...scores, ending: "Cemetary" })
+                            return ({ ...scores, ending: "Cemetery" })
                         } else {
                             return ({ ...scores, ending: "Home" })
                         }
@@ -50,12 +50,12 @@ function Highscores({ user, exitScores }) {
     return (
         <div>
             <div className="container mainMenu">
-                <div className="d-flex justify-content-center">
-                    <div className="card gameTypeContainer col-auto">
+                <div className="row d-flex justify-content-center container">
+                    <div className="card myScoresContainer col-lg-8">
                         <div className="card-body">
-                            <h1 className="px-auto mb-0 brand username">
+                            <h2 className="px-auto mb-0 username">
                                 {user.username}
-                            </h1>
+                            </h2>
                             <hr />
                             <div className="row">
                                 <div className="scores">
@@ -76,7 +76,6 @@ function Highscores({ user, exitScores }) {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
