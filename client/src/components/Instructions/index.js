@@ -23,7 +23,7 @@ function Instructions() {
             className="btn btn-block hvr-back-pulse" 
             id="instructionsBtn" 
             onClick={() => {showInstructions()}}>
-                How to play
+                How to Play
             </button>
             {/* Instructions Modal */}
             <div className={modalInstructions} id="instuctionsModal" role="dialog">
