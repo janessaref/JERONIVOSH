@@ -21,8 +21,6 @@ module.exports = {
       .create({ username: req.body.username, password: hash })
       .then((user) => res.json(user))
       .catch((err) => res.status(422).json(err));
-
-
   },
   update: function (req, res) {
     user.findByIdAndUpdate(
