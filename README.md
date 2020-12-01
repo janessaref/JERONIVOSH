@@ -5,8 +5,8 @@
 
 ## Table of Contents
 * [Description](#description)
-* [Technologies Used](#technologies-used)
 * [GIFs of Project](#gifs-of-project)
+* [Technologies Used](#technologies-used)
 * [Code Snippet](#code-snippet)
 * [Repository Link](#repository-link)
 * [Deployed Link](#deployed-link)
@@ -16,17 +16,6 @@
 ## Description 
 
 In this application, our team has created a choice-based novel game where users can experience a story in an interactive and fun way using React.js. Users will be making decisions as a cat that is lost in a big city, and is given 9 lives at the start of the game. Every decision the user makes can affect the number of lives left. Each scene is accompanied by pixilart animations to enhance the story. With every decision, the current page is being re-rendered using react.js. Users are given two options on what the cat should or shouldn't do and each decision button is given an ID that helps keep track on what scene to render next. The user's progress is being tracked and stored using MongoDB along with the number of lives the cat has left and the usernames of the player that signed up. The user's progress is being updated with put requests.
-
-
-## Technologies Used
-* [react](https://reactjs.org/)
-* [axios](https://www.npmjs.com/package/axios)
-* [express](https://www.npmjs.com/package/express)
-* [if-env](https://www.npmjs.com/package/if-env)
-* [mongoose](https://mongoosejs.com/)
-* [react-router-dom](https://reactrouter.com/)
-* [MongoDB](https://www.mongodb.com/)
-* [react-router-dom](https://nodejs.org/en/)
 
 ## GIFs of Project
 
@@ -38,8 +27,52 @@ Here is a GIF of our application viewed on a mobile device.
 
 ![Gif](#)
 
+## Technologies Used
+* [react](https://reactjs.org/)
+* [axios](https://www.npmjs.com/package/axios)
+* [express](https://www.npmjs.com/package/express)
+* [if-env](https://www.npmjs.com/package/if-env)
+* [mongoose](https://mongoosejs.com/)
+* [react-router-dom](https://reactrouter.com/)
+* [MongoDB](https://www.mongodb.com/)
+* [Node.js](https://nodejs.org/en/)
+* [morgan](https://www.npmjs.com/package/morgan)
+* [bcrypt.js](https://www.npmjs.com/package/bcryptjs)
+* [Hover.css](https://ianlunn.github.io/Hover/)
+
 ## Code Snippet
 ```
+    // if story line lever end return false, then return false
+    function choice(event) {
+        event.preventDefault();
+        // setStart(false);
+        // console.log(user._id);
+        let value = event.target.value;
+        if (storyline[user.level].decision) {
+            if (storyline[user.level].badchoice) {
+                // console.log("working");
+                setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
+            }
+            else {
+                setUser({ ...user, "level": storyline[user.level].decision[value] });
+            }
+        } else if (storyline[user.level].end === true) {
+
+            API.findHighScore(user.username).then(res => {
+                // console.log("highscore: ", res);
+                // if (!res.data) {
+                API.newHighScore(user.username, user.level, user.lives)
+                // } else {
+                //     if (res.data.lives < user.lives) {
+                //         API.updateHighScore(res.data._id, user.level, user.lives)
+                //     }
+                // }
+            })
+            setEndGame(false)
+        } else {
+            setUser({ ...user, "level": user.level + 1 });
+        }
+    }
 ```
 
 ## Repository Link
