@@ -145,7 +145,7 @@ function Game() {
         let pass = event.target[1].value.trim();
         API.getUser(name, pass)
             .then(res => {
-                console.log("login client res: ", res);
+                // console.log("login client res: ", res);
                 if (res.data) {
                     setUser(res.data);
                     setAuth(true);
@@ -159,13 +159,13 @@ function Game() {
 
     function viewHighScores(event) {
         event.preventDefault();
-        console.log("view high scores working");
+        // console.log("view high scores working");
         setUserScores(true);
     }
 
     function exitScores(event) {
         event.preventDefault();
-        console.log("exit high scores working");
+        // console.log("exit high scores working");
         setUserScores(false);
     }
 
