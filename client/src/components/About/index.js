@@ -28,7 +28,7 @@ function About() {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
-                        Meet Jeronivosh
+                        Meet the Team
                             <button
                                 type="button"
                                 className="close"
