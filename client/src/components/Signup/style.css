@@ -13,12 +13,11 @@
 }
 .btn {
     border: 1px black solid;
-    /* margin-top: 20px; */
     background-color: whitesmoke;
     font-family: 'Press Start 2P', cursive;
     color: black;
 }
-.btn:hover{
+.btn:hover {
     cursor: pointer;
     background-color:black;
     color: white;

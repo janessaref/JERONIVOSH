@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-// Login Card displayed oh the homepage
+// Login Card 
 function Login({ login, message, input, erase }) {
     return (
         <div className="homepage container overflow-auto">
