@@ -29,9 +29,9 @@ function Highscores({ user, exitScores }) {
                     var scores = [...sorted]
                     let final = scores.map(scores => {
                         if (scores.level === 35) {
-                            return ({ ...scores, ending: "Cemetary Ending" })
+                            return ({ ...scores, ending: "Cemetary" })
                         } else {
-                            return ({ ...scores, ending: "Home Ending" })
+                            return ({ ...scores, ending: "Home" })
                         }
 
                     })
