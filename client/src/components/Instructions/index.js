@@ -51,7 +51,7 @@ function Instructions() {
                             <button
                                 onClick={() => hideModalInstructions()}
                                 type="button"
-                                className="btn btn-secondary"
+                                className="btn hvr-back-pulse"
                                 data-dismiss="modal">
                                 Exit
                             </button>

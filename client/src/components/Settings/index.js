@@ -16,7 +16,7 @@ function Settings({backToMain, logoutUser}) {
  
     return (
       <div className="settingsButton">
-        <img src="./assets/settingsgear.png" onClick={() => {showModalSettings()}} id="settingsGear"/>
+        <img src="./assets/settingsgear.png" onClick={() => {showModalSettings()}} id="settingsGear" alt="settings icon" />
 
         {/* Settings Modal */}
         <div className={modalSettings} id="settingsModal" role="dialog">
@@ -44,7 +44,7 @@ function Settings({backToMain, logoutUser}) {
                 <button
                   onClick={() => hideModalSettings()}
                   type="button"
-                  className="btn btn-secondary"
+                  className="btn hvr-back-pulse"
                   data-dismiss="modal">
                   Exit
                 </button>
