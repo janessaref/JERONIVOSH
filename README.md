@@ -25,7 +25,7 @@ Here's a GIF of the application.
 
 Here is a GIF of our application viewed on a mobile device. 
 
-![Gif](#)
+![Gif](./assets/mobile.gif)
 
 ## Technologies Used
 * [react](https://reactjs.org/)
@@ -41,16 +41,17 @@ Here is a GIF of our application viewed on a mobile device.
 * [Hover.css](https://ianlunn.github.io/Hover/)
 
 ## Code Snippet
+
+In this code snippet, this is the game logic wherein we set a variable to grab the value of the decision the user makes. If the user's decision is a bad choice, the cat loses a life and continues on to the next scene in the game otherwise, the cat won't lose a life but will move on to the next scene. The user progress is updated and saved with each click of a decision.
+
 ```
-    // if story line lever end return false, then return false
     function choice(event) {
         event.preventDefault();
-        // setStart(false);
-        // console.log(user._id);
+
         let value = event.target.value;
+
         if (storyline[user.level].decision) {
             if (storyline[user.level].badchoice) {
-                // console.log("working");
                 setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
             }
             else {
@@ -59,20 +60,13 @@ Here is a GIF of our application viewed on a mobile device.
         } else if (storyline[user.level].end === true) {
 
             API.findHighScore(user.username).then(res => {
-                // console.log("highscore: ", res);
-                // if (!res.data) {
-                API.newHighScore(user.username, user.level, user.lives)
-                // } else {
-                //     if (res.data.lives < user.lives) {
-                //         API.updateHighScore(res.data._id, user.level, user.lives)
-                //     }
-                // }
+                API.newHighScore(user.username, user.level, user.lives);
             })
             setEndGame(false)
         } else {
             setUser({ ...user, "level": user.level + 1 });
         }
-    }
+    };
 ```
 
 ## Repository Link
@@ -83,14 +77,14 @@ Here is a GIF of our application viewed on a mobile device.
 
 ## Authors 
 
-Jerri Fong
+[Jerri Fong](https://janessaref.herokuapp.com)
 
 [![GitHub](https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/janessaref)
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/janessafong)
 
 
-Josh Glugatch
+[Josh Glugatch](https://josh-glugatch.herokuapp.com/)
 
 
 [![GitHub](https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/joshglugatch)
@@ -98,14 +92,14 @@ Josh Glugatch
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/joshua-glugatch)
 
 
-Jon SanPedro
+[Jon SanPedro](https://jsp-react-portfolio.herokuapp.com/)
 
 [![GitHub](https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/jsp117)
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jonathansanpedro/)
 
 
-Ivan Torres
+[Ivan Torres](https://ivan-torres-mia.herokuapp.com/)
 
 [![GitHub](https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/IvanTorresMia)
 
