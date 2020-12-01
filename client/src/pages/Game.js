@@ -139,8 +139,8 @@ function Game() {
     function login(event) {
         event.preventDefault();
         setUserScores(false);
-        let name = event.target[0].value;
-        let pass = event.target[1].value;
+        let name = event.target[0].value.toLowerCase();
+        let pass = event.target[1].value.trim();
         API.getUser(name, pass)
             .then(res => {
                 console.log("login client res: ", res);
