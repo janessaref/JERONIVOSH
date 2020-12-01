@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./style.css";
 
 function About() {
     const [modalDevelopers, setModalDevelopers] = useState("modal hideModal");
@@ -42,38 +43,35 @@ function About() {
                             href="http://janessaref.herokuapp.com" 
                             target="_blank"
                             rel="noreferrer"
-                            className="mb-3 text-center"> <img src="./assets/developers/dog.png" />
+                            className="text-center"> <img src="./assets/developers/dog.png" className="developers" id="dog" />
                         </a>
                         <p className="font-weight-bold">JERRI FONG</p>
-
-                           
                             <a 
                             href="#" 
                             target="_blank"
                             rel="noreferrer"
-                            className="mb-3 text-center">
-                                <img src="./assets/developers/bird.png" />
+                            className="text-center">
+                                <img src="./assets/developers/bird.png" className="developers" id="bird" />
                             </a>
-                            <p className="font-weight-bold">JON SANPEDRO</p>
-
-                            <p className="font-weight-bold">IVAN TORRES</p>
-                            <p>He is blah blah.</p>
+                            <p className="font-weight-bold mt-2">JON SANPEDRO</p>
+            
                             <a 
                             href="#" 
                             target="_blank"
                             rel="noreferrer"
-                            className="mb-3 text-center">
-                                Ivan's Portfolio
+                            className="text-center">
+                                  <img src="./assets/developers/spider.png" className="developers" id="spider" />
                             </a>
-                            <p className="font-weight-bold">JOSH GLUGATCH</p>
-                            <p>He is blah blah.</p>
+                            <p className="font-weight-bold mt-2">IVAN TORRES</p>
+                         
                             <a 
                             href="#" 
                             target="_blank"
                             rel="noreferrer"
-                            className="mb-3 text-center">
-                                Josh's Portfolio
+                            className="text-center">
+                                  <img src="./assets/developers/cat.png" className="developers" id="cat" />
                             </a>
+                            <p className="font-weight-bold mt-1">JOSH GLUGATCH</p>
                         </div>
                         <div className="modal-footer">
                             <button

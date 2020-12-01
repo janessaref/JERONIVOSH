@@ -1,0 +1,20 @@
+.developers:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#dog:hover {
+    width: 125px;
+}
+
+#bird:hover {
+    width: 90px;
+}
+
+#spider:hover {
+    width: 85px;
+}
+
+#cat:hover {
+    width: 95px;
+}
