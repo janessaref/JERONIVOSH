@@ -70,7 +70,6 @@ function Highscores({ user, exitScores }) {
                                     <button className="btn btn-block hvr-back-pulse" onClick={exitScores}>Main Menu</button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
