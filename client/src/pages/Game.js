@@ -340,7 +340,7 @@ function Game() {
     //         })
     // }
 
-
+// erases the validation messages when button is clicked. 
     function erase() {
         setUserMessage('hideUserMsg signupMsg');
         setPassMessage('hidePassMsg signupMsg');
