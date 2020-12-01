@@ -23,7 +23,7 @@ function Main({ start, viewHighScores, logout }) {
                             </div>
                             <div className="col-md-7">
                                 {/* <Link to={"/coopLogin"}> */}
-                                <div className="btn btn-block ml-1 hvr-back-pulse" id="coopBtn">CO-OP (COMING SOON)</div>
+                                <div className="btn btn-block hvr-back-pulse" id="coopBtn">CO-OP (COMING SOON)</div>
                                 {/* </Link> */}
                             </div>
                         </div>
