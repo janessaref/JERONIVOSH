@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-function signup({ signup, authorized, userMessage, passMessage }) {
+function signup({ signup, authorized, userMessage, passMessage, erase }) {
     return (
         <div className="homepage container">
         <div className="mainContent container d-flex justify-content-center">
@@ -43,7 +43,7 @@ function signup({ signup, authorized, userMessage, passMessage }) {
                         <div className ="row mx-auto text-center">
                             <div className="col-md">
                                 <p className="mt-1 mb-1 alreadyUser">Already a user?</p>
-                                <Link className="button" to="/login">
+                                <Link className="button" onClick={erase} to="/login">
                                     <button className="btn mt-1" id="loginBtn">Login Here</button>
                                 </Link>
                             </div>
