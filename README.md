@@ -21,7 +21,7 @@ In this application, our team has created a choice-based novel game where users 
 
 Here's a GIF of the application.
 
-![Gif](#)
+![Gif](./assets/gameplaygif.gif)
 
 Here is a GIF of our application viewed on a mobile device. 
 
