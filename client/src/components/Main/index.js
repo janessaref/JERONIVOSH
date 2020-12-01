@@ -23,8 +23,10 @@ function Main({ start, viewHighScores, logout }) {
                                 <div className="btn btn-block hvr-back-pulse" id="coopBtn">CO-OP (COMING SOON)</div>
                             </div>
                         </div>
+                        {/* Instructions component */}
                         <Instructions />
                         <button className="btn btn-block hvr-back-pulse" onClick={viewHighScores} id="highscoresBtn">My High Scores</button>
+                        {/* About component */}
                         <About />
                         <button className="btn btn-block hvr-back-pulse" onClick={logout} id="signOutBtn">Log Out</button>
                     </div>
