@@ -110,7 +110,7 @@ function Game() {
                     holder.push(res.data[i].username);
                 }
                 // check if username exists
-                if (!holder.includes(name) && pass.length > 7) {
+                if (!holder.includes(name) && pass.length > 7 && name.length <= 15) {
                     // add new user
                     API.signUp({ username: name, password: pass })
                         .then(function (res) {
@@ -129,11 +129,15 @@ function Game() {
                 } else if (holder.includes(name)) {
                     setUserMessage('showUserMsg signupMsg')
                     setPassMessage('hidePassMsg')
+                    setUserLength('hidePassMsg signupMsg')
                 } else if (pass.length <= 7) {
                     setPassMessage('showPassMsg signupMsg')
                     setUserMessage('hideUserMsg')
-                } else if (name.length > 15) {
+                    setUserLength('hidePassMsg signupMsg')
+                } else if (name.length >= 15) {
                     setUserLength('showPassMsg signupMsg')
+                    setUserMessage('hideUserMsg')
+                    setPassMessage('hidePassMsg')
                 }
             })
         // console.log("user signup: ", user);

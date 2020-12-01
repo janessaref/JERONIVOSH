@@ -34,7 +34,7 @@ function signup({ signup, authorized, userMessage, passMessage, erase, userLengt
                             <p>Password must be <br /> at least <strong>8</strong> characters.</p>
                         </div>
                         <div className={userLengthMessage}>
-                            <p>Username must be <br /> longer than 15 characters <strong>8</strong> characters.</p>
+                            <p>Username must be <br /> longer than 15 characters.</p>
                         </div>
                         <div className ="row mx-auto text-center">
                             <div className="col-md">
