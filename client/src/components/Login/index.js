@@ -28,7 +28,7 @@ function Login({ login, message, input }) {
                                 <input type="password" className={input} id="password" placeholder="Enter your password" />
                             </div>
                             <div className={message}>
-                                    <p>Invalid username or password.</p>
+                                    <p>Wrong username or password.</p>
                                 </div>
                             <div className ="row mx-auto text-center">
                                 <div className="col-md">

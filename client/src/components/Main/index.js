@@ -1,4 +1,5 @@
 import React from 'react';
+import About from '../About';
 import CoopLogin from '../CoopLogin';
 import Instructions from '../Instructions';
 import './style.css'
@@ -27,8 +28,9 @@ function Main({ start, viewHighScores, logout }) {
                             </div>
                         </div>
                         <Instructions />
-                        <button className="btn btn-block hvr-back-pulse" onClick={viewHighScores}>Personal High Scores</button>
-                        <button className="btn btn-block hvr-back-pulse" onClick={logout}>Log Out</button>
+                        <button className="btn btn-block hvr-back-pulse" onClick={viewHighScores} id="highscoresBtn">Personal High Scores</button>
+                        <About />
+                        <button className="btn btn-block hvr-back-pulse" onClick={logout} id="signOutBtn">Log Out</button>
                     </div>
                 </div>
             </div>

@@ -1,14 +1,14 @@
-import React, {useRef, useEffect, useState} from "react";
-import "./style.css"
-import {Link, withRouter} from "react-router-dom"
+import React, { useRef, useEffect, useState } from "react";
+import "./style.css";
+import { withRouter } from "react-router-dom";
 import API from '../../utils/api';
 
 
-function Credits({end}) {
+function Credits({ end }) {
 
-  const [highScores, setHighScores] = useState([])
+  const [highScores, setHighScores] = useState([]);
 
-    const volume = useRef(null);
+  const volume = useRef(null);
 
   useEffect(() => {
     volume.current.volume = 0.5;
@@ -20,27 +20,27 @@ function Credits({end}) {
       .then(res => {
         // console.log(res)
         
-          var sorted = res.data.sort(function(a,b){
+          var sorted = res.data.sort(function(a,b) {
             if(a.lives < b.lives) { return 1; }
             if(a.lives > b.lives) { return -1; }
             return 0;
-          })
+          });
           
-          var scores =[...sorted]
+          var scores =[...sorted];
           // console.log(scores)
         
-        setHighScores(scores.slice(0,10))
+        setHighScores(scores.slice(0,10));
         // console.log(highScores)
       })
       .catch(err => {
       console.log(err);
-      setHighScores(defaultHighScores)
+      setHighScores(defaultHighScores);
       }), 5000
     ) 
 
-}, [])
+}, []);
 
-    const defaultHighScores=[
+    const defaultHighScores = [
       {name:"Jerry", lives: 9},
       {name:"MemeGod", lives: 9},
       {name:"Jerri", lives: 8},
@@ -121,7 +121,7 @@ function Credits({end}) {
        <br/>
        <br/>
        <br/>
-       {highScores.map(score=>{
+       {highScores.map(score => {
             return(
                 <p className="name" key={score.username}>{score.username}: {score.lives}</p>
             )
@@ -137,11 +137,11 @@ function Credits({end}) {
        <br/>
        <br/>
        <br/>
-       <img className="name logos" src="./assets/logos/html5-logo-31816.png" alt="reactlogo"/>
+       <img className="name logos" src="./assets/logos/html5-logo-31816.png" alt="htmllogo"/>
        <br/>
-       <img className="name logos" src="./assets/logos/bootstrap-logo.png" alt="reactlogo"/>
+       <img className="name logos" src="./assets/logos/bootstrap-logo.png" alt="bootstraplogo"/>
        <br/>
-       <img className="name logos" src="./assets/logos/pixilart-logo.png" alt="reactlogo"/>
+       <img className="name logos" src="./assets/logos/pixilart-logo.png" alt="pixilartlogo"/>
 
        <div className="break"/><div className="break"/>
        <p>A special thank you to Jerome, Roger, Kerwin, Manuel, and Mahi.</p>
@@ -162,10 +162,9 @@ function Credits({end}) {
         <br/>
         <div onClick={end}><img className="name cat" src="./assets/logos/creditscat.png" alt="catlogo"/></div>
         {/* <Link to={"/main"}> <img className="name logo cat" src="./assets/logos/cattransparent.png"  alt="catlogo"/> </Link> */}
-     
     </div>
   );
-}
+};
 
 export default withRouter(Credits);
 
