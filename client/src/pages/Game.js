@@ -357,7 +357,7 @@ function Game() {
 
                 <Switch>
 
-                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} erase={erase}/>}</Route>
+                    <Route exact path="/">{authorized ? <Redirect to="/main" /> : <Signup signup={signup} authorized={authorized} userMessage={userMessage} passMessage={passMessage} erase={erase} userLengthMessage={userLength}/>}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} message={message} input={passInput} erase={erase}/>}</Route>
                     <Route exact path="/login">{authorized ? <Redirect to="/main" /> : <Login login={login} authorized={authorized} />}</Route>
                     <Route exact path="/game">{authorized ? startGame ? endGame ? <><Image user={user} story={storyline} lives={livesStyle} />
