@@ -37,6 +37,18 @@
     max-height: 85%;
 }
 
+@media (max-width:910px) {
+    #soloBtn {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:767px) {
+    #coopBtn {
+        margin-top: 10px;
+    }
+}
+
 @media (max-width:470px) {
     #coopBtn,
     #highscoresBtn,
@@ -70,7 +82,7 @@
     #aboutBtn {
         font-size: 9px;
     }
-    #soloBtn,
+    button#soloBtn,
     #instructionsBtn,
     #highscoresBtn,
     #signOutBtn {
@@ -83,7 +95,7 @@
     #aboutBtn {
         font-size: 7px;
     }
-    #soloBtn,
+    button#soloBtn,
     #instructionsBtn {
         font-size: 10px;
     }
@@ -97,23 +109,11 @@
     #aboutBtn {
         font-size: 6px;
     }
-    #soloBtn,
+    button#soloBtn,
     #instructionsBtn,
     #highscoresBtn,
     #signOutBtn {
         font-size: 8px;
-    }
-}
-
-@media (max-width:767px) {
-    #coopBtn {
-        margin-top: 10px;
-    }
-}
-
-@media (max-width:910px) {
-    #soloBtn {
-        font-size: 15px;
     }
 }
 
