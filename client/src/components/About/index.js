@@ -44,7 +44,7 @@ function About() {
                             href="https://janessaref.herokuapp.com" 
                             target="_blank"
                             rel="noreferrer"
-                            className="text-center"> <img src="./assets/developers/dog.png" className="developers" id="dog" />
+                            className="text-center"> <img src="./assets/developers/dog.png" className="developers" id="dog" alt="dog icon"/>
                         </a>
                         <p className="font-weight-bold">JERRI FONG</p>
                             <a 
@@ -52,7 +52,7 @@ function About() {
                             target="_blank"
                             rel="noreferrer"
                             className="text-center">
-                                <img src="./assets/developers/bird.png" className="developers" id="bird" />
+                                <img src="./assets/developers/bird.png" className="developers" id="bird" alt="bird icon" />
                             </a>
                             <p className="font-weight-bold mt-2">JON SANPEDRO</p>
             
@@ -61,7 +61,7 @@ function About() {
                             target="_blank"
                             rel="noreferrer"
                             className="text-center">
-                                  <img src="./assets/developers/spider.png" className="developers" id="spider" />
+                                  <img src="./assets/developers/spider.png" className="developers" id="spider" alt="spider icon" />
                             </a>
                             <p className="font-weight-bold mt-2">IVAN TORRES</p>
                          
@@ -70,7 +70,7 @@ function About() {
                             target="_blank"
                             rel="noreferrer"
                             className="text-center">
-                                  <img src="./assets/developers/cat.png" className="developers" id="cat" />
+                                  <img src="./assets/developers/cat.png" className="developers" id="cat" alt="cat icon" />
                             </a>
                             <p className="font-weight-bold mt-1">JOSH GLUGATCH</p>
                         </div>
@@ -78,7 +78,7 @@ function About() {
                             <button
                                 onClick={() => hideDevelopersModal()}
                                 type="button"
-                                className="btn btn-secondary"
+                                className="btn btn-secondary hvr-back-pulse"
                                 data-dismiss="modal">
                                 Exit
                             </button>
