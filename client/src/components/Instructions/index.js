@@ -4,6 +4,7 @@ import "./style.css";
 
 // How to play instructions displayed on the main page with a modal
 function Instructions() {
+    // variable to hide or show the instructions modal
     const [modalInstructions, setModalInstructions] = useState("modal hideModal");
 
     useEffect(() => {
@@ -19,6 +20,7 @@ function Instructions() {
 
     return(
         <>
+            {/* button displayed in the main menu */}
             <button 
             className="btn btn-block hvr-back-pulse" 
             id="instructionsBtn" 
@@ -48,6 +50,7 @@ function Instructions() {
                             <p>(COMING SOON)</p>
                         </div>
                         <div className="modal-footer">
+                            {/* Exit button to hide the modal */}
                             <button
                                 onClick={() => hideModalInstructions()}
                                 type="button"

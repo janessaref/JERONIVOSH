@@ -1,31 +1,33 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./style.css";
-// import Spinner from 'react-bootstrap/Spinner';
+
+// Scene image set in the gameplay 
 function Image({ user, story, spinner, lives }) {
+  // mute icon
   const [levels, setLevels] = useState({ status: "unmuted" });
   const [visibleX, setVisibleX] = useState(false);
   // loading icon
   const [loading, setLoading] = useState(true);
 
+  // hides or shows the red X when the volume icon is clicked
   let style = { display: "block" };
   if (!visibleX) style.display = "none";
 
   useEffect(() => {
     setLoading(true);
-  }, [story[user.level].image])
+  }, [story[user.level].image]);
 
   function spinner() {
     setLoading(false);
-  }
-
+  };
 
   function showXImage() {
     setVisibleX(true);
-  }
+  };
 
   function hideXImage() {
     setVisibleX(false);
-  }
+  };
 
   function handleMute() {
     if (levels.status === "muted") {
@@ -35,17 +37,17 @@ function Image({ user, story, spinner, lives }) {
       mute();
       showXImage();
     }
-  }
+  };
 
   function mute() {
     setLevels({ status: "muted" });
     volume.current.volume = 0;
-  }
+  };
 
   function unmute() {
     setLevels({ status: "unmuted" });
     volume.current.volume = 0.5;
-  }
+  };
 
   const volume = useRef(null);
 
@@ -56,7 +58,7 @@ function Image({ user, story, spinner, lives }) {
   return (
     <div>
       <div className="mute fixed">
-        <img src="./assets/redx.png" className="redX" style={style} onClick={handleMute} alt="red x image" />
+        <img src="./assets/redx.png" className="redX" style={style} onClick={handleMute} alt="red x" />
         <img src="./assets/audiosmall.png" onClick={handleMute} id="volIcon" alt="volume icon" />
       </div>
       <div className={lives}>
@@ -68,14 +70,11 @@ function Image({ user, story, spinner, lives }) {
       <div style={{ display: loading ? "block" : "none" }} className="spinner-border loading" role="status">
         Loading...
       </div>
-      {/* <Spinner variant="primary" className="loading" style={{ display: loading ? "block" : "none" }} animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner> */}
       <div style={{ display: loading ? "none" : "block" }}>
         <img className="gif img-fluid" src={story[user.level].image} onLoad={() => spinner()} alt="loading" />
       </div>
     </div>
   );
-}
+};
 
 export default Image;
