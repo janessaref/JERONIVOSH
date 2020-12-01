@@ -205,6 +205,7 @@ function Game() {
         setPassMessage('hidePassMsg signupMsg');
         setPassInput('form-control');
         setMessage('message hideMessage');
+        setUserLength('hidePassMsg signupMsg')
     };
 
 
