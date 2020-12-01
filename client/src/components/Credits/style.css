@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-
 html, body {
   height: 100vh;
   background: #000000;
   overflow: hidden;
-  
 }
-
 .wrapper {
     animation-name: credits;
     animation-delay: 11s;
@@ -22,59 +19,41 @@ html, body {
     text-align: center;
     text-transform: uppercase;
     color: white;
-  
 }
-
-
-
 .name {
   margin-bottom: 50px;
   font-size: 45px;
 }
-
 @keyframes credits {
 from { transform:  translateY(0); }
   to { transform: translateY(-12580px); }
 }
-
-.logo{
+.logo {
     width: 400px;
-    height: 500px;
-    
-    
+    height: 500px;  
 }
-.logos{
-    width: 400px;
-    
-    
-    
+.logos {
+    width: 400px;  
 }
-.break{
+.break {
     height: 400px;
 }
-
-.cat{
+.cat {
 width: 27%;
 }
-
-.cat:hover{
+.cat:hover {
     cursor: pointer;
     border-radius: 5000px ;
     border: solid rgb(255, 255, 142);
     background-color:  rgb(255, 255, 142);
     animation: moon 15s infinite linear;
-    
-    
 }
-
-@keyframes title{
+@keyframes title {
   100%{
     color:white
   };
-  
 }
-
-@keyframes moon{
+@keyframes moon {
   50%{
     background-color: rgb(225, 190, 231);
     border: solid rgb(225, 190, 231);
@@ -85,18 +64,15 @@ width: 27%;
     border: solid  rgb(255, 255, 142);
   }
 }
-
-.gameTitle{
+.gameTitle {
   animation-name: title;
   animation-delay: 8s;
   font-size: 8vw;
   animation-fill-mode: forwards;
 }
-
-.titleContainer{
+.titleContainer {
   height: 300px;
 }
-
-span{
+span {
 color:#6f6188;
 }

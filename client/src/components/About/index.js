@@ -3,6 +3,7 @@ import "./style.css";
 
 // About the developers modal
 function About() {
+    // Variable to show or hide the modal
     const [modalDevelopers, setModalDevelopers] = useState("modal hideModal");
 
     useEffect(() => {
@@ -18,6 +19,7 @@ function About() {
 
     return(
         <>
+            {/* Button displayed in the main menu page */}
             <button 
             className="btn btn-block hvr-back-pulse" 
             id="aboutBtn" 
@@ -39,6 +41,7 @@ function About() {
                         </div>
                         <small className="mt-2">Click on the icon to check out their portfolio!</small>
                         <div className="modal-body mt-2 overflow-auto">
+                            {/* Jerri Fong's Portfolio */}
                             <a 
                             href="https://janessaref.herokuapp.com" 
                             target="_blank"
@@ -47,6 +50,7 @@ function About() {
                                 <img src="./assets/developers/dog.png" className="developers" id="dog" alt="dog icon"/>
                             </a>
                             <p className="font-weight-bold">JERRI FONG</p>
+                             {/* Jon SanPedro's Portfolio */}
                             <a 
                             href="https://jsp-react-portfolio.herokuapp.com/" 
                             target="_blank"
@@ -55,6 +59,7 @@ function About() {
                                 <img src="./assets/developers/bird.png" className="developers" id="bird" alt="bird icon" />
                             </a>
                             <p className="font-weight-bold mt-2">JON SANPEDRO</p>
+                             {/* Ivan Torres Mia's Portfolio */}
                             <a 
                             href="https://ivan-torres-mia.herokuapp.com/" 
                             target="_blank"
@@ -63,6 +68,7 @@ function About() {
                                   <img src="./assets/developers/spider.png" className="developers" id="spider" alt="spider icon" />
                             </a>
                             <p className="font-weight-bold mt-2">IVAN TORRES</p>
+                             {/* Josh Glugatch's Portfolio */}
                             <a 
                             href="https://josh-glugatch.herokuapp.com/" 
                             target="_blank"
@@ -73,6 +79,7 @@ function About() {
                             <p className="font-weight-bold mt-1">JOSH GLUGATCH</p>
                         </div>
                         <div className="modal-footer">
+                            {/* Exit the modal and hide the modal */}
                             <button
                                 onClick={() => hideDevelopersModal()}
                                 type="button"

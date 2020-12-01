@@ -3,29 +3,28 @@ import API from "../../utils/api";
 import "./style.css";
 
 function Highscores({ user, exitScores }) {
-
+    // Variables to set personal high scores of the user
     const [highScores, setHighScores] = useState([]);
     const [data, setData] = useState(false);
 
     useEffect(() => {
         let sorted = [];
         sorted.length = 0;
-        console.log("username: ", user.username)
-        console.log("score useffect running");
+
         API.allScoresByUser(user.username)
             .then(res => {
-                console.log("find all scores: ", res)
+
                 if (res.data.length !== 0) {
-                    console.log("there is data")
                     setData(true);
 
-
+                    // Sort the scores
                     sorted = res.data.sort(function (a, b) {
                         if (a.lives < b.lives) { return 1; }
                         if (a.lives > b.lives) { return -1; }
                         return 0;
-                    })
+                    });
 
+                    // map the scores and display the scores with the corresponding ending the user played
                     var scores = [...sorted]
                     let final = scores.map(scores => {
                         if (scores.level === 35) {
@@ -33,19 +32,14 @@ function Highscores({ user, exitScores }) {
                         } else {
                             return ({ ...scores, ending: "Home" })
                         }
-
-                    })
-                    // console.log("scores: ", final)
-
-                    setHighScores(final.slice(0, 10))
-                    // console.log(highScores)
-                }
+                    });
+                    setHighScores(final.slice(0, 10));
+                };
             })
             .catch(err => {
                 console.log(err);
-            })
-
-    }, [])
+            });
+    }, []);
 
     return (
         <div>
@@ -59,6 +53,7 @@ function Highscores({ user, exitScores }) {
                             <hr />
                             <div className="row">
                                 <div className="scores col-md">
+                                    {/* Display the highscores of the user, otherwise display "no high scores" if user hasn't played */}
                                     {data ? highScores.map(score => {
                                         return (
                                             <div>
@@ -68,7 +63,6 @@ function Highscores({ user, exitScores }) {
                                             </div>
                                         )
                                     }) : <div>No High Scores</div>}
-                                    
                                 </div>       
                             </div>
                             <div className="modal-footer">
@@ -81,7 +75,7 @@ function Highscores({ user, exitScores }) {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Highscores;

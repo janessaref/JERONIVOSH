@@ -4,6 +4,7 @@ import "./style.css";
 
 // Settings gear displayed in the game to show and hide the modal with options of logging out the user or going back to main menu
 function Settings({backToMain, logoutUser}) {
+  // Variable to hide and show the modal 
   const [modalSettings, setModalSettings] = useState("modal hideModal");
 
   function hideModalSettings() {
@@ -16,6 +17,7 @@ function Settings({backToMain, logoutUser}) {
  
     return (
       <div className="settingsButton">
+        {/* Settings icon to show modal when clicked */}
         <img src="./assets/settingsgear.png" onClick={() => {showModalSettings()}} id="settingsGear" alt="settings icon" />
 
         {/* Settings Modal */}
@@ -40,6 +42,7 @@ function Settings({backToMain, logoutUser}) {
                 {/* Signout component */}
                 <Signout logoutUser={logoutUser}/>
               </div>
+              {/* Exit button to hide modal */}
               <div className="modal-footer">
                 <button
                   onClick={() => hideModalSettings()}
