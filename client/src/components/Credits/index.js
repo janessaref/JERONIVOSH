@@ -1,12 +1,12 @@
 import React, {useRef, useEffect, useState} from "react";
 import "./style.css"
-import {Link, withRouter} from "react-router-dom"
+import {withRouter} from "react-router-dom"
 import API from '../../utils/api';
 
 
 function Credits({end}) {
 
-  const [highScores, setHighScores] = useState([])
+  const [recentScores, setRecentScores] = useState([])
 
     const volume = useRef(null);
 
@@ -23,29 +23,30 @@ function Credits({end}) {
           var scores = res.data.reverse()
           console.log(scores)
         
-        setHighScores(scores.slice(0,10))
-        // console.log(highScores)
+        setRecentScores(scores.slice(0,10))
+        // console.log(RecentScores)
       })
       .catch(err => {
+        const defaultRecentScores=[
+          {name:"Jerry", lives: 9},
+          {name:"MemeGod", lives: 9},
+          {name:"Jerri", lives: 8},
+          {name:"NyanCat", lives: 7},
+          {name:"bluecat", lives: 6},
+          {name:"acedragon48", lives: 6},
+          {name:"Tom", lives: 5},
+          {name:"Bob", lives: 5},
+          {name:"Jill", lives: 4},
+          {name:"Rat", lives: 1}
+        ]
       console.log(err);
-      setHighScores(defaultHighScores)
+      setRecentScores(defaultRecentScores)
       }), 5000
     ) 
 
 }, [])
 
-    const defaultHighScores=[
-      {name:"Jerry", lives: 9},
-      {name:"MemeGod", lives: 9},
-      {name:"Jerri", lives: 8},
-      {name:"NyanCat", lives: 7},
-      {name:"bluecat", lives: 6},
-      {name:"acedragon48", lives: 6},
-      {name:"Tom", lives: 5},
-      {name:"Bob", lives: 5},
-      {name:"Jill", lives: 4},
-      {name:"Rat", lives: 1}
-    ]
+    
   return (
     <div className="wrapper img-fluid">
         <div>
@@ -115,7 +116,7 @@ function Credits({end}) {
        <br/>
        <br/>
        <br/>
-       {highScores.map(score=>{
+       {recentScores.map(score=>{
             return(
                 <p className="name" key={score.id}>{score.username}: {score.lives}</p>
             )
