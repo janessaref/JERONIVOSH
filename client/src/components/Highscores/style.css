@@ -17,7 +17,7 @@
 }
 
 .myScoresContainer {
-    margin-top: 120px;
+    margin-top: 80px;
     background-color: #6f6188;
     padding-left: 40px;
     padding-right: 40px;
@@ -28,5 +28,5 @@
     opacity: 0.98;
     box-shadow: 5px 5px 2px #514564;
     max-width: 100%;
-    max-height: 85%;
+    max-height: auto;
 }
