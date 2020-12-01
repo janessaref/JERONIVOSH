@@ -100,7 +100,7 @@ function Game() {
         let holder = [];
         holder.length = 0;
         let name = event.target[0].value.toLowerCase();
-        let pass = event.target[1].value
+        let pass = event.target[1].value.trim();
         // console.log("username, password: ", name, pass)
         // check all users
         API.findAll()
