@@ -39,6 +39,7 @@ function Game() {
     // state for validation messages
     const [userMessage, setUserMessage] = useState('hideUserMsg signupMsg');
     const [passMessage, setPassMessage] = useState('hidePassMsg signupMsg');
+    const [userLength, setUserLength] = useState('hidePassMsg signupMsg')
     const [livesStyle, setLivesStyle] = useState('lives lives-color1');
 
     // state for viewing personal high scores
@@ -132,7 +133,7 @@ function Game() {
                     setPassMessage('showPassMsg signupMsg')
                     setUserMessage('hideUserMsg')
                 } else if (name.length > 15) {
-                    
+
                 }
             })
         // console.log("user signup: ", user);
