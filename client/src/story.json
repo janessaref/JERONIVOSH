@@ -29,7 +29,7 @@
         "story": "You made it to calm space in between the towering mountains that surround you. The rumble of the monsters recedes into the background. Your stomach is growling... You haven't eaten for days. You notice some rats feeding on scraps. Fixated on your prey, you...",
         "choices": [
             "Go straight for the pounce",
-            "Play it slow, sneak up behind the dumpster"
+            "Try to sneak up"
         ],
         "decision": [4, 5]
     },

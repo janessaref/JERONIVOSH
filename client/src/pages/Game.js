@@ -76,13 +76,9 @@ function Game() {
     }, [user.lives])
 
     useEffect(() => {
-        // console.log("user before update: ", user)
-
         API.updateUser(user)
             .then(res => console.log("updated user"))
             .catch(err => console.log("update user error: ", err));
-        // console.log("Authorization: ", authorized);
-
     }, [user])
 
     useEffect(() => {
@@ -116,7 +112,6 @@ function Game() {
                         .then(function (res) {
                             setUser({
                                 username: res.data.username,
-                                password: res.data.password,
                                 level: res.data.level,
                                 lives: res.data.lives,
                                 id: res.data._id
@@ -217,12 +212,9 @@ function Game() {
     // if story line lever end return false, then return false
     function choice(event) {
         event.preventDefault();
-        // setStart(false);
-        // console.log(user._id);
         let value = event.target.value;
         if (storyline[user.level].decision) {
             if (storyline[user.level].badchoice) {
-                // console.log("working");
                 setUser({ ...user, "level": storyline[user.level].decision[value], "lives": user.lives - 1 });
             }
             else {
