@@ -55,10 +55,9 @@ function Image({ user, story, spinner, lives }) {
 
   return (
     <div>
-     
       <div className="mute fixed">
-        <img src="./assets/redx.png" className="redX" style={style} onClick={handleMute} />
-        <img src="./assets/audiosmall.png" onClick={handleMute} id="volIcon" />
+        <img src="./assets/redx.png" className="redX" style={style} onClick={handleMute} alt="red x image" />
+        <img src="./assets/audiosmall.png" onClick={handleMute} id="volIcon" alt="volume icon" />
       </div>
       <div className={lives}>
         <p>Lives: {user.lives}</p>
@@ -72,9 +71,8 @@ function Image({ user, story, spinner, lives }) {
       {/* <Spinner variant="primary" className="loading" style={{ display: loading ? "block" : "none" }} animation="border" role="status">
         <span className="sr-only">Loading...</span>
       </Spinner> */}
-
       <div style={{ display: loading ? "none" : "block" }}>
-        <img className="gif img-fluid" src={story[user.level].image} onLoad={() => spinner()}></img>
+        <img className="gif img-fluid" src={story[user.level].image} onLoad={() => spinner()} alt="loading" />
       </div>
     </div>
   );

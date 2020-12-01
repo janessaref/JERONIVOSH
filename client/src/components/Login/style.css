@@ -43,9 +43,7 @@ hr {
     .brand {
         font-size: 22px;
     }
-    #userName {
-        font-size: 10px;
-    }
+    #userName,
     #password {
         font-size: 10px;
     }
@@ -57,24 +55,18 @@ hr {
     .brand {
         font-size: 19px;
     }
-    #userName {
-        font-size: 8px;
-    }
+    #userName,
     #password {
         font-size: 8px;
     }
     #signUpBtn {
         font-size: 10px;
     }
-    .usernameLabel {
-        font-size: 14px;
-    }
+    .usernameLabel,
     .passwordLabel {
         font-size: 14px;
     }
-    .notUser {
-        font-size: 12px;
-    }
+    .notUser,
     #loginBtn {
         font-size: 12px;
     }

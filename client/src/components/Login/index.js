@@ -28,11 +28,11 @@ function Login({ login, message, input, erase }) {
                                 <input type="password" className={input} id="password" placeholder="Enter your password" />
                             </div>
                             <div className={message}>
-                                    <p>Wrong username or password.</p>
+                                    <p>Invalid username or password.</p>
                                 </div>
                             <div className ="row mx-auto text-center">
                                 <div className="col-md">
-                                    <button id="loginBtn" value="send" type="submit" className="btn mt-1 mb-1">Login
+                                    <button id="loginBtn" value="send" type="submit" className="btn mt-1 mb-1 hvr-back-pulse">Login
                                     </button>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@ function Login({ login, message, input, erase }) {
                                 <div className="col-md">
                                     <p className="mt-1 mb-1 notUser">Not a user?</p>
                                     <Link className="button" to="/">
-                                        <button className="btn mt-1" onClick={erase} id="signUpBtn">Sign Up Here</button>
+                                        <button className="btn mt-1 hvr-back-pulse" onClick={erase} id="signUpBtn">Sign Up Here</button>
                                     </Link>
                                 </div>
                             </div>

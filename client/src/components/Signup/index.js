@@ -38,7 +38,7 @@ function signup({ signup, authorized, userMessage, passMessage, erase, userLengt
                         </div>
                         <div className ="row mx-auto text-center">
                             <div className="col-md">
-                                <button id="signUpBtn" value="send" type="submit" className="btn mt-1 mb-1">Sign Up
+                                <button id="signUpBtn" value="send" type="submit" className="btn mt-1 mb-1 hvr-back-pulse">Sign Up
                                 </button>
                             </div>
                         </div>
@@ -47,7 +47,7 @@ function signup({ signup, authorized, userMessage, passMessage, erase, userLengt
                             <div className="col-md">
                                 <p className="mt-1 mb-1 alreadyUser">Already a user?</p>
                                 <Link className="button" onClick={erase} to="/login">
-                                    <button className="btn mt-1" id="loginBtn">Login Here</button>
+                                    <button className="btn mt-1 hvr-back-pulse" id="loginBtn">Login Here</button>
                                 </Link>
                             </div>
                         </div>

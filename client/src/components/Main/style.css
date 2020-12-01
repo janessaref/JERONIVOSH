@@ -37,54 +37,83 @@
     max-height: 85%;
 }
 
-@media (max-width:470px) {
-    #coopBtn {
-        font-size: 14px;
-    }
-}
-
-@media (max-width:430px) {
-    #coopBtn {
-        font-size: 12px;
-    }
-}
-
-@media (max-width:375px) {
-    #coopBtn {
-        font-size: 10px;
-    }
+@media (max-width:910px) {
     #soloBtn {
-        font-size: 14px;
-    }
-}
-
-@media (max-width:320px) {
-    #coopBtn {
-        font-size: 8px;
-    }
-    #soloBtn {
-        font-size: 10px;
-    }
-    #instructionsBtn {
-        font-size: 10px;
-    }
-}
-
-@media (max-width:280px) {
-    #coopBtn {
-        font-size: 6px;
-    }
-    #soloBtn {
-        font-size: 8px;
-    }
-    #instructionsBtn {
-        font-size: 8px;
+        font-size: 15px;
     }
 }
 
 @media (max-width:767px) {
     #coopBtn {
         margin-top: 10px;
+    }
+}
+
+@media (max-width:470px) {
+    #coopBtn,
+    #highscoresBtn,
+    #aboutBtn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:430px) {
+    #coopBtn,
+    #aboutBtn {
+        font-size: 11px;
+    }
+}
+
+@media (max-width:375px) {
+    #coopBtn,
+    #aboutBtn {
+        font-size: 10px;
+    }
+    #soloBtn,
+    #instructionsBtn,
+    #highscoresBtn,
+    #signOutBtn {
+        font-size: 13px;
+    }
+}
+
+@media (max-width:350px) {
+    #coopBtn,
+    #aboutBtn {
+        font-size: 9px;
+    }
+    button#soloBtn,
+    #instructionsBtn,
+    #highscoresBtn,
+    #signOutBtn {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:330px) {
+    #coopBtn,
+    #aboutBtn {
+        font-size: 7px;
+    }
+    button#soloBtn,
+    #instructionsBtn {
+        font-size: 10px;
+    }
+    #highscoresBtn {
+        font-size: 9px;
+    }
+}
+
+@media (max-width:300px) {
+    #coopBtn,
+    #aboutBtn {
+        font-size: 6px;
+    }
+    button#soloBtn,
+    #instructionsBtn,
+    #highscoresBtn,
+    #signOutBtn {
+        font-size: 8px;
     }
 }
 
