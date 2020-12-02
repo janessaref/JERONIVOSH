@@ -168,7 +168,7 @@
     {
         "id": 16,
         "image": "./assets/compressed/chimney-min.gif",
-        "story": "You wander the stucture's peak and encounter a mysterious column emitting heat. There is a weird dark could looming above it. You are cold and need a place to stay warm for the night.",
+        "story": "You wander the stucture's peak and encounter a mysterious column emitting heat. There is a weird dark cloud looming above it. You are cold and need a place to stay warm for the night.",
         "choices": [
             "Lay in the warmth","Search for a way down"
         ],
